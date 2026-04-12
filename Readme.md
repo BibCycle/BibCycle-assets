@@ -15,7 +15,7 @@
 
 ## 隱私與條款
 
-- 隱私政策（Privacy Policy）：https://bibcycle.github.io/BibCycle-assets/privacy.html
+- 隱私政策（Privacy Policy）：https://bibcycle.org/privacy.html
 
 
 ## 這個倉庫包含什麼？
