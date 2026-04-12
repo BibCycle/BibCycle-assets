@@ -1,4 +1,4 @@
-# BibCycle
+# BibCymacpro.dark@gmail.come
 
 BibCycle 是一款以「每日抽取经文章节」为核心的读经 App。  
 你可以在安静时刻抽取经文、记录阅读进度、收藏经文，并在登录后同步你的记录与设置。
