@@ -82,29 +82,15 @@
     a:hover { text-decoration: underline; }
 
     .store-badge {
+      height: 64px;
+      width: auto;
       object-fit: contain;
       display: block;
     }
 
-    .store-badge.ios {
-      width: 208px;
-      height: 62px;
-    }
-
-    .store-badge.android {
-      width: 286px;
-      height: 84px;
-    }
-
     @media (max-width: 640px) {
-      .store-badge.ios {
-        width: 174px;
-        height: 52px;
-      }
-
-      .store-badge.android {
-        width: 238px;
-        height: 70px;
+      .store-badge {
+        height: 54px;
       }
     }
 
@@ -145,12 +131,12 @@
         <tr>
           <td>
             <a href="https://testflight.apple.com/join/6Mawm2pQ" target="_blank" rel="noopener noreferrer">
-              <img class="store-badge ios" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+              <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
             </a>
           </td>
           <td>
             <a href="https://play.google.com/apps/testing/com.edwinluk.bibcycle" target="_blank" rel="noopener noreferrer">
-              <img class="store-badge android" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+              <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
             </a>
           </td>
         </tr>
