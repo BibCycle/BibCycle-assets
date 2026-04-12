@@ -89,22 +89,25 @@
       justify-content: center;
     }
 
-    .store-badge {
+    .store-badge-box.apple .store-badge {
+      width: 92%;
+      height: 92%;
+    }
+
+    .store-badge-box.google .store-badge {
       width: 100%;
       height: 100%;
+    }
+
+    .store-badge {
       object-fit: contain;
       display: block;
     }
 
     @media (max-width: 640px) {
       .store-badge-box {
-        width: 210px;
+        width: 200px;
         height: 60px;
-      }
-
-      .store-badge {
-        width: 100%;
-        height: 100%;
       }
     }
 
@@ -144,12 +147,12 @@
       <tbody>
         <tr>
           <td>
-            <a class="store-badge-box" href="https://testflight.apple.com/join/6Mawm2pQ" target="_blank" rel="noopener noreferrer">
+            <a class="store-badge-box apple" href="https://testflight.apple.com/join/6Mawm2pQ" target="_blank" rel="noopener noreferrer">
               <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
             </a>
           </td>
           <td>
-            <a class="store-badge-box" href="https://play.google.com/apps/testing/com.edwinluk.bibcycle" target="_blank" rel="noopener noreferrer">
+            <a class="store-badge-box google" href="https://play.google.com/apps/testing/com.edwinluk.bibcycle" target="_blank" rel="noopener noreferrer">
               <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
             </a>
           </td>
