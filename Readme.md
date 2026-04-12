@@ -1,12 +1,11 @@
-# BibCycle
+# BibCycle 翼旅
 
-BibCycle 是一款以「每日抽取經文章節」為核心的讀經 App。  
+「BibCycle 翼旅」 是一款以「每日抽取經文章節」為核心的讀經 App。  
 你可以在安靜時刻抽取經文、記錄閱讀進度、收藏經文，並在登錄後同步你的記錄與設置。
 
-> 說明：此倉庫為 BibCycle 的資源倉庫（Assets）。  
-> App 主代碼倉庫目前為私有。
+> 說明：此倉庫為 「BibCycle 翼旅」 的資源倉庫（Assets）。  
 
-## 下載 BibCycle
+## 下載 「BibCycle 翼旅」测试版
 
 | iOS | Android |
 | --- | --- |
