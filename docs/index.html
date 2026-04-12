@@ -81,6 +81,14 @@
     }
     a:hover { text-decoration: underline; }
 
+    .store-badge-box {
+      width: 260px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .store-badge {
       height: 64px;
       width: auto;
@@ -89,6 +97,11 @@
     }
 
     @media (max-width: 640px) {
+      .store-badge-box {
+        width: 210px;
+        height: 60px;
+      }
+
       .store-badge {
         height: 54px;
       }
@@ -130,12 +143,12 @@
       <tbody>
         <tr>
           <td>
-            <a href="https://testflight.apple.com/join/6Mawm2pQ" target="_blank" rel="noopener noreferrer">
+            <a class="store-badge-box" href="https://testflight.apple.com/join/6Mawm2pQ" target="_blank" rel="noopener noreferrer">
               <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
             </a>
           </td>
           <td>
-            <a href="https://play.google.com/apps/testing/com.edwinluk.bibcycle" target="_blank" rel="noopener noreferrer">
+            <a class="store-badge-box" href="https://play.google.com/apps/testing/com.edwinluk.bibcycle" target="_blank" rel="noopener noreferrer">
               <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
             </a>
           </td>
