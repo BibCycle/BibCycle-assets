@@ -1,12 +1,12 @@
 # BibCycle
 
-BibCycle 是一款以「每日抽取经文章节」为核心的读经 App。  
-你可以在安静时刻抽取经文、记录阅读进度、收藏经文，并在登录后同步你的记录与设置。
+BibCycle 是一款以「每日抽取經文章節」為核心的讀經 App。  
+你可以在安靜時刻抽取經文、記錄閱讀進度、收藏經文，並在登錄後同步你的記錄與設置。
 
-> 说明：此仓库为 BibCycle 的资源仓库（Assets）。  
-> App 主代码仓库目前为私有。
+> 說明：此倉庫為 BibCycle 的資源倉庫（Assets）。  
+> App 主代碼倉庫目前為私有。
 
-## 下载 BibCycle
+## 下載 BibCycle
 
 | iOS | Android |
 | --- | --- |
@@ -14,17 +14,12 @@ BibCycle 是一款以「每日抽取经文章节」为核心的读经 App。
 
 
 
+## 隱私與條款
+
+- 隱私政策（Privacy Policy）：https://bibcycle.github.io/BibCycle-assets/privacy.html
 
 
+## 這個倉庫包含什麼？
 
-
-
-## 隐私与条款
-
-- 隐私政策（Privacy Policy）：https://bibcycle.github.io/BibCycle-assets/privacy.html
-
-
-## 这个仓库包含什么？
-
-- 章节图片资源包（OT / NT）
-- 版本化发布文件（供 App 下载）
+- 章節圖片資源包（OT / NT）
+- 版本化發佈文件（供 App 下載）
