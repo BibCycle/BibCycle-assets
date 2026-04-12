@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BibCycle – Privacy Policy</title>
+  <title>BibCycle 翼旅 | Wing Journey</title>
+  <meta name="description" content="BibCycle 翼旅 is an offline-first Scripture reading app built with Expo/React Native.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -11,21 +12,22 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #f9f9f7;
       color: #222;
-      line-height: 1.75;
+      line-height: 1.8;
+      font-size: 18px;
     }
 
     header {
       background: #1A3A5C;
       color: #fff;
-      padding: 48px 24px 40px;
+      padding: 56px 24px 44px;
       text-align: center;
     }
     header .dove { font-size: 2.4rem; margin-bottom: 12px; }
-    header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: 0.02em; }
-    header p  { margin-top: 8px; font-size: 0.95rem; opacity: 0.75; }
+    header h1 { font-size: 2.1rem; font-weight: 700; letter-spacing: 0.02em; }
+    header p  { margin-top: 10px; font-size: 1.08rem; opacity: 0.82; }
 
     main {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 48px 24px 80px;
     }
@@ -36,7 +38,7 @@
       border-radius: 6px;
       padding: 16px 20px;
       margin-bottom: 40px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #1A3A5C;
     }
     .notice strong { display: block; margin-bottom: 4px; font-size: 1rem; }
@@ -44,7 +46,7 @@
     section { margin-bottom: 40px; }
 
     h2 {
-      font-size: 1.1rem;
+      font-size: 1.28rem;
       font-weight: 700;
       color: #1A3A5C;
       border-bottom: 2px solid #EBF3FA;
@@ -52,47 +54,89 @@
       margin-bottom: 14px;
     }
 
-    p { margin-bottom: 12px; font-size: 0.97rem; }
+    p { margin-bottom: 12px; font-size: 1.08rem; }
 
     ul {
       padding-left: 20px;
       margin-bottom: 12px;
     }
-    ul li { margin-bottom: 6px; font-size: 0.97rem; }
+    ul li { margin-bottom: 6px; font-size: 1.08rem; }
 
-    .highlight {
-      background: #FDF6E3;
-      border-left: 4px solid #B07D2A;
+    .line {
+      display: block;
+    }
+
+    .line-en {
+      font-size: 0.94em;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    .code {
+      background: #f5f9fd;
+      border-left: 4px solid #1A3A5C;
       border-radius: 6px;
       padding: 14px 18px;
       margin: 16px 0;
-      font-size: 0.95rem;
-      color: #5a3e00;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      overflow-x: auto;
     }
+
+    a {
+      color: #1A3A5C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 0.93rem;
     }
-    th {
-      background: #1A3A5C;
-      color: #fff;
-      padding: 10px 14px;
-      text-align: left;
-      font-weight: 600;
+
+    th, td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 10px 8px;
     }
-    td {
-      padding: 10px 14px;
-      border-bottom: 1px solid #e4e4e4;
+
+    .store-badge-box {
+      width: 260px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    tr:nth-child(even) td { background: #f5f9fd; }
+
+    .store-badge {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 17px;
+      }
+
+      .store-badge-box {
+        width: 210px;
+        height: 60px;
+      }
+
+      .store-badge {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
     footer {
       text-align: center;
       padding: 32px 16px;
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: #999;
       border-top: 1px solid #e4e4e4;
     }
@@ -103,155 +147,107 @@
 
 <header>
   <div class="dove">🕊</div>
-  <h1>BibCycle – Privacy Policy</h1>
-  <p>Last updated: April 2026 &nbsp;|&nbsp; Version 1.0 (Current Release)</p>
+  <h1>
+    <span class="line">「BibCycle 翼旅」</span>
+    <span class="line line-en">"BibCycle Wing Journey"</span>
+  </h1>
+  <p>
+    <span class="line">「BibCycle 翼旅」是一款以離線優先為核心、基於 Expo/React Native 建構的讀經 App。</span>
+    <span class="line line-en">"BibCycle Wing Journey" is an offline-first Scripture reading app built with Expo and React Native.</span>
+  </p>
 </header>
 
 <main>
-
-  <div class="notice">
-    <strong>Short version</strong>
-    This version of BibCycle does not collect, transmit, or store any personal data on external servers.
-    Everything stays on your device.
-  </div>
-
   <section>
-    <h2>1. About BibCycle</h2>
+    <h2>
+      <span class="line">關於「BibCycle 翼旅」</span>
+      <span class="line line-en">About "BibCycle Wing Journey"</span>
+    </h2>
     <p>
-      BibCycle is a Bible reading application designed to help users read through the entire Bible
-      within approximately one year. The app breaks the 1,189 chapters of the Bible out of linear
-      order, drawing chapters from an unread pool - removing the pressure of falling behind and
-      allowing users to return at any time.
-    </p>
-    <p>
-      BibCycle is built on a <strong>human-first, local-first</strong> philosophy. Reading progress
-      is yours. The system serves the text and the reader - nothing else.
+      <span class="line">「BibCycle 翼旅」是一款以「每日抽取經文章節」為核心的讀經 App。</span>
+      <span class="line line-en">BibCycle Wing Journey is a Scripture reading app centered on drawing a daily passage.</span>
+      <span class="line">你可以在安靜時刻抽取經文、記錄閱讀進度、收藏經文，並在登錄後同步你的記錄與設置。</span>
+      <span class="line line-en">You can draw passages in quiet moments, track reading progress, save favorites, and sync your records and settings after signing in.</span>
     </p>
   </section>
 
   <section>
-    <h2>2. Data We Do NOT Collect</h2>
-    <p>In this version of BibCycle, we do <strong>not</strong> collect any of the following:</p>
-    <ul>
-      <li>Personal identification information (name, email, phone number)</li>
-      <li>Device identifiers or advertising IDs</li>
-      <li>Location data</li>
-      <li>Reading habits, history, or progress transmitted to any server</li>
-      <li>Usage analytics or behavioural tracking</li>
-      <li>Crash reports sent to third-party services</li>
-    </ul>
-    <div class="highlight">
-      All reading progress and app data is stored <strong>locally on your device only</strong>.
-      Uninstalling the app will remove all stored data.
-    </div>
-  </section>
-
-  <section>
-    <h2>3. Local Storage</h2>
-    <p>BibCycle stores the following data locally on your device:</p>
+    <h2>
+      <span class="line">下載「BibCycle 翼旅」</span>
+      <span class="line line-en">Download "BibCycle Wing Journey"</span>
+    </h2>
     <table>
       <thead>
-        <tr><th>Data Type</th><th>Purpose</th><th>Stored Where</th></tr>
+        <tr><th>iOS</th><th>Android</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>Reading pool state</td>
-          <td>Track which chapters have been read</td>
-          <td>Device local storage</td>
-        </tr>
-        <tr>
-          <td>App preferences</td>
-          <td>Display settings and preferences</td>
-          <td>Device local storage</td>
-        </tr>
-        <tr>
-          <td>Downloaded images</td>
-          <td>Bible chapter illustrations (cached locally after first download)</td>
-          <td>Device local cache</td>
+          <td>
+            <a class="store-badge-box" href="https://testflight.apple.com/join/6Mawm2pQ" target="_blank" rel="noopener noreferrer">
+              <img class="store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+          </td>
+          <td>
+            <a class="store-badge-box" href="https://play.google.com/apps/testing/com.edwinluk.bibcycle" target="_blank" rel="noopener noreferrer">
+              <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
-    <p>None of this data leaves your device in the current version.</p>
   </section>
 
   <section>
-    <h2>4. Image Assets Download</h2>
+    <h2>
+      <span class="line">隱私與條款</span>
+      <span class="line line-en">Privacy and Terms</span>
+    </h2>
     <p>
-      On first launch, BibCycle downloads a set of Bible chapter images (~60-80MB) from our
-      content delivery server. This is a one-time download of static image files only.
+      <span class="line">隱私政策（Privacy Policy）：<a href="https://bibcycle.org/privacy.html">https://bibcycle.org/privacy.html</a></span>
+      <span class="line line-en">Privacy Policy: <a href="https://bibcycle.org/privacy.html">https://bibcycle.org/privacy.html</a></span>
     </p>
+  </section>
+
+  <section>
+    <h2>
+      <span class="line">這個倉庫包含什麼？</span>
+      <span class="line line-en">What does this repository include?</span>
+    </h2>
     <ul>
-      <li>No personal data is transmitted during this process</li>
-      <li>Only standard network request metadata (IP address) is involved, as with any file download</li>
-      <li>Images are cached locally and do not require re-downloading</li>
+      <li>
+        <span class="line">章節圖片資源包（OT / NT）</span>
+        <span class="line line-en">Chapter image asset packs (OT / NT)</span>
+      </li>
+      <li>
+        <span class="line">版本化發佈文件（供 App 下載）</span>
+        <span class="line line-en">Versioned release files for app downloads</span>
+      </li>
     </ul>
   </section>
 
   <section>
-    <h2>5. Third-Party Services</h2>
+    <h2>
+      <span class="line">連結</span>
+      <span class="line line-en">Links</span>
+    </h2>
     <p>
-      This version of BibCycle does not integrate any third-party analytics, advertising,
-      or tracking SDKs (e.g. Firebase Analytics, Google Ads, Facebook SDK).
+      <a href="https://github.com/BibCycle/BibCycle-assets" target="_blank" rel="noopener noreferrer">
+        <span class="line">GitHub 儲存庫</span>
+        <span class="line line-en">GitHub Repository</span>
+      </a>
     </p>
     <p>
-      The app is distributed via Google Play. Google may collect certain device and installation
-      data as part of their standard platform operations, governed by
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+      <a href="https://bibcycle.org/privacy.html">
+        <span class="line">隱私政策</span>
+        <span class="line line-en">Privacy Policy</span>
+      </a>
     </p>
   </section>
-
-  <section>
-    <h2>6. Children's Privacy</h2>
-    <p>
-      BibCycle does not knowingly collect any data from children under the age of 13.
-      As no personal data is collected in this version, the app is suitable for general audiences.
-    </p>
-  </section>
-
-  <section>
-    <h2>7. Future Versions</h2>
-    <div class="highlight">
-      A future version of BibCycle will introduce optional account functionality with reading
-      progress sync. That version will collect email addresses and reading progress data.
-      A updated privacy policy will be published at that time, and users will be clearly
-      informed before any data collection begins.
-    </div>
-    <p>This policy applies to the current release only.</p>
-  </section>
-
-  <section>
-    <h2>8. Your Rights</h2>
-    <p>
-      Since all data in this version is stored locally on your device, you have full control:
-    </p>
-    <ul>
-      <li>Clear app data at any time via your device settings</li>
-      <li>Uninstall the app to remove all associated local data</li>
-    </ul>
-    <p>There is no account to delete, no server-side data to request.</p>
-  </section>
-
-  <section>
-    <h2>9. Changes to This Policy</h2>
-    <p>
-      We may update this Privacy Policy as BibCycle evolves. When material changes are made,
-      we will update the "Last updated" date at the top of this page and, where appropriate,
-      notify users within the app.
-    </p>
-  </section>
-
-  <section>
-    <h2>10. Contact</h2>
-    <p>
-      If you have any questions about this Privacy Policy, please contact us at:<br/>
-      <strong>bibcycleb@gmail.com</strong>
-    </p>
-  </section>
-
 </main>
 
 <footer>
-  🕊 &nbsp;<span>BibCycle</span> &nbsp;·&nbsp; Privacy Policy v1.0 &nbsp;·&nbsp; Current Release
+  <span class="line">🕊 &nbsp;「BibCycle 翼旅」&nbsp;·&nbsp; <a href="https://bibcycle.org/privacy.html">隱私政策</a>&nbsp;·&nbsp; 聯絡信箱：<a href="mailto:bibcycleb@gmail.com">bibcycleb@gmail.com</a></span>
+  <span class="line line-en">🕊 &nbsp;"BibCycle Wing Journey" &nbsp;·&nbsp; <a href="https://bibcycle.org/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; Contact: <a href="mailto:bibcycleb@gmail.com">bibcycleb@gmail.com</a></span>
 </footer>
 
 </body>
