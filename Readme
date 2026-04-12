@@ -1,1 +1,22 @@
-Version: v26.4.6
+# BibCycle
+
+BibCycle 是一款以「每日抽取经文章节」为核心的读经 App。  
+你可以在安静时刻抽取经文、记录阅读进度、收藏经文，并在登录后同步你的记录与设置。
+
+> 说明：此仓库为 BibCycle 的资源仓库（Assets）。  
+> App 主代码仓库目前为私有。
+
+## 下载 BibCycle
+
+[![Join on TestFlight](https://img.shields.io/badge/iOS-TestFlight-0D96F6?style=for-the-badge&logo=apple&logoColor=white)](https://testflight.apple.com/join/6Mawm2pQ)
+[![Get it on Google Play](https://img.shields.io/badge/Android-Google%20Play-34A853?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/apps/testing/com.edwinluk.bibcycle)
+
+## 隐私与条款
+
+- 隐私政策（Privacy Policy）：https://bibcycle.github.io/BibCycle-assets/privacy.html
+
+
+## 这个仓库包含什么？
+
+- 章节图片资源包（OT / NT）
+- 版本化发布文件（供 App 下载）
