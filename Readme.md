@@ -9,7 +9,7 @@
 
 | iOS | Android |
 | --- | --- |
-| <a href="https://testflight.apple.com/join/6Mawm2pQ"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="56"></a> | <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="56"></a> |
+| <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="56"></a> | <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="56"></a> |
 
 
 
