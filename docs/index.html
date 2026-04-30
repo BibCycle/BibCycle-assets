@@ -104,7 +104,7 @@
     }
 
     .hero-eyebrow {
-      font-size: 12px; font-weight: 400; letter-spacing: 0.2em;
+      font-size: 30px; font-weight: 400; letter-spacing: 0.2em;
       color: var(--amber); margin-bottom: 28px;
       opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
     }
@@ -174,7 +174,7 @@
 
     /* ── SECTIONS ── */
     section { padding: 100px 60px; }
-    .section-label { font-size: 11px; font-weight: 400; letter-spacing: 0.25em; color: var(--amber-dark); text-transform: uppercase; margin-bottom: 16px; }
+    .section-label { font-size: 27.5px; font-weight: 400; letter-spacing: 0.25em; color: var(--amber-dark); text-transform: uppercase; margin-bottom: 16px; }
     .section-title { font-family: var(--serif); font-size: clamp(28px, 3vw, 44px); font-weight: 500; color: var(--navy); letter-spacing: 0.03em; line-height: 1.4; margin-bottom: 16px; }
     .section-subtitle { font-size: 16px; font-weight: 300; color: var(--text-muted); line-height: 1.8; max-width: 480px; }
     .section-header { margin-bottom: 64px; }
@@ -468,6 +468,185 @@
     .tweak-row select { font-family: var(--sans); font-size: 12px; border: 1px solid rgba(42,63,92,0.15); border-radius: 6px; padding: 6px 8px; color: var(--navy); background: #fff; }
     .tweak-row input[type="checkbox"] { width: 16px; height: 16px; }
 
+    /* ── MISSION SECTION ── */
+    #mission { background: var(--bg); }
+    .mission-body {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .mission-text {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2.2vw, 26px);
+      color: var(--navy);
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+      margin-bottom: 48px;
+    }
+    .mission-builder {
+      border-top: 1px solid rgba(42,63,92,0.1);
+      padding-top: 36px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+    .mission-builder strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* ── CARD SHOWCASE ── */
+    #card-showcase { background: var(--bg-warm); }
+    .card-showcase-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+.card-image-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 16px;
+      align-items: start;
+    }
+.card-img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(42,63,92,0.15);
+      cursor: zoom-in;
+    }
+.card-img-caption {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+    .card-text-wrap { display: flex; flex-direction: column; gap: 24px; }
+    .card-headline {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.4;
+      letter-spacing: 0.03em;
+    }
+    .card-body {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+    .card-tagline {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--navy);
+      border-left: 3px solid var(--amber);
+      padding-left: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── STEP WITH BUTTON ── */
+    .step-download {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+      align-items: center;
+    }
+    .step-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .step-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .step-btn-primary { background: var(--amber); color: var(--navy); }
+    .step-btn-secondary { background: rgba(42,63,92,0.08); color: var(--navy); }
+
+    /* ── INVITE SECTION ── */
+    #invite { background: var(--bg-warm); text-align: center; }
+    .invite-inner { max-width: 600px; margin: 0 auto; }
+    .invite-title {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+    .invite-body {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+    .invite-email {
+      display: inline-block;
+      font-size: 15px;
+      color: var(--navy);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+.invite-email:hover { color: var(--amber-dark); }
+
+    /* ── IMAGE LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 1000;
+    }
+    .lightbox.open { display: flex; }
+.lightbox-img {
+      max-width: min(96vw, 1200px);
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ── READABILITY BOOST ── */
+    .nav-links a { font-size: 16px; }
+    .hero-subtitle { font-size: 22px; line-height: 1.8; }
+    .btn { font-size: 17px; }
+    .btn-label-sub { font-size: 13px; }
+    .section-subtitle { font-size: 19px; line-height: 1.9; max-width: 560px; }
+    .pain-title { font-size: 24px; line-height: 1.55; }
+    .pain-desc { font-size: 17px; line-height: 2; }
+    .step-title { font-size: 24px; line-height: 1.55; }
+    .step-desc { font-size: 17px; line-height: 2; color: rgba(255,255,255,0.72); }
+    .card-body { font-size: 19px; line-height: 2; }
+    .card-tagline { font-size: 19px; line-height: 1.9; }
+    .invite-body { font-size: 19px; line-height: 2; }
+    .faq-q { font-size: 19px; }
+    .faq-a { font-size: 18px; line-height: 1.95; }
+    .cta-subtitle { font-size: 19px; line-height: 2; color: rgba(255,255,255,0.72); }
+    .footer-links a { font-size: 16px; color: rgba(255,255,255,0.55); }
+    .footer-tagline { font-size: 14px; }
+
+    @media (max-width: 960px) {
+      .card-showcase-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
     @media (max-width: 960px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
@@ -488,8 +667,9 @@
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#video-section" data-i18n="nav-video"></a></li>
-        <li><a href="#pain" data-i18n="nav-pain"></a></li>
+        <li><a href="#mission" data-i18n="nav-mission"></a></li>
         <li><a href="#how" data-i18n="nav-how"></a></li>
+        <li><a href="#get-card" data-i18n="nav-getcard"></a></li>
         <li><a href="#cta" data-i18n="nav-download"></a></li>
       </ul>
       <div class="lang-switcher">
@@ -550,6 +730,36 @@
     </div>
   </section>
 
+  <!-- MISSION -->
+  <section id="mission">
+    <div class="mission-body reveal">
+      <p class="section-label" data-i18n="mission-label"></p>
+      <div class="mission-text" data-i18n="mission-text" data-i18n-html="true"></div>
+      <div class="mission-builder" data-i18n="mission-builder" data-i18n-html="true"></div>
+    </div>
+  </section>
+
+  <!-- CARD SHOWCASE -->
+  <section id="card-showcase">
+    <div class="card-showcase-inner">
+      <div class="card-image-wrap reveal">
+        <img class="card-img" src="assets/here_enough/card-front.jpg" alt="Here is enough 正面">
+        <img class="card-img" src="assets/here_enough/card-back.jpg" alt="Here is enough 背面">
+        <img class="card-img" src="assets/carried_card/card-front.jpg" alt="You are carried 正面">
+        <img class="card-img" src="assets/word_wind_Card/card-front.jpg" alt="BibCycle 翼旅 正面">
+        <img class="card-img" src="assets/carried_card/card-back.jpg" alt="You are carried 背面">
+        <img class="card-img" src="assets/word_wind_Card/card-back.jpg" alt="BibCycle 翼旅 背面">
+        <p class="card-img-caption" data-i18n="card-caption"></p>
+      </div>
+      <div class="card-text-wrap reveal reveal-delay-2">
+        <p class="section-label" data-i18n="card-label"></p>
+        <h2 class="card-headline" data-i18n="card-headline"></h2>
+        <p class="card-body" data-i18n="card-body" data-i18n-html="true"></p>
+        <p class="card-tagline" data-i18n="card-tagline"></p>
+      </div>
+    </div>
+  </section>
+
   <!-- PAIN POINTS -->
   <section id="pain">
     <div style="max-width:1200px; margin:0 auto;">
@@ -578,38 +788,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div style="max-width:1200px; margin:0 auto;">
-      <div class="section-header reveal" style="text-align:center; margin:0 auto 48px; max-width:640px;">
-        <h2 class="section-title" data-i18n="testimonials-title"></h2>
-        <p class="testimonials-subtitle" data-i18n="testimonials-subtitle"></p>
-      </div>
-      <div class="testimonials-grid">
-        <article class="quote-card reveal reveal-delay-1">
-          <span class="quote-mark quote-mark-open">"</span>
-          <p class="quote-text" data-i18n="quote1"></p>
-          <span class="quote-mark quote-mark-close">"</span>
-        </article>
-        <article class="quote-card reveal reveal-delay-2">
-          <span class="quote-mark quote-mark-open">"</span>
-          <p class="quote-text" data-i18n="quote2"></p>
-          <span class="quote-mark quote-mark-close">"</span>
-        </article>
-        <article class="quote-card reveal reveal-delay-3">
-          <span class="quote-mark quote-mark-open">"</span>
-          <p class="quote-text" data-i18n="quote3"></p>
-          <span class="quote-mark quote-mark-close">"</span>
-        </article>
-        <article class="quote-card reveal">
-          <span class="quote-mark quote-mark-open">"</span>
-          <p class="quote-text" data-i18n="quote4"></p>
-          <span class="quote-mark quote-mark-close">"</span>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <!-- HOW IT WORKS -->
   <section id="how">
     <div style="max-width:1100px; margin:0 auto;">
@@ -621,19 +799,59 @@
         <div class="step reveal reveal-delay-1">
           <div class="step-num" data-i18n="step1-num"></div>
           <h3 class="step-title" data-i18n="step1-title"></h3>
-          <p class="step-desc" data-i18n="step1-desc"></p>
+          <p class="step-desc" data-i18n="step1-desc" data-i18n-html="true"></p>
+          <div class="step-download">
+            <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990"
+               target="_blank" rel="noopener" class="btn btn-primary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
+              <div><span class="btn-label-sub" data-i18n="btn-download-on"></span>App Store</div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle"
+               target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg>
+              <div><span class="btn-label-sub" data-i18n="btn-download-on"></span>Google Play</div>
+            </a>
+          </div>
         </div>
         <div class="step reveal reveal-delay-2">
           <div class="step-num" data-i18n="step2-num"></div>
           <h3 class="step-title" data-i18n="step2-title"></h3>
-          <p class="step-desc" data-i18n="step2-desc"></p>
+          <p class="step-desc" data-i18n="step2-desc" data-i18n-html="true"></p>
         </div>
         <div class="step reveal reveal-delay-3">
           <div class="step-num" data-i18n="step3-num"></div>
           <h3 class="step-title" data-i18n="step3-title"></h3>
-          <p class="step-desc" data-i18n="step3-desc"></p>
+          <p class="step-desc" data-i18n="step3-desc" data-i18n-html="true"></p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- GET CARD -->
+  <section id="get-card" style="background: var(--bg); text-align: center; padding: 100px 60px;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <div class="reveal">
+        <p class="section-label" data-i18n="get-card-label"></p>
+        <h2 class="section-title" data-i18n="get-card-title"></h2>
+        <p class="section-subtitle" style="margin: 0 auto 32px;"
+           data-i18n="get-card-body" data-i18n-html="true"></p>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom: 24px;"
+           data-i18n="get-card-note"></p>
+        <a href="mailto:bibcyclebib@gmail.com" class="invite-email">
+          bibcyclebib@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVITE -->
+  <section id="invite">
+    <div class="invite-inner reveal">
+      <h2 class="invite-title" data-i18n="invite-title"></h2>
+      <p class="invite-body" data-i18n="invite-body" data-i18n-html="true"></p>
+      <a href="mailto:bibcyclebib@gmail.com" class="invite-email">
+        bibcyclebib@gmail.com
+      </a>
     </div>
   </section>
 
@@ -643,7 +861,7 @@
       <div class="section-header reveal" style="text-align:center; margin:0 auto 48px; max-width:600px;">
         <p class="section-label" data-i18n="ss-label"></p>
         <h2 class="section-title" data-i18n="ss-title"></h2>
-        <p class="section-subtitle" style="margin:0 auto;" data-i18n="ss-subtitle"></p>
+        <p class="section-subtitle" style="margin:0 auto;" data-i18n="ss-subtitle" data-i18n-html="true"></p>
       </div>
       <div class="screenshots-wrapper">
         <div class="phone-mockup reveal reveal-delay-1">
@@ -686,10 +904,6 @@
         <details class="faq-item reveal reveal-delay-3">
           <summary class="faq-q" data-i18n="faq3-q"></summary>
           <p class="faq-a" data-i18n="faq3-a" data-i18n-html="true"></p>
-        </details>
-        <details class="faq-item reveal">
-          <summary class="faq-q" data-i18n="faq4-q"></summary>
-          <p class="faq-a" data-i18n="faq4-a" data-i18n-html="true"></p>
         </details>
         <details class="faq-item reveal">
           <summary class="faq-q" data-i18n="faq5-q"></summary>
@@ -736,6 +950,9 @@
     </div>
   </footer>
   <div class="footer-copyright" data-i18n="footer-copyright"></div>
+  <div id="img-lightbox" class="lightbox" aria-hidden="true">
+    <img id="img-lightbox-content" class="lightbox-img" alt="">
+  </div>
 
   <!-- TWEAKS PANEL -->
   <div id="tweaks-panel">
@@ -771,63 +988,70 @@
   const T = {
     'zh-TW': {
       'nav-video':      '介紹影片',
-      'nav-pain':       '功能',
-      'nav-how':        '如何運作',
+      'nav-mission':    '使命',
+      'nav-how':        '如何參與',
+      'nav-getcard':    '取得卡片',
       'nav-download':   '下載',
       'video-label':    '介紹影片',
       'video-title':    '看看 BibCycle 翼旅',
       'video-watch':    '前往 YouTube 觀看',
-      'hero-eyebrow':   '聖經閱讀，重新開始',
-      'hero-title':     '用另一種方式，<br>讀<em>完整本</em>聖經',
-      'hero-subtitle':  '<span>非線性</span><span>無壓力</span><span>週期完成</span>',
+      'hero-eyebrow':   '走進聖經的那扇門',
+      'hero-title':     '有一位托著你',
+      'hero-subtitle':  '<span>你身邊有沒有一個人</span><span>你一直想把神的話給他？</span>',
       'btn-download-on':'下載於',
       'btn-get-on':     '下載於',
       'btn-coming-soon':'即將上架',
-      'pain-label':     '為何不同',
-      'pain-title':     '你是否也有這些困擾？',
-      'pain-subtitle':  '許多人渴望讀完整本聖經，卻在傳統方式中屢次受挫。BibCycle 重新思考閱讀的邏輯。',
+      'pain-label':     '你想把神的話給誰？',
+      'pain-title':     '身邊總有這樣的人',
+      'pain-subtitle':  '你一直記掛著他。這已經夠了。',
       'pain-tag':       '常見困境',
-      'pain1-title':    '「讀了又停，不知道自己去過哪裡。」',
-      'pain1-desc':     '沒有起點終點，只有還沒去過的地方。昨天沒讀，今天回來，池子還在那裡。',
+      'pain1-title':    '不知道怎樣開口',
+      'pain1-desc':     '一張卡，替你說了那句話。',
       'pain1-solution': '',
-      'pain2-title':    '「總是從創世記讀到一半就放棄。」',
-      'pain2-desc':     'BibCycle 不從頭開始。它從未讀池抽取。每次抽取，不是中獎，而是交託。',
+      'pain2-title':    '他可能還沒準備好',
+      'pain2-desc':     '沒關係。卡片會在他的口袋裡等他。',
       'pain2-solution': '',
-      'pain3-title':    '「不知道自己到底讀了多少。」',
-      'pain3-desc':     '走過的地方都有痕跡。進度是見證，不是績效。',
+      'pain3-title':    '你不需要看見結果',
+      'pain3-desc':     '你只需要把它放到他手裡。',
       'pain3-solution': '',
-      'testimonials-title':'他們這樣說',
-      'testimonials-subtitle':'真實用家的回應',
-      'quote1':         '中途停了很多次，但每次回來，都可以繼續。',
-      'quote2':         '昨天沒讀，今天打開，池子還在那裡。這句話改變了我。',
-      'quote3':         '第一次讀經不是為了表現，而是為了遇見。',
-      'quote4':         '每一張圖都有它的神學情緒，打開聖經之前已經感受到了。',
+      'mission-label':  '為什麼這場運動存在',
+      'mission-text':   '你身邊可能有一個人，<br>你一直記掛著他。<br><br>也許他久未踏入教會。<br>也許他正在低谷，開始問一些大問題。<br>也許你只是覺得，他需要一點什麼。<br><br>你想讓他接觸神的話。<br>只是不知道怎樣開始。<br><br>翼旅想做的，就是把這一步變得簡單一點。<br>一張卡，從你手裡，到他手裡。',
+      'mission-builder':'兩位回應呼召的神學生，用今天的工具服事下一代。',
+      'card-label':     '翼旅卡片',
+      'card-headline':  '記號，不是說明書',
+      'card-body':      '這張卡不解釋任何東西。<br>它只是在對方手裡，靜靜說一句話：<br><br>「有人記掛著你。」<br><br>它會在他的口袋裡等。<br>等他準備好的那一天。',
+      'card-tagline':   '送出一張卡，等於把那扇門放到對方手裡。',
+      'card-caption':   '',
       'how-label':      '三個步驟',
-      'how-title':      '如何開始你的閱讀週期',
+      'how-title':      '你怎麼加入這場運動',
       'step1-num':      '一',
-      'step1-title':    '打開 App，抽取今天的段落',
-      'step1-desc':     '從 1,189 章的未讀池裡抽取一段。不是你選，而是交託。',
+      'step1-title':    '先自己走進去',
+      'step1-desc':     '下載 App，讓它抽一段給你。<br>走幾章，感受一下。',
       'step2-num':      '二',
-      'step2-title':    '安靜閱讀這個段落',
-      'step2-desc':     '沒有計時，沒有通知，沒有下一步提示。只有你和文本。',
+      'step2-title':    '想起那個人',
+      'step2-desc':     '他的臉，可能已經在你心裡了。',
       'step3-num':      '三',
-      'step3-title':    '週期完成，你走過了這裡',
-      'step3-desc':     '池子慢慢縮小，直到走過全部 1,189 章。這不是通關，是見證。',
-      'ss-label':       '應用截圖',
-      'ss-title':       '簡潔，為了專注',
-      'ss-subtitle':    '每一個介面細節，都為了讓你更容易進入文字本身。',
+      'step3-title':    '把卡放到他手裡',
+      'step3-desc':     '不需要說很多。<br>讓卡片說那句話。',
+      'get-card-label': '取得翼旅卡片',
+      'get-card-title': '把那扇門放到他手裡',
+      'get-card-body':  '你心裡那個人，值得收到這張卡。<br><br>聯絡我們，告訴我們他是誰。<br>我們會為你準備好。',
+      'get-card-note':  '首批 2,000 張，免費送出。',
+      'invite-title':   '每一張卡，都是開始',
+      'invite-body':    '翼旅還在起步。<br>每一張遞出去的卡，都是這場運動的開始。<br><br>如果你已經把卡給了某個人，<br>我們很想聽你說說他的故事。',
+      'ss-label':       '旅程的空間',
+      'ss-title':       'App 是門裡的世界',
+      'ss-subtitle':    '安靜的，沒有壓力的，<br>只有他和神的話。',
       'ss-caption':     '首頁 · 紀錄 · 收藏盒',
       'faq-title':      '常見問題',
       'faq1-q':         '這個 App 免費嗎？',
-      'faq1-a':         '完全免費下載，沒有訂閱費用，沒有隱藏收費。',
-      'faq2-q':         'AI 會替我解釋聖經嗎？',
-      'faq2-a':         '不會。AI 只用於製作圖片資源。<br>閱讀時，權威是文本與你，不是系統。',
-      'faq3-q':         '我的資料會上傳到雲端嗎？',
-      'faq3-a':         '預設 Local-first。你的閱讀歷史屬於你。',
-      'faq4-q':         '沒有每日提醒嗎？',
-      'faq4-a':         '沒有。BibCycle 不催你。池子等你回來。',
-      'faq5-q':         '有問題想聯絡你們？',
-      'faq5-a':         '歡迎電郵至 <a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>我們會盡快回覆。',
+      'faq1-a':         '完全免費。沒有訂閱，沒有隱藏收費。<br>放心給他。',
+      'faq2-q':         '這張卡適合給從未讀過聖經的人嗎？',
+      'faq2-a':         '很適合。BibCycle 不預設任何聖經知識。<br>每次只是一段，安靜讀，沒有門檻。<br>對很多人來說，這是他們第一次願意打開聖經。',
+      'faq3-q':         '如果對方有信仰問題，我需要準備答案嗎？',
+      'faq3-a':         '不需要。<br>卡片只是把門放近一點。<br>他什麼時候走進去，由他自己決定。<br>你已經做了你的部分了。',
+      'faq5-q':         '有話想說？',
+      'faq5-a':         '<a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>我們很想聽。',
       'phone1-week':    '週期進度 62%',
       'phone1-heading': '今日閱讀',
       'phone1-b1': '詩篇', 'phone1-c1': '第 23 篇',
@@ -844,9 +1068,9 @@
       'phone3-label':   '1,189 章 · 已走過 238 章',
       'bk1': '摩西五經', 'bk2': '歷史書', 'bk3': '詩歌書', 'bk4': '先知書', 'bk5': '新約',
       'cta-label':      '開始你的旅程',
-      'cta-title':      '今天，就讀第一章',
-      'cta-subtitle':   '免費下載。無訂閱費用。<br>只需要你願意打開。',
-      'footer-tagline': '為真實相遇而建造',
+      'cta-title':      '你記掛著他。',
+      'cta-subtitle':   '這已經是開始了。',
+      'footer-tagline': 'A door into the Bible · Word & Wings',
       'footer-privacy': '隱私政策',
       'footer-contact': '聯絡我們',
       'footer-intro-video':'介紹影片',
@@ -854,63 +1078,70 @@
     },
     'zh-CN': {
       'nav-video':      '介绍影片',
-      'nav-pain':       '功能',
-      'nav-how':        '如何运作',
+      'nav-mission':    '使命',
+      'nav-how':        '如何参与',
+      'nav-getcard':    '取得卡片',
       'nav-download':   '下载',
       'video-label':    '介绍影片',
       'video-title':    '看看 BibCycle 翼旅',
       'video-watch':    '前往 YouTube 观看',
-      'hero-eyebrow':   '圣经阅读，重新开始',
-      'hero-title':     '用另一种方式，<br>读<em>完整本</em>圣经',
-      'hero-subtitle':  '<span>非线性</span><span>无压力</span><span>周期完成</span>',
+      'hero-eyebrow':   '走进圣经的那扇门',
+      'hero-title':     '有一位托着你',
+      'hero-subtitle':  '<span>你身边有没有一个人</span><span>你一直想把神的话给他？</span>',
       'btn-download-on':'下载于',
       'btn-get-on':     '下载于',
       'btn-coming-soon':'即将上架',
-      'pain-label':     '为何不同',
-      'pain-title':     '你是否也有这些困扰？',
-      'pain-subtitle':  '许多人渴望读完整本圣经，却在传统方式中屡次受挫。BibCycle 重新思考阅读的逻辑。',
+      'pain-label':     '你想把神的话给谁？',
+      'pain-title':     '身边总有这样的人',
+      'pain-subtitle':  '你一直记挂着他。这已经够了。',
       'pain-tag':       '常见困境',
-      'pain1-title':    '「读了又停，不知道自己去过哪里。」',
-      'pain1-desc':     '没有起点终点，只有还没去过的地方。昨天没读，今天回来，池子还在那里。',
+      'pain1-title':    '不知道怎样开口',
+      'pain1-desc':     '一张卡，替你说了那句话。',
       'pain1-solution': '',
-      'pain2-title':    '「总是从创世记读到一半就放弃。」',
-      'pain2-desc':     'BibCycle 不从头开始。它从未读池抽取。每次抽取，不是中奖，而是托付。',
+      'pain2-title':    '他可能还没准备好',
+      'pain2-desc':     '没关系。卡片会在他的口袋里等他。',
       'pain2-solution': '',
-      'pain3-title':    '「不知道自己到底读了多少。」',
-      'pain3-desc':     '走过的地方都有痕迹。进度是见证，不是绩效。',
+      'pain3-title':    '你不需要看见结果',
+      'pain3-desc':     '你只需要把它放到他手里。',
       'pain3-solution': '',
-      'testimonials-title':'他们这样说',
-      'testimonials-subtitle':'真实用户的回应',
-      'quote1':         '中途停了很多次，但每次回来，都可以继续。',
-      'quote2':         '昨天没读，今天打开，池子还在那里。这句话改变了我。',
-      'quote3':         '第一次读经不是为了表现，而是为了相遇。',
-      'quote4':         '每一张图都有它的神学情绪，打开圣经之前已经感受到了。',
+      'mission-label':  '为什么这场运动存在',
+      'mission-text':   '你身边可能有一个人，<br>你一直记挂着他。<br><br>也许他久未踏入教会。<br>也许他正在低谷，开始问一些大问题。<br>也许你只是觉得，他需要一点什么。<br><br>你想让他接触神的话。<br>只是不知道怎样开始。<br><br>翼旅想做的，就是把这一步变得简单一点。<br>一张卡，从你手里，到他手里。',
+      'mission-builder':'两位回应呼召的神学生，用今天的工具服事下一代。',
+      'card-label':     '翼旅卡片',
+      'card-headline':  '记号，不是说明书',
+      'card-body':      '这张卡不解释任何东西。<br>它只是在对方手里，静静说一句话：<br><br>「有人记挂着你。」<br><br>它会在他的口袋里等。<br>等他准备好的那一天。',
+      'card-tagline':   '送出一张卡，等于把那扇门放到对方手里。',
+      'card-caption':   '',
       'how-label':      '三个步骤',
-      'how-title':      '如何开始你的阅读周期',
+      'how-title':      '你怎么加入这场运动',
       'step1-num':      '一',
-      'step1-title':    '打开 App，抽取今天的段落',
-      'step1-desc':     '从 1,189 章的未读池里抽取一段。不是你选，而是托付。',
+      'step1-title':    '先自己走进去',
+      'step1-desc':     '下载 App，让它抽一段给你。<br>走几章，感受一下。',
       'step2-num':      '二',
-      'step2-title':    '安静阅读这个段落',
-      'step2-desc':     '没有计时，没有通知，没有下一步提示。只有你和文本。',
+      'step2-title':    '想起那个人',
+      'step2-desc':     '他的脸，可能已经在你心里了。',
       'step3-num':      '三',
-      'step3-title':    '周期完成，你走过了这里',
-      'step3-desc':     '池子慢慢缩小，直到走过全部 1,189 章。这不是通关，是见证。',
-      'ss-label':       '应用截图',
-      'ss-title':       '简洁，为了专注',
-      'ss-subtitle':    '每一个界面细节，都为了让你更容易进入文字本身。',
+      'step3-title':    '把卡放到他手里',
+      'step3-desc':     '不需要说很多。<br>让卡片说那句话。',
+      'get-card-label': '取得翼旅卡片',
+      'get-card-title': '把那扇门放到他手里',
+      'get-card-body':  '你心里那个人，值得收到这张卡。<br><br>联系我们，告诉我们他是谁。<br>我们会为你准备好。',
+      'get-card-note':  '首批 2,000 张，免费送出。',
+      'invite-title':   '每一张卡，都是开始',
+      'invite-body':    '翼旅还在起步。<br>每一张递出去的卡，都是这场运动的开始。<br><br>如果你已经把卡给了某个人，<br>我们很想听你说说他的故事。',
+      'ss-label':       '旅程的空间',
+      'ss-title':       'App 是门里的世界',
+      'ss-subtitle':    '安静的，没有压力的，<br>只有他和神的话。',
       'ss-caption':     '首页 · 记录 · 收藏盒',
       'faq-title':      '常见问题',
       'faq1-q':         '这个 App 免费吗？',
-      'faq1-a':         '完全免费下载，没有订阅费用，没有隐藏收费。',
-      'faq2-q':         'AI 会替我解释圣经吗？',
-      'faq2-a':         '不会。AI 只用于制作图片资源。<br>阅读时，权威是文本与你，不是系统。',
-      'faq3-q':         '我的资料会上传到云端吗？',
-      'faq3-a':         '默认 Local-first。你的阅读历史属于你。',
-      'faq4-q':         '没有每日提醒吗？',
-      'faq4-a':         '没有。BibCycle 不催你。池子等你回来。',
-      'faq5-q':         '有问题想联系你们？',
-      'faq5-a':         '欢迎电邮至 <a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>我们会尽快回复。',
+      'faq1-a':         '完全免费。没有订阅，没有隐藏收费。<br>放心给他。',
+      'faq2-q':         '这张卡适合给从未读过圣经的人吗？',
+      'faq2-a':         '很适合。BibCycle 不预设任何圣经知识。<br>每次只是一段，安静读，没有门槛。<br>对很多人来说，这是他们第一次愿意打开圣经。',
+      'faq3-q':         '如果对方有信仰问题，我需要准备答案吗？',
+      'faq3-a':         '不需要。<br>卡片只是把门放近一点。<br>他什么时候走进去，由他自己决定。<br>你已经做了你的部分了。',
+      'faq5-q':         '有话想说？',
+      'faq5-a':         '<a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>我们很想听。',
       'phone1-week':    '周期进度 62%',
       'phone1-heading': '今日阅读',
       'phone1-b1': '诗篇', 'phone1-c1': '第 23 篇',
@@ -927,9 +1158,9 @@
       'phone3-label':   '1,189 章 · 已走过 238 章',
       'bk1': '摩西五经', 'bk2': '历史书', 'bk3': '诗歌书', 'bk4': '先知书', 'bk5': '新约',
       'cta-label':      '开始你的旅程',
-      'cta-title':      '今天，就读第一章',
-      'cta-subtitle':   '免费下载。无订阅费用。<br>只需要你愿意打开。',
-      'footer-tagline': '为真实相遇而建造',
+      'cta-title':      '你记挂着他。',
+      'cta-subtitle':   '这已经是开始了。',
+      'footer-tagline': 'A door into the Bible · Word & Wings',
       'footer-privacy': '隐私政策',
       'footer-contact': '联系我们',
       'footer-intro-video':'介绍视频',
@@ -937,63 +1168,70 @@
     },
     'en': {
       'nav-video':      'Intro Video',
-      'nav-pain':       'Features',
-      'nav-how':        'How it works',
+      'nav-mission':    'Mission',
+      'nav-how':        'How to join',
+      'nav-getcard':    'Get the card',
       'nav-download':   'Download',
       'video-label':    'Introduction',
       'video-title':    'See BibCycle in action',
       'video-watch':    'Watch on YouTube',
-      'hero-eyebrow':   'Bible Reading, Reimagined',
-      'hero-title':     'A different way<br>through the <em>whole Bible</em>',
-      'hero-subtitle':  '<span>Non-linear</span><span>No pressure</span><span>Complete the cycle</span>',
+      'hero-eyebrow':   'A door into the Bible',
+      'hero-title':     'You are carried.',
+      'hero-subtitle':  '<span>Is there someone</span><span>you\'ve been wanting to give God\'s word to?</span>',
       'btn-download-on':'Download on',
       'btn-get-on':     'Get it on',
       'btn-coming-soon':'Coming soon',
-      'pain-label':     'Why Different',
-      'pain-title':     'Does this sound familiar?',
-      'pain-subtitle':  'Many people long to read the whole Bible, but keep running into the same walls. BibCycle rethinks how reading works.',
+      'pain-label':     'Who do you want to reach?',
+      'pain-title':     'There\'s always someone',
+      'pain-subtitle':  'You\'ve been carrying them in your heart. That\'s already enough.',
       'pain-tag':       'A common struggle',
-      'pain1-title':    '"I keep stopping. I don\'t know where I\'ve been."',
-      'pain1-desc':     'No start line, no finish line. Just places you haven\'t been yet. The pool waits. Come back when you\'re ready.',
+      'pain1-title':    'You don\'t know how to start',
+      'pain1-desc':     'The card says it for you.',
       'pain1-solution': '',
-      'pain2-title':    '"I always give up halfway through Genesis."',
-      'pain2-desc':     'BibCycle doesn\'t start from the beginning. It draws from your unread pool. Each draw is not a reward — it\'s a surrender.',
+      'pain2-title':    'They might not be ready yet',
+      'pain2-desc':     'That\'s okay. The card will wait in their pocket.',
       'pain2-solution': '',
-      'pain3-title':    '"I have no idea how much I\'ve actually read."',
-      'pain3-desc':     'Every passage you\'ve read leaves a mark. Progress is a witness, not a performance.',
+      'pain3-title':    'You don\'t need to see the result',
+      'pain3-desc':     'You just need to put it in their hands.',
       'pain3-solution': '',
-      'testimonials-title':'What people say',
-      'testimonials-subtitle':'From real users',
-      'quote1':         'I stopped so many times. But every time I came back, I could just continue.',
-      'quote2':         'The pool waits. That phrase changed everything for me.',
-      'quote3':         'For the first time, reading wasn\'t a performance. It was an encounter.',
-      'quote4':         'Every image carries its own theological mood. I feel it before I even start reading.',
+      'mission-label':  'Why this movement exists',
+      'mission-text':   'There\'s probably someone in your life<br>you\'ve been carrying in your heart.<br><br>Maybe they haven\'t been to church in years.<br>Maybe they\'re going through something hard, starting to ask bigger questions.<br>Maybe you just feel like they need something — you\'re not sure what.<br><br>You want them to encounter God\'s word.<br>You just don\'t know how to begin.<br><br>Word & Wings exists to make that one step simpler.<br>One card, from your hands to theirs.',
+      'mission-builder':'Two seminary students answering a call, building for the next generation with today\'s tools.',
+      'card-label':     'The card',
+      'card-headline':  'A sign, not a brochure',
+      'card-body':      'This card doesn\'t explain anything.<br>It simply sits in someone\'s hands and says:<br><br>"Someone thought of you."<br><br>It will wait in their pocket.<br>Until the day they\'re ready.',
+      'card-tagline':   'To pass the card is to put the door in their hands.',
+      'card-caption':   '',
       'how-label':      'Three steps',
-      'how-title':      'How your reading cycle works',
+      'how-title':      'How to join the movement',
       'step1-num':      'I',
-      'step1-title':    'Open the app, draw today\'s passage',
-      'step1-desc':     'One passage is drawn from your unread pool of 1,189 chapters. You don\'t choose — you receive.',
+      'step1-title':    'Walk in yourself first',
+      'step1-desc':     'Download the app. Let it draw a passage for you.<br>Read a few chapters. Feel it.',
       'step2-num':      'II',
-      'step2-title':    'Read it quietly',
-      'step2-desc':     'No timer. No notifications. No suggested next step. Just you and the text.',
+      'step2-title':    'Think of that person',
+      'step2-desc':     'Their face is probably already in your heart.',
       'step3-num':      'III',
-      'step3-title':    'Cycle complete. You\'ve been here.',
-      'step3-desc':     'The pool slowly empties until you\'ve been through all 1,189 chapters. Not an achievement — a witness.',
-      'ss-label':       'App screenshots',
-      'ss-title':       'Simple, so you can focus',
-      'ss-subtitle':    'Every design detail exists to bring you closer to the text itself.',
+      'step3-title':    'Put the card in their hands',
+      'step3-desc':     'You don\'t need many words.<br>Let the card say it.',
+      'get-card-label': 'Get the card',
+      'get-card-title': 'Put the door in their hands',
+      'get-card-body':  'The person on your heart deserves to receive this card.<br><br>Contact us and tell us who they are.<br>We\'ll get it ready for you.',
+      'get-card-note':  'First 2,000 cards, sent with love.',
+      'invite-title':   'Every card is a beginning',
+      'invite-body':    'Word & Wings is just getting started.<br>Every card that goes out is how this movement grows.<br><br>If you\'ve already given one to someone,<br>we\'d love to hear their story.',
+      'ss-label':       'The space for the journey',
+      'ss-title':       'The app is what\'s inside the door',
+      'ss-subtitle':    'Quiet. No pressure.<br>Just them and God\'s word.',
       'ss-caption':     'Home · Record · Collection',
       'faq-title':      'Questions',
       'faq1-q':         'Is it free?',
-      'faq1-a':         'Completely free. No subscription, no hidden fees.',
-      'faq2-q':         'Does AI interpret Scripture for me?',
-      'faq2-a':         'No. AI is only used to produce visual assets.<br>When you read, the authority is the text and you — not the system.',
-      'faq3-q':         'Is my data stored in the cloud?',
-      'faq3-a':         'Local-first by default.<br>Your reading history belongs to you.',
-      'faq4-q':         'No daily reminders?',
-      'faq4-a':         'None. BibCycle doesn\'t push you.<br>The pool waits.',
-      'faq5-q':         'Want to get in touch?',
-      'faq5-a':         'Email us at <a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>We\'ll get back to you as soon as we can.',
+      'faq1-a':         'Completely free. No subscription, no hidden fees.<br>Give it with confidence.',
+      'faq2-q':         'Is this card suitable for someone who has never read the Bible?',
+      'faq2-a':         'Very much so. BibCycle assumes no prior knowledge.<br>Just one passage at a time, read quietly, no background needed.<br>For many people, it\'s the first time they\'ve been willing to open the Bible.',
+      'faq3-q':         'What if they have faith questions after receiving the card?',
+      'faq3-a':         'You don\'t need to have answers ready.<br>The card just puts the door a little closer.<br>When they walk through it is entirely up to them.<br>You\'ve already done your part.',
+      'faq5-q':         'Want to say something?',
+      'faq5-a':         '<a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>We\'d love to hear from you.',
       'phone1-week':    'Cycle progress 62%',
       'phone1-heading': 'Today\'s passage',
       'phone1-b1': 'Psalms', 'phone1-c1': 'Ch. 23',
@@ -1010,9 +1248,9 @@
       'phone3-label':   '1,189 chapters · 238 visited',
       'bk1': 'Pentateuch', 'bk2': 'History', 'bk3': 'Poetry', 'bk4': 'Prophets', 'bk5': 'NT',
       'cta-label':      'Begin your journey',
-      'cta-title':      'Today, read the first chapter',
-      'cta-subtitle':   'Free to download. No subscription.<br>All it takes is opening it.',
-      'footer-tagline': 'Built for real encounter',
+      'cta-title':      'You\'ve been carrying them in your heart.',
+      'cta-subtitle':   'That\'s already the beginning.',
+      'footer-tagline': 'A door into the Bible · Word & Wings',
       'footer-privacy': 'Privacy Policy',
       'footer-contact': 'Contact',
       'footer-intro-video':'Intro Video',
@@ -1129,6 +1367,36 @@
   });
 
   // ─── Init ────────────────────────────────────────────────────────
+  (function() {
+    const lightbox = document.getElementById('img-lightbox');
+    const lightboxImg = document.getElementById('img-lightbox-content');
+    const cardImgs = document.querySelectorAll('#card-showcase .card-img');
+    if (!lightbox || !lightboxImg || !cardImgs.length) return;
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.removeAttribute('src');
+    }
+
+    cardImgs.forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  })();
+
   applyLang(currentLang);
   </script>
 </body>
