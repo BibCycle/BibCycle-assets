@@ -4,28 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BibCycle 翼旅 — 走進聖經的那扇門</title>
+  <link rel="icon" type="image/webp" href="/assets/logo_bird001.webp">
+  <link rel="shortcut icon" type="image/webp" href="/assets/logo_bird001.webp">
+  <link rel="apple-touch-icon" href="/assets/logo_bird001.webp">
 
   <!-- 基本 SEO -->
-  <meta name="description" content="BibCycle 翼旅——走進聖經的那扇門。一張卡，從你手裡，到他手裡。">
-  <meta name="keywords" content="BibCycle, 翼旅, 聖經, 讀經, 福音, Word and Wings">
+  <meta name="description" content="BibCycle 翼旅是一款非線性聖經讀經 App。每次抽取一個章節，無需從頭開始，無壓力完成整本聖經的旅程。走進聖經的那扇門 — 一張卡，從你手裡，到他手裡。">
+  <meta name="keywords" content="BibCycle, 翼旅, 聖經, 讀經, 讀經App, 聖經App, 非線性讀經, Bible reading app, Word and Wings, 福音">
   <meta name="author" content="BibCycle">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="BibCycle 翼旅">
-  <meta property="og:description" content="走進聖經的那扇門。一張卡，從你手裡，到他手裡。">
-  <meta property="og:image" content="https://bibcycle.org/assets/carried_card/card-front.jpg">
-  <meta property="og:url" content="https://bibcycle.org/">
-  <meta property="og:locale" content="zh_TW">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BibCycle 翼旅">
-  <meta name="twitter:description" content="走進聖經的那扇門。一張卡，從你手裡，到他手裡。">
-  <meta name="twitter:image" content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+  <meta name="robots" content="index, follow">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://bibcycle.org/">
+
+  <!-- Sitemap hint -->
+  <link rel="sitemap" type="application/xml" href="https://bibcycle.org/sitemap.xml">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="zh-TW"     href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="zh-HK"     href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="zh-CN"     href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="en"        href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="x-default" href="https://bibcycle.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="BibCycle 翼旅">
+  <meta property="og:title"       content="BibCycle 翼旅 — 走進聖經的那扇門">
+  <meta property="og:description" content="非線性聖經讀經 App。每次抽取一個章節，無壓力完成整本聖經的旅程。一張卡，從你手裡，到他手裡。">
+  <meta property="og:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url"         content="https://bibcycle.org/">
+  <meta property="og:locale"      content="zh_TW">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BibCycle 翼旅 — 走進聖經的那扇門">
+  <meta name="twitter:description" content="非線性聖經讀經 App。每次抽取一個章節，無壓力，走完整本聖經。">
+  <meta name="twitter:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://bibcycle.org/#website",
+        "url": "https://bibcycle.org/",
+        "name": "BibCycle 翼旅",
+        "alternateName": ["BibCycle", "翼旅", "Word & Wings"],
+        "description": "非線性聖經讀經 App。每次抽取一個章節，無壓力完成整本聖經的旅程。",
+        "inLanguage": ["zh-TW", "zh-CN", "en"],
+        "publisher": {
+          "@id": "https://bibcycle.org/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://bibcycle.org/#organization",
+        "name": "BibCycle",
+        "alternateName": "BibCycle 翼旅",
+        "url": "https://bibcycle.org/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bibcycle.org/assets/logo_bird001.webp"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "bibcyclebib@gmail.com",
+          "contactType": "customer support"
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://bibcycle.org/#app",
+        "name": "BibCycle 翼旅",
+        "alternateName": "BibCycle",
+        "description": "非線性聖經讀經 App，以章節為最小單位從未讀池中抽取，無線性壓力，幫助信徒完成整本聖經的閱讀旅程。",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": ["iOS", "Android"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "HKD"
+        },
+        "inLanguage": ["zh-TW", "zh-CN", "en"],
+        "url": "https://bibcycle.org/",
+        "author": {
+          "@id": "https://bibcycle.org/#organization"
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
