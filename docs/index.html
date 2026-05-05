@@ -142,7 +142,7 @@
     }
     nav.scrolled { background: rgba(42,63,92,0.96); backdrop-filter: blur(12px); }
 
-    .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; letter-spacing: 0.02em; }
+    .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
     .nav-logo span { color: var(--amber); }
 
     .nav-right { display: flex; align-items: center; gap: 36px; }
@@ -150,6 +150,20 @@
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; letter-spacing: 0.05em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--amber); }
+    .nav-links a.nav-key-link {
+      color: var(--amber);
+      border: 1px solid rgba(255,210,127,0.42);
+      background: rgba(255,210,127,0.12);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .nav-links a.nav-key-link:hover {
+      color: #fff;
+      border-color: rgba(255,210,127,0.7);
+      background: rgba(255,210,127,0.28);
+    }
 
     /* Language switcher */
     .lang-switcher {
@@ -175,6 +189,7 @@
     .lang-btn:hover { color: rgba(255,255,255,0.75); }
     .lang-btn.active { color: var(--amber); background: rgba(255,210,127,0.1); }
     .lang-sep { color: rgba(255,255,255,0.15); font-size: 11px; user-select: none; }
+    .wing-term { color: var(--amber); }
 
     /* ── HERO ── */
     #hero {
@@ -360,6 +375,8 @@
     .step-num { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,210,127,0.12); border: 1px solid rgba(255,210,127,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-family: var(--serif); font-size: 18px; color: var(--amber); font-weight: 400; }
     .step-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: #fff; margin-bottom: 14px; letter-spacing: 0.03em; }
     .step-desc { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.9; }
+    .how-resource-cta { display: flex; justify-content: center; margin: -28px 0 18px; }
+    .how-resource-cta .btn { min-width: 220px; justify-content: center; }
 
     /* ── SCREENSHOTS ── */
     #screenshots { background: var(--bg-warm); overflow: hidden; }
@@ -760,13 +777,14 @@
 
   <!-- NAV -->
   <nav id="main-nav">
-    <div class="nav-logo">Bib<span>Cycle</span></div>
+    <a href="index.html" class="nav-logo">Bib<span>Cycle</span></a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#video-section" data-i18n="nav-video"></a></li>
         <li><a href="#mission" data-i18n="nav-mission"></a></li>
-        <li><a href="#how" data-i18n="nav-how"></a></li>
+        <li><a href="#how" class="nav-key-link" data-i18n="nav-how"></a></li>
         <li><a href="#get-card" data-i18n="nav-getcard"></a></li>
+        <li><a href="wingbearer.html" class="nav-key-link" data-i18n="nav-wingbearer"></a></li>
         <li><a href="#cta" data-i18n="nav-download"></a></li>
       </ul>
       <div class="lang-switcher">
@@ -840,12 +858,12 @@
   <section id="card-showcase">
     <div class="card-showcase-inner">
       <div class="card-image-wrap reveal">
-        <img class="card-img" src="assets/here_enough/card-front.jpg" alt="Here is enough 正面">
-        <img class="card-img" src="assets/here_enough/card-back.jpg" alt="Here is enough 背面">
-        <img class="card-img" src="assets/carried_card/card-front.jpg" alt="You are carried 正面">
-        <img class="card-img" src="assets/word_wind_Card/card-front.jpg" alt="BibCycle 翼旅 正面">
-        <img class="card-img" src="assets/carried_card/card-back.jpg" alt="You are carried 背面">
-        <img class="card-img" src="assets/word_wind_Card/card-back.jpg" alt="BibCycle 翼旅 背面">
+        <img class="card-img" src="assets/card/here_enough/card-front.png" alt="Here is enough 正面">
+        <img class="card-img" src="assets/card/here_enough/card-back.png" alt="Here is enough 背面">
+        <img class="card-img" src="assets/card/carried_card/card-front.png" alt="You are carried 正面">
+        <img class="card-img" src="assets/card/word_wind_Card/card-front.jpg" alt="BibCycle 翼旅 正面">
+        <img class="card-img" src="assets/card/carried_card/card-back.png" alt="You are carried 背面">
+        <img class="card-img" src="assets/card/word_wind_Card/card-back.jpg" alt="BibCycle 翼旅 背面">
         <p class="card-img-caption" data-i18n="card-caption"></p>
       </div>
       <div class="card-text-wrap reveal reveal-delay-2">
@@ -891,6 +909,9 @@
       <div class="section-header reveal" style="text-align:center; margin:0 auto 64px; max-width:600px;">
         <p class="section-label" data-i18n="how-label"></p>
         <h2 class="section-title" data-i18n="how-title"></h2>
+      </div>
+      <div class="how-resource-cta reveal">
+        <a href="wingbearer.html" class="btn btn-primary" data-i18n="how-resource-btn"></a>
       </div>
       <div class="steps-container">
         <div class="step reveal reveal-delay-1">
@@ -1006,6 +1027,15 @@
           <summary class="faq-q" data-i18n="faq5-q"></summary>
           <p class="faq-a" data-i18n="faq5-a" data-i18n-html="true"></p>
         </details>
+        <details class="faq-item reveal">
+          <summary class="faq-q" data-i18n="faq6-q"></summary>
+          <p class="faq-a" data-i18n="faq6-a" data-i18n-html="true"></p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-q" data-i18n="faq7-q"></summary>
+          <p class="faq-a" data-i18n="faq7-a" data-i18n-html="true"></p>
+        </details>
       </div>
     </div>
   </section>
@@ -1086,8 +1116,9 @@
     'zh-TW': {
       'nav-video':      '介紹影片',
       'nav-mission':    '使命',
-      'nav-how':        '如何參與',
+      'nav-how':        '成為翼使',
       'nav-getcard':    '取得卡片',
+      'nav-wingbearer': '翼使資源',
       'nav-download':   '下載',
       'video-label':    '介紹影片',
       'video-title':    '看看 BibCycle 翼旅',
@@ -1119,8 +1150,9 @@
       'card-body':      '這張卡不解釋任何東西。<br>它只是在對方手裡，靜靜說一句話：<br><br>「有人記掛著你。」<br><br>它會在他的口袋裡等。<br>等他準備好的那一天。',
       'card-tagline':   '送出一張卡，等於把那扇門放到對方手裡。',
       'card-caption':   '',
-      'how-label':      '三個步驟',
-      'how-title':      '你怎麼加入這場運動',
+      'how-label':      '成為翼使',
+      'how-title':      '把那扇門親手傳遞出去的人',
+      'how-resource-btn':'前往翼使資源',
       'step1-num':      '一',
       'step1-title':    '先自己走進去',
       'step1-desc':     '下載 App，讓它抽一段給你。<br>走幾章，感受一下。',
@@ -1128,8 +1160,8 @@
       'step2-title':    '想起那個人',
       'step2-desc':     '他的臉，可能已經在你心裡了。',
       'step3-num':      '三',
-      'step3-title':    '把卡放到他手裡',
-      'step3-desc':     '不需要說很多。<br>讓卡片說那句話。',
+      'step3-title':    '把卡放到他手裡——你就是翼使',
+      'step3-desc':     '不需要說很多。<br>讓卡片說那句話。<br><br>當你把這張卡放到他手裡，<br>你就成了一位翼使——<br>把那扇門親手傳遞出去的人。',
       'get-card-label': '取得翼旅卡片',
       'get-card-title': '把那扇門放到他手裡',
       'get-card-body':  '你心裡那個人，值得收到這張卡。<br><br>聯絡我們，告訴我們他是誰。<br>我們會為你準備好。',
@@ -1149,6 +1181,10 @@
       'faq3-a':         '不需要。<br>卡片只是把門放近一點。<br>他什麼時候走進去，由他自己決定。<br>你已經做了你的部分了。',
       'faq5-q':         '有話想說？',
       'faq5-a':         '<a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>我們很想聽。',
+      'faq6-q':         '翼使是什麼？',
+      'faq6-a':         '翼使是把翼旅卡親手遞出去的人。<br>不是英雄，不是傳道員。<br>只是一個心裡有那個人，願意把那扇門放到他手裡的人。<br><br><a href="wingbearer.html" style="color: var(--amber);">了解更多 →</a>',
+      'faq7-q':         '我可以怎樣取得翼旅卡片？',
+      'faq7-a':         '首批 2,000 張免費送出。<br>聯絡我們，告訴我們你想給誰，我們會為你準備好。<br><br><a href="mailto:bibcyclebib@gmail.com" style="color: var(--amber);">bibcyclebib@gmail.com</a>',
       'phone1-week':    '週期進度 62%',
       'phone1-heading': '今日閱讀',
       'phone1-b1': '詩篇', 'phone1-c1': '第 23 篇',
@@ -1176,8 +1212,9 @@
     'zh-CN': {
       'nav-video':      '介绍影片',
       'nav-mission':    '使命',
-      'nav-how':        '如何参与',
+      'nav-how':        '成为翼使',
       'nav-getcard':    '取得卡片',
+      'nav-wingbearer': '翼使资源',
       'nav-download':   '下载',
       'video-label':    '介绍影片',
       'video-title':    '看看 BibCycle 翼旅',
@@ -1209,8 +1246,9 @@
       'card-body':      '这张卡不解释任何东西。<br>它只是在对方手里，静静说一句话：<br><br>「有人记挂着你。」<br><br>它会在他的口袋里等。<br>等他准备好的那一天。',
       'card-tagline':   '送出一张卡，等于把那扇门放到对方手里。',
       'card-caption':   '',
-      'how-label':      '三个步骤',
-      'how-title':      '你怎么加入这场运动',
+      'how-label':      '成为翼使',
+      'how-title':      '把那扇门亲手传递出去的人',
+      'how-resource-btn':'前往翼使资源',
       'step1-num':      '一',
       'step1-title':    '先自己走进去',
       'step1-desc':     '下载 App，让它抽一段给你。<br>走几章，感受一下。',
@@ -1218,8 +1256,8 @@
       'step2-title':    '想起那个人',
       'step2-desc':     '他的脸，可能已经在你心里了。',
       'step3-num':      '三',
-      'step3-title':    '把卡放到他手里',
-      'step3-desc':     '不需要说很多。<br>让卡片说那句话。',
+      'step3-title':    '把卡放到他手里——你就是翼使',
+      'step3-desc':     '不需要说很多。<br>让卡片说那句话。<br><br>当你把这张卡放到他手里，<br>你就成了一位翼使——<br>把那扇门亲手传递出去的人。',
       'get-card-label': '取得翼旅卡片',
       'get-card-title': '把那扇门放到他手里',
       'get-card-body':  '你心里那个人，值得收到这张卡。<br><br>联系我们，告诉我们他是谁。<br>我们会为你准备好。',
@@ -1239,6 +1277,10 @@
       'faq3-a':         '不需要。<br>卡片只是把门放近一点。<br>他什么时候走进去，由他自己决定。<br>你已经做了你的部分了。',
       'faq5-q':         '有话想说？',
       'faq5-a':         '<a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>我们很想听。',
+      'faq6-q':         '翼使是什么？',
+      'faq6-a':         '翼使是把翼旅卡亲手递出去的人。<br>不是英雄，不是传道员。<br>只是一个心里有那个人，愿意把那扇门放到他手里的人。<br><br><a href="wingbearer.html" style="color: var(--amber);">了解更多 →</a>',
+      'faq7-q':         '我可以怎样取得翼旅卡片？',
+      'faq7-a':         '首批 2,000 张免费送出。<br>联系我们，告诉我们你想给谁，我们会为你准备好。<br><br><a href="mailto:bibcyclebib@gmail.com" style="color: var(--amber);">bibcyclebib@gmail.com</a>',
       'phone1-week':    '周期进度 62%',
       'phone1-heading': '今日阅读',
       'phone1-b1': '诗篇', 'phone1-c1': '第 23 篇',
@@ -1266,8 +1308,9 @@
     'en': {
       'nav-video':      'Intro Video',
       'nav-mission':    'Mission',
-      'nav-how':        'How to join',
+      'nav-how':        'Become a Wing Bearer',
       'nav-getcard':    'Get the card',
+      'nav-wingbearer': 'Wing Bearer',
       'nav-download':   'Download',
       'video-label':    'Introduction',
       'video-title':    'See BibCycle in action',
@@ -1299,8 +1342,9 @@
       'card-body':      'This card doesn\'t explain anything.<br>It simply sits in someone\'s hands and says:<br><br>"Someone thought of you."<br><br>It will wait in their pocket.<br>Until the day they\'re ready.',
       'card-tagline':   'To pass the card is to put the door in their hands.',
       'card-caption':   '',
-      'how-label':      'Three steps',
-      'how-title':      'How to join the movement',
+      'how-label':      'Become a Wing Bearer',
+      'how-title':      'The one who puts the door in someone\'s hands',
+      'how-resource-btn':'Go to Wing Bearer Resources',
       'step1-num':      'I',
       'step1-title':    'Walk in yourself first',
       'step1-desc':     'Download the app. Let it draw a passage for you.<br>Read a few chapters. Feel it.',
@@ -1308,8 +1352,8 @@
       'step2-title':    'Think of that person',
       'step2-desc':     'Their face is probably already in your heart.',
       'step3-num':      'III',
-      'step3-title':    'Put the card in their hands',
-      'step3-desc':     'You don\'t need many words.<br>Let the card say it.',
+      'step3-title':    'Put the card in their hands — you are a Wing Bearer',
+      'step3-desc':     'You don\'t need many words.<br>Let the card say it.<br><br>When you place this card in someone\'s hands,<br>you become a Wing Bearer —<br>the one who puts the door within reach.',
       'get-card-label': 'Get the card',
       'get-card-title': 'Put the door in their hands',
       'get-card-body':  'The person on your heart deserves to receive this card.<br><br>Contact us and tell us who they are.<br>We\'ll get it ready for you.',
@@ -1329,6 +1373,10 @@
       'faq3-a':         'You don\'t need to have answers ready.<br>The card just puts the door a little closer.<br>When they walk through it is entirely up to them.<br>You\'ve already done your part.',
       'faq5-q':         'Want to say something?',
       'faq5-a':         '<a href="mailto:bibcyclebib@gmail.com">bibcyclebib@gmail.com</a><br>We\'d love to hear from you.',
+      'faq6-q':         'What is a Wing Bearer?',
+      'faq6-a':         'A Wing Bearer is someone who puts the card in another person\'s hands.<br>Not a hero. Not an evangelist.<br>Just someone with a person on their heart, willing to put the door within their reach.<br><br><a href="wingbearer.html" style="color: var(--amber);">Learn more →</a>',
+      'faq7-q':         'How can I get the physical cards?',
+      'faq7-a':         'The first 2,000 cards are free.<br>Contact us, tell us who you have in mind,<br>and we\'ll get them ready for you.<br><br><a href="mailto:bibcyclebib@gmail.com" style="color: var(--amber);">bibcyclebib@gmail.com</a>',
       'phone1-week':    'Cycle progress 62%',
       'phone1-heading': 'Today\'s passage',
       'phone1-b1': 'Psalms', 'phone1-c1': 'Ch. 23',
@@ -1357,6 +1405,9 @@
 
   // ─── i18n engine ─────────────────────────────────────────────────
   let currentLang = localStorage.getItem('bibcycle-lang') || 'zh-TW';
+  function highlightWingTerm(text) {
+    return text.replace(/翼使/g, '<span class="wing-term">翼使</span>');
+  }
 
   function applyLang(lang) {
     currentLang = lang;
@@ -1368,8 +1419,16 @@
       const key = el.getAttribute('data-i18n');
       const val = dict[key];
       if (val === undefined) return;
+      const isZh = lang === 'zh-TW' || lang === 'zh-CN';
+      const shouldHighlightWingTerm = isZh
+        && val.includes('翼使')
+        && el.tagName !== 'TITLE'
+        && key !== 'how-resource-btn'
+        && !el.classList.contains('faq-q');
       if (el.getAttribute('data-i18n-html') === 'true') {
-        el.innerHTML = val;
+        el.innerHTML = shouldHighlightWingTerm ? highlightWingTerm(val) : val;
+      } else if (shouldHighlightWingTerm) {
+        el.innerHTML = highlightWingTerm(val);
       } else {
         el.textContent = val;
       }

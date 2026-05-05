@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="wb-page-title">翼使資源 — BibCycle 翼旅</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2a3f5c;
+      --amber: #FFD27F;
+      --amber-dark: #e8b84b;
+      --bg: #f8f6f1;
+      --bg-warm: #f2ede4;
+      --text: #1a1a1a;
+      --text-muted: #6b6b6b;
+      --serif: 'Noto Serif TC', serif;
+      --sans: 'Noto Sans TC', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.3s, backdrop-filter 0.3s;
+    }
+    nav.scrolled { background: rgba(42,63,92,0.96); backdrop-filter: blur(12px); }
+    .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-right { display: flex; align-items: center; gap: 36px; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-links a.nav-key-link {
+      color: var(--amber);
+      border: 1px solid rgba(255,210,127,0.42);
+      background: rgba(255,210,127,0.12);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .nav-links a.nav-key-link:hover {
+      color: #fff;
+      border-color: rgba(255,210,127,0.7);
+      background: rgba(255,210,127,0.28);
+    }
+
+    .lang-switcher {
+      display: flex; align-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      padding: 5px 11px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.45);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-family: var(--sans);
+      transition: color 0.2s, background 0.2s;
+      line-height: 1;
+    }
+    .lang-btn:hover { color: rgba(255,255,255,0.75); }
+    .lang-btn.active { color: var(--amber); background: rgba(255,210,127,0.1); }
+    .lang-sep { color: rgba(255,255,255,0.15); font-size: 11px; user-select: none; }
+    .wing-term { color: var(--amber); }
+
+    section { padding: 100px 60px; }
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--amber-dark);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-family: var(--sans);
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 48px);
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .section-subtitle {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    .wb-hero {
+      background: var(--navy);
+      padding: 120px 60px 80px;
+      text-align: center;
+    }
+    .wb-hero-label {
+      font-family: var(--sans);
+      font-size: 26px;
+      letter-spacing: 0.12em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    [data-i18n="wb-identity-label"],
+    #wb-res-label,
+    #wb-cta-label {
+      font-size: 24px;
+    }
+    .wb-hero-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--bg);
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .wb-hero-sub {
+      font-size: 18px;
+      color: rgba(248,246,241,0.7);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .wb-identity {
+      background: var(--bg-warm);
+      padding: 100px 60px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .wb-identity-text {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 24px);
+      color: var(--navy);
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+    .wb-resources {
+      background: var(--bg);
+      padding: 100px 60px;
+    }
+    .wb-resources-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .wb-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .wb-card {
+      background: var(--bg-warm);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid rgba(42,63,92,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wb-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(42,63,92,0.1);
+    }
+    .wb-card-icon { font-size: 28px; }
+    .wb-card-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .wb-card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .wb-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--amber);
+      color: var(--navy);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      margin-top: 8px;
+      transition: transform 0.2s;
+    }
+    .wb-card-btn:hover { transform: translateY(-2px); }
+    .wb-card-btn-ghost {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+    }
+    .wb-coming {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .wb-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .wb-tag-ready { background: #e8f5e9; color: #2e7d32; }
+    .wb-tag-soon { background: #fff3e0; color: #e65100; }
+
+    footer {
+      background: #1f3048;
+      color: rgba(255,255,255,0.72);
+      padding: 46px 60px 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-brand-wrap { display: flex; flex-direction: column; gap: 8px; }
+    .footer-brand { font-family: var(--serif); font-size: 22px; color: #fff; }
+    .footer-brand span { color: var(--amber); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 16px; color: rgba(255,255,255,0.55); text-decoration: none; }
+    .footer-tagline { font-size: 14px; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a { color: #fff; opacity: 0.8; }
+    .footer-copyright {
+      background: #1a283c;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      font-size: 12px;
+      padding: 12px;
+    }
+
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 72px 24px; }
+      footer { flex-direction: column; gap: 24px; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      .wb-card-grid { grid-template-columns: 1fr; }
+      .wb-hero { padding: 100px 24px 60px; }
+      .wb-identity { padding: 60px 24px; }
+      .wb-resources { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body>
+<script>
+  // Inherit language from index.html via localStorage, default to zh-TW
+  const currentLang = localStorage.getItem('bibcycle-lang') || 'zh-TW';
+  document.documentElement.lang = currentLang === 'zh-TW' ? 'zh-TW' : currentLang === 'zh-CN' ? 'zh-CN' : 'en';
+</script>
+
+  <!-- NAV：複用 index.html 完整 nav bar -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">Bib<span>Cycle</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html#video-section" data-i18n="nav-video"></a></li>
+        <li><a href="index.html#mission" data-i18n="nav-mission"></a></li>
+        <li><a href="index.html#how" class="nav-key-link" data-i18n="nav-how"></a></li>
+        <li><a href="index.html#get-card" data-i18n="nav-getcard"></a></li>
+        <li><a href="wingbearer.html" class="nav-key-link" data-i18n="nav-wingbearer"></a></li>
+        <li><a href="index.html#cta" data-i18n="nav-download"></a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="zh-TW">繁</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="zh-CN">简</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="wb-hero">
+    <p class="wb-hero-label" id="wb-hero-label"></p>
+    <h1 class="wb-hero-title" id="wb-hero-title"></h1>
+<script>
+  const wbHeroLabel = {
+    'zh-TW': 'Wing Bearer · 翼使',
+    'zh-CN': 'Wing Bearer · 翼使',
+    'en': 'Wing Bearer · 翼使'
+  };
+  const wbHeroTitle = {
+    'zh-TW': '把那扇門<br>親手傳遞出去的人',
+    'zh-CN': '把那扇门<br>亲手传递出去的人',
+    'en': 'The one who puts<br>the door in someone\'s hands'
+  };
+  document.getElementById('wb-hero-label').innerHTML = wbHeroLabel[currentLang] || wbHeroLabel['zh-TW'];
+  document.getElementById('wb-hero-title').innerHTML = wbHeroTitle[currentLang] || wbHeroTitle['zh-TW'];
+</script>
+    <p class="wb-hero-sub" id="wb-hero-sub"></p>
+<script>
+  const wbHeroSub = {
+    'zh-TW': '你不只是一位弟兄姊妹。<br>不是英雄，不是傳道員。<br>只是一個心裡有那個人，<br>願意把那扇門放到他手裡的人。',
+    'zh-CN': '你不只是一位弟兄姊妹。<br>不是英雄，不是传道员。<br>只是一个心里有那个人，<br>愿意把那扇门放到他手里的人。',
+    'en': 'Not a hero. Not an evangelist.<br>Just someone with a person on their heart,<br>willing to put the door in their hands.'
+  };
+  document.getElementById('wb-hero-sub').innerHTML = wbHeroSub[currentLang] || wbHeroSub['zh-TW'];
+</script>
+  </section>
+
+  <!-- IDENTITY -->
+  <section style="background: var(--bg-warm); padding: 100px 60px;">
+    <div class="wb-identity" style="padding: 0;">
+      <p class="section-label" data-i18n="wb-identity-label"></p>
+      <p class="wb-identity-text" id="wb-identity-text"></p>
+      <p id="wb-identity-quote" style="font-family: var(--serif); font-size: 16px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;"></p>
+      <p class="wb-identity-text" id="wb-identity-boundary"></p>
+<script>
+  const wbIdentityText = {
+    'zh-TW': '<span class="wing-term">翼使</span>，是被記掛差遣出去的人。<br><br>不需要準備好一篇信仰分享。<br>不需要有所有問題的答案。<br>只需要心裡有那個人，<br>然後把卡放到他手裡。<br><br>你已經做了你的部分了。',
+    'zh-CN': '<span class="wing-term">翼使</span>，是被记挂差遣出去的人。<br><br>不需要准备好一篇信仰分享。<br>不需要有所有问题的答案。<br>只需要心里有那个人，<br>然后把卡放到他手里。<br><br>你已经做了你的部分了。',
+    'en': 'A Wing Bearer is someone sent out by care.<br><br>You don\'t need a prepared speech.<br>You don\'t need to have all the answers.<br>You just need that person on your heart,<br>and the willingness to put the card in their hands.<br><br>You\'ve already done your part.'
+  };
+  const wbIdentityQuote = {
+    'zh-TW': '「因為我想起了你。」<br>這句話，已經是福音的預備。',
+    'zh-CN': '「因为我想起了你。」<br>这句话，已经是福音的预备。',
+    'en': '"Because I thought of you."<br>That sentence is already the beginning of the gospel.'
+  };
+  const wbIdentityBoundary = {
+    'zh-TW': '<span class="wing-term">翼使</span>的工作在門口結束。<br>走進去，是他自己的事。<br>果子什麼時候結，不在<span class="wing-term">翼使</span>手裡。<br><br>你可能永遠不知道那張卡最後去了哪裡。<br>這沒關係。<br>忠心撒種，已經夠了。',
+    'zh-CN': '<span class="wing-term">翼使</span>的工作在门口结束。<br>走进去，是他自己的事。<br>果子什么时候结，不在<span class="wing-term">翼使</span>手里。<br><br>你可能永远不知道那张卡最后去了哪里。<br>这没关系。<br>忠心撒种，已经够了。',
+    'en': 'A Wing Bearer\'s work ends at the door.<br>Walking through is their own journey.<br>When the fruit comes is not in your hands.<br><br>You may never know where that card ends up.<br>That\'s okay.<br>Faithful planting is enough.'
+  };
+  document.getElementById('wb-identity-text').innerHTML = wbIdentityText[currentLang] || wbIdentityText['zh-TW'];
+  document.getElementById('wb-identity-quote').innerHTML = wbIdentityQuote[currentLang] || wbIdentityQuote['zh-TW'];
+  document.getElementById('wb-identity-boundary').innerHTML = wbIdentityBoundary[currentLang] || wbIdentityBoundary['zh-TW'];
+</script>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="wb-resources">
+    <div class="wb-resources-inner">
+      <p class="section-label" id="wb-res-label"></p>
+      <h2 class="section-title" id="wb-res-title"></h2>
+      <p class="section-subtitle" id="wb-res-sub" style="margin: 0 auto 0;"></p>
+<script>
+  const wbResLabel = {
+    'zh-TW': '翼使資源',
+    'zh-CN': '翼使资源',
+    'en': 'Wing Bearer Resources'
+  };
+  const wbResTitle = {
+    'zh-TW': '你需要的，都在這裡',
+    'zh-CN': '你需要的，都在这里',
+    'en': 'Everything you need is here'
+  };
+  const wbResSub = {
+    'zh-TW': '以下資源幫助你更清楚地參與這場運動。',
+    'zh-CN': '以下资源帮助你更清楚地参与这场运动。',
+    'en': 'These resources help you participate in the movement with clarity and confidence.'
+  };
+  document.getElementById('wb-res-label').innerHTML = wbResLabel[currentLang] || wbResLabel['zh-TW'];
+  document.getElementById('wb-res-title').innerHTML = wbResTitle[currentLang] || wbResTitle['zh-TW'];
+  document.getElementById('wb-res-sub').innerHTML = wbResSub[currentLang] || wbResSub['zh-TW'];
+</script>
+
+      <div class="wb-card-grid">
+
+        <!-- SOP -->
+        <div class="wb-card">
+          <span class="wb-card-icon">📋</span>
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-sop-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-sop-desc" data-i18n-html="true"></p>
+          <a href="assets/docs/BibCycle_SOP_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-sop-btn"></span>
+          </a>
+        </div>
+
+        <!-- Q&A -->
+        <div class="wb-card">
+          <span class="wb-card-icon">💬</span>
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-qa-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-qa-desc" data-i18n-html="true"></p>
+          <a href="assets/docs/BibCycle_QA_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-qa-btn"></span>
+          </a>
+        </div>
+
+        <!-- 翼旅推廣圖 -->
+        <div class="wb-card">
+          <span class="wb-card-icon">🖼️</span>
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-promo-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-promo-desc" data-i18n-html="true"></p>
+          <a href="assets/images/bibcycle_instruction.png" class="wb-card-btn" download>
+            <span data-i18n="wb-promo-dark-btn"></span>
+          </a>
+          <a href="assets/images/bibcycle_poster.png" class="wb-card-btn wb-card-btn-ghost" download style="margin-top: 8px;">
+            <span data-i18n="wb-promo-light-btn"></span>
+          </a>
+          <a href="assets/images/bibcycle_QR.png" class="wb-card-btn wb-card-btn-ghost" download style="margin-top: 8px;">
+            <span data-i18n="wb-promo-qr-btn"></span>
+          </a>
+        </div>
+
+        <!-- Prepare PDF -->
+        <div class="wb-card">
+          <span class="wb-card-icon">🧠</span>
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-prepare-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-prepare-desc" data-i18n-html="true"></p>
+          <a href="assets/docs/BibCycle_prepare_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-prepare-btn"></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: var(--navy); text-align: center; padding: 100px 60px;">
+    <p class="section-label" id="wb-cta-label" style="color: var(--amber);"></p>
+    <h2 id="wb-cta-title" style="font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); color: var(--bg); font-weight: 500; margin-bottom: 16px;"></h2>
+    <p id="wb-cta-body" style="font-size: 16px; color: rgba(248,246,241,0.7); margin-bottom: 32px; line-height: 1.8;"></p>
+<script>
+  const wbCtaLabel = {
+    'zh-TW': '索取實體卡片',
+    'zh-CN': '索取实体卡片',
+    'en': 'Get the physical cards'
+  };
+  const wbCtaTitle = {
+    'zh-TW': '你心裡那個人，值得收到這張卡。',
+    'zh-CN': '你心里那个人，值得收到这张卡。',
+    'en': 'The person on your heart deserves to receive this card.'
+  };
+  const wbCtaBody = {
+    'zh-TW': '首批 2,000 張翼旅卡片免費提供。<br>聯絡我們，告訴我們他是誰，我們會為你準備好。',
+    'zh-CN': '首批 2,000 张翼旅卡片免费提供。<br>联系我们，告诉我们他是谁，我们会为你准备好。',
+    'en': 'The first 2,000 cards are free.<br>Contact us, tell us who you have in mind,<br>and we\'ll get them ready for you.'
+  };
+  document.getElementById('wb-cta-label').innerHTML = wbCtaLabel[currentLang] || wbCtaLabel['zh-TW'];
+  document.getElementById('wb-cta-title').innerHTML = wbCtaTitle[currentLang] || wbCtaTitle['zh-TW'];
+  document.getElementById('wb-cta-body').innerHTML = wbCtaBody[currentLang] || wbCtaBody['zh-TW'];
+</script>
+    <a href="mailto:bibcyclebib@gmail.com" style="display: inline-block; font-size: 15px; color: var(--amber); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--amber); padding-bottom: 2px;">
+      bibcyclebib@gmail.com
+    </a>
+  </section>
+
+  <!-- FOOTER：複用 index.html 完整 footer -->
+  <footer>
+    <div class="footer-brand-wrap">
+      <div class="footer-brand">Bib<span>Cycle</span></div>
+      <p class="footer-tagline" data-i18n="footer-tagline"></p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="https://bibcycle.org/privacy.html" target="_blank" rel="noopener" data-i18n="footer-privacy"></a></li>
+      <li><a href="mailto:bibcyclebib@gmail.com" data-i18n="footer-contact"></a></li>
+      <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61555773296475" target="_blank" rel="noopener" title="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+    </div>
+  </footer>
+  <div class="footer-copyright" data-i18n="footer-copyright"></div>
+
+  <!-- 複用 index.html 的 i18n script -->
+  <script>
+    const T = {
+      'zh-TW': {
+        'wb-page-title': '翼使資源 — BibCycle 翼旅',
+        'nav-video': '介紹影片',
+        'nav-mission': '使命',
+        'nav-how': '成為翼使',
+        'nav-getcard': '取得卡片',
+        'nav-wingbearer': '翼使資源',
+        'nav-download': '下載',
+        'wb-hero-label': 'Wing Bearer · 翼使',
+        'wb-hero-title': '把那扇門<br>親手傳遞出去的人',
+        'wb-hero-sub': '你不只是一位弟兄姊妹。<br>當你把翼旅卡放到那個人手裡，<br>你就成了一位翼使。',
+        'wb-identity-label': '翼使是什麼',
+        'wb-identity-text': '翼使，是把那扇門親手傳遞出去的人。<br><br>不需要準備好一篇信仰分享。<br>不需要有所有問題的答案。<br>只需要心裡有那個人，<br>然後把卡放到他手裡。<br><br>你已經做了你的部分了。',
+        'wb-identity-quote': '「因為我想起了你。」<br>這句話，已經是福音的預備。',
+        'wb-resources-label': '翼使資源',
+        'wb-resources-title': '你需要的，都在這裡',
+        'wb-resources-subtitle': '以下資源幫助你更清楚地參與這場運動。',
+        'wb-tag-ready': '已備妥',
+        'wb-sop-title': '翼使指引',
+        'wb-sop-desc': '對已信者、對未信者的說辭口徑，<br>遞卡時的常見問題處理，<br>一份讓你有備無患的指引。',
+        'wb-sop-btn': '下載指引',
+        'wb-qa-title': 'Q&A 問答庫',
+        'wb-qa-desc': '38 條常見問題與標準答案，<br>涵蓋卡片、App、信仰問題，<br>信徒與未信者的場景都有。',
+        'wb-qa-btn': '下載 Q&A',
+        'wb-promo-title': '翼旅推廣圖',
+        'wb-promo-desc': '推廣指引圖、推廣海報圖與<br>QR 圖三款素材，<br>可直接下載分享使用。',
+        'wb-promo-dark-btn': '下載指引圖',
+        'wb-promo-light-btn': '下載海報圖',
+        'wb-promo-qr-btn': '下載 QR 圖',
+        'wb-prepare-title': '翼使心理準備',
+        'wb-prepare-desc': '遞卡前的心態預備與提醒，<br>幫助你更自然、更安心地開始，<br>把那扇門放到對方手裡。',
+        'wb-prepare-btn': '下載心理準備',
+        'wb-cta-label': '索取實體卡片',
+        'wb-cta-title': '你心裡那個人，值得收到這張卡。',
+        'wb-cta-body': '首批 2,000 張翼旅卡片免費提供。<br>聯絡我們，告訴我們他是誰，我們會為你準備好。',
+        'footer-tagline': 'A door into the Bible · Word & Wings',
+        'footer-privacy': '隱私政策',
+        'footer-contact': '聯絡我們',
+        'footer-intro-video': '介紹影片',
+        'footer-copyright': '© 2026 BibCycle'
+      },
+      'zh-CN': {
+        'wb-page-title': '翼使资源 — BibCycle 翼旅',
+        'nav-video': '介绍影片',
+        'nav-mission': '使命',
+        'nav-how': '成为翼使',
+        'nav-getcard': '取得卡片',
+        'nav-wingbearer': '翼使资源',
+        'nav-download': '下载',
+        'wb-hero-label': 'Wing Bearer · 翼使',
+        'wb-hero-title': '把那扇门<br>亲手传递出去的人',
+        'wb-hero-sub': '你不只是一位弟兄姊妹。<br>当你把翼旅卡放到那个人手里，<br>你就成了一位翼使。',
+        'wb-identity-label': '翼使是什么',
+        'wb-identity-text': '翼使，是把那扇门亲手传递出去的人。<br><br>不需要准备好一篇信仰分享。<br>不需要有所有问题的答案。<br>只需要心里有那个人，<br>然后把卡放到他手里。<br><br>你已经做了你的部分了。',
+        'wb-identity-quote': '「因为我想起了你。」<br>这句话，已经是福音的预备。',
+        'wb-resources-label': '翼使资源',
+        'wb-resources-title': '你需要的，都在这里',
+        'wb-resources-subtitle': '以下资源帮助你更清楚地参与这场运动。',
+        'wb-tag-ready': '已备妥',
+        'wb-sop-title': '翼使指引',
+        'wb-sop-desc': '对已信者、对未信者的说辞口径，<br>递卡时的常见问题处理，<br>一份让你有备无患的指引。',
+        'wb-sop-btn': '下载指引',
+        'wb-qa-title': 'Q&A 问答库',
+        'wb-qa-desc': '38 条常见问题与标准答案，<br>涵盖卡片、App、信仰问题，<br>信徒与未信者的场景都有。',
+        'wb-qa-btn': '下载 Q&A',
+        'wb-promo-title': '翼旅推广图',
+        'wb-promo-desc': '推广指引图、推广海报图与<br>QR 图三款素材，<br>可直接下载分享使用。',
+        'wb-promo-dark-btn': '下载指引图',
+        'wb-promo-light-btn': '下载海报图',
+        'wb-promo-qr-btn': '下载 QR 图',
+        'wb-prepare-title': '翼使心理准备',
+        'wb-prepare-desc': '递卡前的心态准备与提醒，<br>帮助你更自然、更安心地开始，<br>把那扇门放到对方手里。',
+        'wb-prepare-btn': '下载心理准备',
+        'wb-cta-label': '索取实体卡片',
+        'wb-cta-title': '你心里那个人，值得收到这张卡。',
+        'wb-cta-body': '首批 2,000 张翼旅卡片免费提供。<br>联系我们，告诉我们他是谁，我们会为你准备好。',
+        'footer-tagline': 'A door into the Bible · Word & Wings',
+        'footer-privacy': '隐私政策',
+        'footer-contact': '联系我们',
+        'footer-intro-video': '介绍视频',
+        'footer-copyright': '© 2026 BibCycle'
+      },
+      'en': {
+        'wb-page-title': 'Wing Bearer Resources — BibCycle Word & Wings',
+        'nav-video': 'Intro Video',
+        'nav-mission': 'Mission',
+        'nav-how': 'Become a Wing Bearer',
+        'nav-getcard': 'Get the card',
+        'nav-wingbearer': 'Wing Bearer',
+        'nav-download': 'Download',
+        'wb-hero-label': 'Wing Bearer',
+        'wb-hero-title': 'The one who puts the door<br>in someone\'s hands',
+        'wb-hero-sub': 'You are not just a brother or sister.<br>When you place a Word & Wings card in someone\'s hands,<br>you become a Wing Bearer.',
+        'wb-identity-label': 'What Is a Wing Bearer',
+        'wb-identity-text': 'A Wing Bearer is someone who personally passes that door on.<br><br>You do not need to prepare a full faith-sharing talk.<br>You do not need answers to every question.<br>You only need to carry that person in your heart,<br>and place the card in their hands.<br><br>You have already done your part.',
+        'wb-identity-quote': '\"Because I thought of you.\"<br>That sentence is already a preparation for the gospel.',
+        'wb-resources-label': 'Wing Bearer Resources',
+        'wb-resources-title': 'Everything You Need Is Here',
+        'wb-resources-subtitle': 'The resources below help you participate in this movement more clearly.',
+        'wb-tag-ready': 'Ready',
+        'wb-sop-title': 'Wing Bearer Guide',
+        'wb-sop-desc': 'Suggested language for believers and non-believers,<br>common scenarios when handing over a card,<br>and practical guidance so you can be prepared.',
+        'wb-sop-btn': 'Download Guide',
+        'wb-qa-title': 'Q&A Library',
+        'wb-qa-desc': '38 common questions with standard answers,<br>covering the card, the app, and faith questions,<br>for both believers and seekers.',
+        'wb-qa-btn': 'Download Q&A',
+        'wb-promo-title': 'Promotion Images',
+        'wb-promo-desc': 'Instruction graphic, poster graphic, and<br>QR graphic resources,<br>ready to download and share.',
+        'wb-promo-dark-btn': 'Download Instruction',
+        'wb-promo-light-btn': 'Download Poster',
+        'wb-promo-qr-btn': 'Download QR',
+        'wb-prepare-title': 'Wing Bearer Preparation',
+        'wb-prepare-desc': 'A short mindset guide before handing over the card,<br>so you can begin naturally and confidently,<br>and put the door in their hands.',
+        'wb-prepare-btn': 'Download Preparation',
+        'wb-cta-label': 'Request Physical Cards',
+        'wb-cta-title': 'The person on your heart deserves this card.',
+        'wb-cta-body': 'The first 2,000 Word & Wings cards are free.<br>Contact us, tell us who this person is, and we will prepare it for you.',
+        'footer-tagline': 'A door into the Bible · Word & Wings',
+        'footer-privacy': 'Privacy Policy',
+        'footer-contact': 'Contact Us',
+        'footer-intro-video': 'Intro Video',
+        'footer-copyright': '© 2026 BibCycle'
+      }
+    };
+
+    let activeLang = localStorage.getItem('bibcycle-lang') || 'zh-TW';
+    function highlightWingTerm(text) {
+      return text.replace(/翼使/g, '<span class="wing-term">翼使</span>');
+    }
+
+    function applyLang(lang) {
+      activeLang = lang;
+      localStorage.setItem('bibcycle-lang', lang);
+      const dict = T[lang];
+      if (!dict) return;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = dict[key];
+        if (val === undefined) return;
+        const isZh = lang === 'zh-TW' || lang === 'zh-CN';
+        const shouldHighlightWingTerm = isZh && val.includes('翼使') && el.tagName !== 'TITLE';
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = shouldHighlightWingTerm ? highlightWingTerm(val) : val;
+        } else if (shouldHighlightWingTerm) {
+          el.innerHTML = highlightWingTerm(val);
+        } else {
+          el.textContent = val;
+        }
+      });
+
+      document.documentElement.lang = lang === 'zh-TW' ? 'zh-TW' : lang === 'zh-CN' ? 'zh-CN' : 'en';
+
+      const serif = lang === 'en'
+        ? "'Noto Serif', serif"
+        : (lang === 'zh-CN' ? "'Noto Serif SC', 'Noto Serif TC', serif" : "'Noto Serif TC', serif");
+      document.documentElement.style.setProperty('--serif', serif);
+      const sans = lang === 'en'
+        ? "'Noto Sans', sans-serif"
+        : (lang === 'zh-CN' ? "'Noto Sans SC', 'Noto Sans TC', sans-serif" : "'Noto Sans TC', sans-serif");
+      document.documentElement.style.setProperty('--sans', sans);
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+    });
+
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    applyLang(activeLang);
+  </script>
+
+</body>
+</html>
