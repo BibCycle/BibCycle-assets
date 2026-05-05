@@ -210,6 +210,19 @@
       border: 1.5px solid var(--navy);
       color: var(--navy);
     }
+    .wb-promo-btn-row {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-top: 8px;
+      align-items: center;
+    }
+    .wb-promo-btn-row .wb-card-btn {
+      margin-top: 0;
+      padding: 10px 14px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
     .wb-coming {
       opacity: 0.5;
       pointer-events: none;
@@ -262,6 +275,8 @@
       .wb-hero { padding: 100px 24px 60px; }
       .wb-identity { padding: 60px 24px; }
       .wb-resources { padding: 60px 24px; }
+      .wb-promo-btn-row { flex-wrap: wrap; }
+      .wb-promo-btn-row .wb-card-btn { font-size: 13px; padding: 10px 20px; }
     }
   </style>
 </head>
@@ -296,89 +311,27 @@
 
   <!-- HERO -->
   <section class="wb-hero">
-    <p class="wb-hero-label" id="wb-hero-label"></p>
-    <h1 class="wb-hero-title" id="wb-hero-title"></h1>
-<script>
-  const wbHeroLabel = {
-    'zh-TW': 'Wing Bearer · 翼使',
-    'zh-CN': 'Wing Bearer · 翼使',
-    'en': 'Wing Bearer · 翼使'
-  };
-  const wbHeroTitle = {
-    'zh-TW': '把那扇門<br>親手傳遞出去的人',
-    'zh-CN': '把那扇门<br>亲手传递出去的人',
-    'en': 'The one who puts<br>the door in someone\'s hands'
-  };
-  document.getElementById('wb-hero-label').innerHTML = wbHeroLabel[currentLang] || wbHeroLabel['zh-TW'];
-  document.getElementById('wb-hero-title').innerHTML = wbHeroTitle[currentLang] || wbHeroTitle['zh-TW'];
-</script>
-    <p class="wb-hero-sub" id="wb-hero-sub"></p>
-<script>
-  const wbHeroSub = {
-    'zh-TW': '你不只是一位弟兄姊妹。<br>不是英雄，不是傳道員。<br>只是一個心裡有那個人，<br>願意把那扇門放到他手裡的人。',
-    'zh-CN': '你不只是一位弟兄姊妹。<br>不是英雄，不是传道员。<br>只是一个心里有那个人，<br>愿意把那扇门放到他手里的人。',
-    'en': 'Not a hero. Not an evangelist.<br>Just someone with a person on their heart,<br>willing to put the door in their hands.'
-  };
-  document.getElementById('wb-hero-sub').innerHTML = wbHeroSub[currentLang] || wbHeroSub['zh-TW'];
-</script>
+    <p class="wb-hero-label" data-i18n="wb-hero-label"></p>
+    <h1 class="wb-hero-title" data-i18n="wb-hero-title" data-i18n-html="true"></h1>
+    <p class="wb-hero-sub" data-i18n="wb-hero-sub" data-i18n-html="true"></p>
   </section>
 
   <!-- IDENTITY -->
   <section style="background: var(--bg-warm); padding: 100px 60px;">
     <div class="wb-identity" style="padding: 0;">
       <p class="section-label" data-i18n="wb-identity-label"></p>
-      <p class="wb-identity-text" id="wb-identity-text"></p>
-      <p id="wb-identity-quote" style="font-family: var(--serif); font-size: 16px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;"></p>
-      <p class="wb-identity-text" id="wb-identity-boundary"></p>
-<script>
-  const wbIdentityText = {
-    'zh-TW': '<span class="wing-term">翼使</span>，是被記掛差遣出去的人。<br><br>不需要準備好一篇信仰分享。<br>不需要有所有問題的答案。<br>只需要心裡有那個人，<br>然後把卡放到他手裡。<br><br>你已經做了你的部分了。',
-    'zh-CN': '<span class="wing-term">翼使</span>，是被记挂差遣出去的人。<br><br>不需要准备好一篇信仰分享。<br>不需要有所有问题的答案。<br>只需要心里有那个人，<br>然后把卡放到他手里。<br><br>你已经做了你的部分了。',
-    'en': 'A Wing Bearer is someone sent out by care.<br><br>You don\'t need a prepared speech.<br>You don\'t need to have all the answers.<br>You just need that person on your heart,<br>and the willingness to put the card in their hands.<br><br>You\'ve already done your part.'
-  };
-  const wbIdentityQuote = {
-    'zh-TW': '「因為我想起了你。」<br>這句話，已經是福音的預備。',
-    'zh-CN': '「因为我想起了你。」<br>这句话，已经是福音的预备。',
-    'en': '"Because I thought of you."<br>That sentence is already the beginning of the gospel.'
-  };
-  const wbIdentityBoundary = {
-    'zh-TW': '<span class="wing-term">翼使</span>的工作在門口結束。<br>走進去，是他自己的事。<br>果子什麼時候結，不在<span class="wing-term">翼使</span>手裡。<br><br>你可能永遠不知道那張卡最後去了哪裡。<br>這沒關係。<br>忠心撒種，已經夠了。',
-    'zh-CN': '<span class="wing-term">翼使</span>的工作在门口结束。<br>走进去，是他自己的事。<br>果子什么时候结，不在<span class="wing-term">翼使</span>手里。<br><br>你可能永远不知道那张卡最后去了哪里。<br>这没关系。<br>忠心撒种，已经够了。',
-    'en': 'A Wing Bearer\'s work ends at the door.<br>Walking through is their own journey.<br>When the fruit comes is not in your hands.<br><br>You may never know where that card ends up.<br>That\'s okay.<br>Faithful planting is enough.'
-  };
-  document.getElementById('wb-identity-text').innerHTML = wbIdentityText[currentLang] || wbIdentityText['zh-TW'];
-  document.getElementById('wb-identity-quote').innerHTML = wbIdentityQuote[currentLang] || wbIdentityQuote['zh-TW'];
-  document.getElementById('wb-identity-boundary').innerHTML = wbIdentityBoundary[currentLang] || wbIdentityBoundary['zh-TW'];
-</script>
+      <p class="wb-identity-text" data-i18n="wb-identity-text" data-i18n-html="true"></p>
+      <p style="font-family: var(--serif); font-size: 16px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;" data-i18n="wb-identity-quote" data-i18n-html="true"></p>
+      <p class="wb-identity-text" data-i18n="wb-identity-boundary" data-i18n-html="true"></p>
     </div>
   </section>
 
   <!-- RESOURCES -->
   <section class="wb-resources">
     <div class="wb-resources-inner">
-      <p class="section-label" id="wb-res-label"></p>
-      <h2 class="section-title" id="wb-res-title"></h2>
-      <p class="section-subtitle" id="wb-res-sub" style="margin: 0 auto 0;"></p>
-<script>
-  const wbResLabel = {
-    'zh-TW': '翼使資源',
-    'zh-CN': '翼使资源',
-    'en': 'Wing Bearer Resources'
-  };
-  const wbResTitle = {
-    'zh-TW': '你需要的，都在這裡',
-    'zh-CN': '你需要的，都在这里',
-    'en': 'Everything you need is here'
-  };
-  const wbResSub = {
-    'zh-TW': '以下資源幫助你更清楚地參與這場運動。',
-    'zh-CN': '以下资源帮助你更清楚地参与这场运动。',
-    'en': 'These resources help you participate in the movement with clarity and confidence.'
-  };
-  document.getElementById('wb-res-label').innerHTML = wbResLabel[currentLang] || wbResLabel['zh-TW'];
-  document.getElementById('wb-res-title').innerHTML = wbResTitle[currentLang] || wbResTitle['zh-TW'];
-  document.getElementById('wb-res-sub').innerHTML = wbResSub[currentLang] || wbResSub['zh-TW'];
-</script>
+      <p class="section-label" data-i18n="wb-resources-label"></p>
+      <h2 class="section-title" data-i18n="wb-resources-title"></h2>
+      <p class="section-subtitle" style="margin: 0 auto 0;" data-i18n="wb-resources-subtitle" data-i18n-html="true"></p>
 
       <div class="wb-card-grid">
 
@@ -410,15 +363,17 @@
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-promo-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-promo-desc" data-i18n-html="true"></p>
-          <a href="assets/images/bibcycle_instruction.png" class="wb-card-btn" download>
-            <span data-i18n="wb-promo-dark-btn"></span>
-          </a>
-          <a href="assets/images/bibcycle_poster.png" class="wb-card-btn wb-card-btn-ghost" download style="margin-top: 8px;">
-            <span data-i18n="wb-promo-light-btn"></span>
-          </a>
-          <a href="assets/images/bibcycle_QR.png" class="wb-card-btn wb-card-btn-ghost" download style="margin-top: 8px;">
-            <span data-i18n="wb-promo-qr-btn"></span>
-          </a>
+          <div class="wb-promo-btn-row">
+            <a href="assets/images/bibcycle_instruction.png" class="wb-card-btn" download>
+              <span data-i18n="wb-promo-dark-btn"></span>
+            </a>
+            <a href="assets/images/bibcycle_poster.png" class="wb-card-btn wb-card-btn-ghost" download>
+              <span data-i18n="wb-promo-light-btn"></span>
+            </a>
+            <a href="assets/images/bibcycle_QR.png" class="wb-card-btn wb-card-btn-ghost" download>
+              <span data-i18n="wb-promo-qr-btn"></span>
+            </a>
+          </div>
         </div>
 
         <!-- Prepare PDF -->
@@ -432,35 +387,26 @@
           </a>
         </div>
 
+        <!-- 動員者指引 -->
+        <div class="wb-card">
+          <span class="wb-card-icon">🕊️</span>
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-mobilizer-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-mobilizer-desc" data-i18n-html="true"></p>
+          <a href="assets/docs/BibCycle_mobilizer_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-mobilizer-btn"></span>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <section style="background: var(--navy); text-align: center; padding: 100px 60px;">
-    <p class="section-label" id="wb-cta-label" style="color: var(--amber);"></p>
-    <h2 id="wb-cta-title" style="font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); color: var(--bg); font-weight: 500; margin-bottom: 16px;"></h2>
-    <p id="wb-cta-body" style="font-size: 16px; color: rgba(248,246,241,0.7); margin-bottom: 32px; line-height: 1.8;"></p>
-<script>
-  const wbCtaLabel = {
-    'zh-TW': '索取實體卡片',
-    'zh-CN': '索取实体卡片',
-    'en': 'Get the physical cards'
-  };
-  const wbCtaTitle = {
-    'zh-TW': '你心裡那個人，值得收到這張卡。',
-    'zh-CN': '你心里那个人，值得收到这张卡。',
-    'en': 'The person on your heart deserves to receive this card.'
-  };
-  const wbCtaBody = {
-    'zh-TW': '首批 2,000 張翼旅卡片免費提供。<br>聯絡我們，告訴我們他是誰，我們會為你準備好。',
-    'zh-CN': '首批 2,000 张翼旅卡片免费提供。<br>联系我们，告诉我们他是谁，我们会为你准备好。',
-    'en': 'The first 2,000 cards are free.<br>Contact us, tell us who you have in mind,<br>and we\'ll get them ready for you.'
-  };
-  document.getElementById('wb-cta-label').innerHTML = wbCtaLabel[currentLang] || wbCtaLabel['zh-TW'];
-  document.getElementById('wb-cta-title').innerHTML = wbCtaTitle[currentLang] || wbCtaTitle['zh-TW'];
-  document.getElementById('wb-cta-body').innerHTML = wbCtaBody[currentLang] || wbCtaBody['zh-TW'];
-</script>
+    <p class="section-label" style="color: var(--amber);" data-i18n="wb-cta-label"></p>
+    <h2 style="font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); color: var(--bg); font-weight: 500; margin-bottom: 16px;" data-i18n="wb-cta-title"></h2>
+    <p style="font-size: 16px; color: rgba(248,246,241,0.7); margin-bottom: 32px; line-height: 1.8;" data-i18n="wb-cta-body" data-i18n-html="true"></p>
     <a href="mailto:bibcyclebib@gmail.com" style="display: inline-block; font-size: 15px; color: var(--amber); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--amber); padding-bottom: 2px;">
       bibcyclebib@gmail.com
     </a>
@@ -502,9 +448,10 @@
         'wb-identity-label': '翼使是什麼',
         'wb-identity-text': '翼使，是把那扇門親手傳遞出去的人。<br><br>不需要準備好一篇信仰分享。<br>不需要有所有問題的答案。<br>只需要心裡有那個人，<br>然後把卡放到他手裡。<br><br>你已經做了你的部分了。',
         'wb-identity-quote': '「因為我想起了你。」<br>這句話，已經是福音的預備。',
+        'wb-identity-boundary': '<span class="wing-term">翼使</span>的工作在門口結束。<br>走進去，是他自己的事。<br>果子什麼時候結，不在<span class="wing-term">翼使</span>手裡。<br><br>你可能永遠不知道那張卡最後去了哪裡。<br>這沒關係。<br>忠心撒種，已經夠了。',
         'wb-resources-label': '翼使資源',
         'wb-resources-title': '你需要的，都在這裡',
-        'wb-resources-subtitle': '以下資源幫助你更清楚地參與這場運動。',
+        'wb-resources-subtitle': '以下資源幫助你更清楚地參與這場運動——一個人遞卡，或者帶一群人一起進來。',
         'wb-tag-ready': '已備妥',
         'wb-sop-title': '翼使指引',
         'wb-sop-desc': '對已信者、對未信者的說辭口徑，<br>遞卡時的常見問題處理，<br>一份讓你有備無患的指引。',
@@ -520,6 +467,9 @@
         'wb-prepare-title': '翼使心理準備',
         'wb-prepare-desc': '遞卡前的心態預備與提醒，<br>幫助你更自然、更安心地開始，<br>把那扇門放到對方手裡。',
         'wb-prepare-btn': '下載心理準備',
+        'wb-mobilizer-title': '動員者指引',
+        'wb-mobilizer-desc': '想在你的教會或小組裡介紹翼旅？<br>這份指引幫助你帶一群人一起進來，<br>讓更多人有機會把卡給心裡那個人。',
+        'wb-mobilizer-btn': '下載動員者指引',
         'wb-cta-label': '索取實體卡片',
         'wb-cta-title': '你心裡那個人，值得收到這張卡。',
         'wb-cta-body': '首批 2,000 張翼旅卡片免費提供。<br>聯絡我們，告訴我們他是誰，我們會為你準備好。',
@@ -543,9 +493,10 @@
         'wb-identity-label': '翼使是什么',
         'wb-identity-text': '翼使，是把那扇门亲手传递出去的人。<br><br>不需要准备好一篇信仰分享。<br>不需要有所有问题的答案。<br>只需要心里有那个人，<br>然后把卡放到他手里。<br><br>你已经做了你的部分了。',
         'wb-identity-quote': '「因为我想起了你。」<br>这句话，已经是福音的预备。',
+        'wb-identity-boundary': '<span class="wing-term">翼使</span>的工作在门口结束。<br>走进去，是他自己的事。<br>果子什么时候结，不在<span class="wing-term">翼使</span>手里。<br><br>你可能永远不知道那张卡最后去了哪里。<br>这没关系。<br>忠心撒种，已经够了。',
         'wb-resources-label': '翼使资源',
         'wb-resources-title': '你需要的，都在这里',
-        'wb-resources-subtitle': '以下资源帮助你更清楚地参与这场运动。',
+        'wb-resources-subtitle': '以下资源帮助你更清楚地参与这场运动——一个人递卡，或者带一群人一起进来。',
         'wb-tag-ready': '已备妥',
         'wb-sop-title': '翼使指引',
         'wb-sop-desc': '对已信者、对未信者的说辞口径，<br>递卡时的常见问题处理，<br>一份让你有备无患的指引。',
@@ -561,6 +512,9 @@
         'wb-prepare-title': '翼使心理准备',
         'wb-prepare-desc': '递卡前的心态准备与提醒，<br>帮助你更自然、更安心地开始，<br>把那扇门放到对方手里。',
         'wb-prepare-btn': '下载心理准备',
+        'wb-mobilizer-title': '动员者指引',
+        'wb-mobilizer-desc': '想在你的教会或小组里介绍翼旅？<br>这份指引帮助你带一群人一起进来，<br>让更多人有机会把卡给心里那个人。',
+        'wb-mobilizer-btn': '下载动员者指引',
         'wb-cta-label': '索取实体卡片',
         'wb-cta-title': '你心里那个人，值得收到这张卡。',
         'wb-cta-body': '首批 2,000 张翼旅卡片免费提供。<br>联系我们，告诉我们他是谁，我们会为你准备好。',
@@ -584,9 +538,10 @@
         'wb-identity-label': 'What Is a Wing Bearer',
         'wb-identity-text': 'A Wing Bearer is someone who personally passes that door on.<br><br>You do not need to prepare a full faith-sharing talk.<br>You do not need answers to every question.<br>You only need to carry that person in your heart,<br>and place the card in their hands.<br><br>You have already done your part.',
         'wb-identity-quote': '\"Because I thought of you.\"<br>That sentence is already a preparation for the gospel.',
+        'wb-identity-boundary': 'A Wing Bearer\'s work ends at the door.<br>Walking through is their own journey.<br>When the fruit comes is not in your hands.<br><br>You may never know where that card ends up.<br>That\'s okay.<br>Faithful planting is enough.',
         'wb-resources-label': 'Wing Bearer Resources',
         'wb-resources-title': 'Everything You Need Is Here',
-        'wb-resources-subtitle': 'The resources below help you participate in this movement more clearly.',
+        'wb-resources-subtitle': 'The resources below help you participate in this movement — whether you\'re giving a card yourself, or bringing a group in together.',
         'wb-tag-ready': 'Ready',
         'wb-sop-title': 'Wing Bearer Guide',
         'wb-sop-desc': 'Suggested language for believers and non-believers,<br>common scenarios when handing over a card,<br>and practical guidance so you can be prepared.',
@@ -602,6 +557,9 @@
         'wb-prepare-title': 'Wing Bearer Preparation',
         'wb-prepare-desc': 'A short mindset guide before handing over the card,<br>so you can begin naturally and confidently,<br>and put the door in their hands.',
         'wb-prepare-btn': 'Download Preparation',
+        'wb-mobilizer-title': 'Mobilizer Guide',
+        'wb-mobilizer-desc': 'Want to introduce Word & Wings in your church or small group?<br>This guide helps you bring a group in together,<br>so more people can give the card to someone they care about.',
+        'wb-mobilizer-btn': 'Download Mobilizer Guide',
         'wb-cta-label': 'Request Physical Cards',
         'wb-cta-title': 'The person on your heart deserves this card.',
         'wb-cta-body': 'The first 2,000 Word & Wings cards are free.<br>Contact us, tell us who this person is, and we will prepare it for you.',
