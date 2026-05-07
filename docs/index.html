@@ -780,10 +780,13 @@
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       section { padding: 72px 24px; }
+      .mission-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
       .pain-grid, .testimonials-grid, .steps-container { grid-template-columns: 1fr; }
       .screenshots-wrapper { gap: 16px; }
       .phone-mockup { width: 160px; }
       footer { flex-direction: column; gap: 24px; text-align: center; }
+      #get-card > div { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .qr-block { display: block; }
       .hero-title { font-size: 34px; }
     }
   </style>
@@ -800,7 +803,7 @@
         <li><a href="#how" class="nav-key-link" data-i18n="nav-how"></a></li>
         <li><a href="#get-card" data-i18n="nav-getcard"></a></li>
         <li><a href="wingbearer.html" class="nav-key-link" data-i18n="nav-wingbearer"></a></li>
-        <li><a href="#cta" data-i18n="nav-download"></a></li>
+        <li><a href="download.html" data-i18n="nav-download"></a></li>
       </ul>
       <div class="lang-switcher">
         <button class="lang-btn active" data-lang="zh-TW">繁</button>
@@ -862,10 +865,18 @@
 
   <!-- MISSION -->
   <section id="mission">
-    <div class="mission-body reveal">
-      <p class="section-label" data-i18n="mission-label"></p>
-      <div class="mission-text" data-i18n="mission-text" data-i18n-html="true"></div>
-      <div class="mission-builder" data-i18n="mission-builder" data-i18n-html="true"></div>
+    <div class="mission-inner" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div class="mission-body reveal">
+        <p class="section-label" data-i18n="mission-label"></p>
+        <div class="mission-text" data-i18n="mission-text" data-i18n-html="true"></div>
+        <div class="mission-builder" data-i18n="mission-builder" data-i18n-html="true"></div>
+      </div>
+      <div class="reveal reveal-delay-2" style="text-align:center;">
+        <img src="assets/images/wait_001.png"
+             alt=""
+             aria-hidden="true"
+             style="width:100%; max-width:300px; border-radius:20px;">
+      </div>
     </div>
   </section>
 
@@ -901,16 +912,22 @@
       <div class="pain-grid">
         <div class="pain-card reveal reveal-delay-1">
           <div class="pain-number">01</div>
+          <img src="assets/images/pain_001.png" alt="" aria-hidden="true"
+               style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;">
           <h3 class="pain-title" data-i18n="pain1-title"></h3>
           <p class="pain-desc" data-i18n="pain1-desc"></p>
         </div>
         <div class="pain-card reveal reveal-delay-2">
           <div class="pain-number">02</div>
+          <img src="assets/images/pain_002.png" alt="" aria-hidden="true"
+               style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;">
           <h3 class="pain-title" data-i18n="pain2-title"></h3>
           <p class="pain-desc" data-i18n="pain2-desc"></p>
         </div>
         <div class="pain-card reveal reveal-delay-3">
           <div class="pain-number">03</div>
+          <img src="assets/images/pain_003.png" alt="" aria-hidden="true"
+               style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;">
           <h3 class="pain-title" data-i18n="pain3-title"></h3>
           <p class="pain-desc" data-i18n="pain3-desc"></p>
         </div>
@@ -964,9 +981,20 @@
     </div>
   </section>
 
+  <!-- AFTER YOU GIVE THE CARD -->
+  <section id="after-card" style="background: var(--bg); text-align: center;">
+    <div class="reveal" style="max-width: 900px; margin: 0 auto;">
+      <p class="section-label" style="color: var(--amber-dark);">遞出去之後</p>
+      <h2 class="section-title" style="margin: 0 auto 48px; max-width: 500px;">三步，就夠了。</h2>
+      <img id="after-card-instruction" src="assets/images/bibcycle_instruction.png"
+           alt="三步就夠了：把卡親手交給他，問可不可以留 WhatsApp，傳圖加話"
+           style="width: 100%; max-width: 480px; border-radius: 20px; box-shadow: 0 24px 64px rgba(42,63,92,0.12); cursor:pointer;">
+    </div>
+  </section>
+
   <!-- GET CARD -->
-  <section id="get-card" style="background: var(--bg); text-align: center; padding: 100px 60px;">
-    <div style="max-width: 600px; margin: 0 auto;">
+  <section id="get-card">
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center;">
       <div class="reveal">
         <p class="section-label" data-i18n="get-card-label"></p>
         <h2 class="section-title" data-i18n="get-card-title"></h2>
@@ -977,6 +1005,12 @@
         <a href="mailto:bibcyclebib@gmail.com" class="invite-email">
           bibcyclebib@gmail.com
         </a>
+      </div>
+      <div class="reveal reveal-delay-2 qr-block">
+        <img id="get-card-qr" src="assets/images/bibcycle_QR.png"
+             alt="掃描下載 BibCycle 翼旅"
+             style="width: 200px; border-radius: 16px; box-shadow: 0 16px 48px rgba(42,63,92,0.12); cursor:pointer;">
+        <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 10px; letter-spacing: 0.06em;">bibcycle.org/download</p>
       </div>
     </div>
   </section>
@@ -1580,7 +1614,11 @@
     const lightbox = document.getElementById('img-lightbox');
     const lightboxImg = document.getElementById('img-lightbox-content');
     const cardImgs = document.querySelectorAll('#card-showcase .card-img');
-    if (!lightbox || !lightboxImg || !cardImgs.length) return;
+    const missionPoster = document.getElementById('mission-poster');
+    const afterCardInstruction = document.getElementById('after-card-instruction');
+    const getCardQr = document.getElementById('get-card-qr');
+    const clickableImgs = [...cardImgs, ...(missionPoster ? [missionPoster] : []), ...(afterCardInstruction ? [afterCardInstruction] : []), ...(getCardQr ? [getCardQr] : [])];
+    if (!lightbox || !lightboxImg || !clickableImgs.length) return;
 
     function closeLightbox() {
       lightbox.classList.remove('open');
@@ -1588,7 +1626,7 @@
       lightboxImg.removeAttribute('src');
     }
 
-    cardImgs.forEach((img) => {
+    clickableImgs.forEach((img) => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt || '';
