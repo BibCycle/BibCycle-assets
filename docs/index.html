@@ -480,6 +480,21 @@
       font-size: 15px;
       line-height: 1.8;
     }
+    .faq-a a {
+      color: var(--amber);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,210,127,0.9);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+      word-break: break-word;
+    }
+    .faq-a a:hover,
+    .faq-a a:focus-visible {
+      color: #ffe6aa;
+      text-decoration-color: #ffe6aa;
+      outline: none;
+    }
 
     /* ── VIDEO ── */
     #video-section {
@@ -1027,7 +1042,7 @@
           <summary class="faq-q" data-i18n="faq3-q"></summary>
           <p class="faq-a" data-i18n="faq3-a" data-i18n-html="true"></p>
         </details>
-        <details class="faq-item reveal">
+        <details class="faq-item reveal" id="faq-contact-item">
           <summary class="faq-q" data-i18n="faq5-q"></summary>
           <p class="faq-a" data-i18n="faq5-a" data-i18n-html="true"></p>
         </details>
@@ -1071,7 +1086,7 @@
     </div>
     <ul class="footer-links">
       <li><a href="https://bibcycle.org/privacy.html" target="_blank" rel="noopener" data-i18n="footer-privacy"></a></li>
-      <li><a href="#faq" data-i18n="footer-contact"></a></li>
+      <li><a href="#faq" data-i18n="footer-contact" id="footer-contact-link"></a></li>
       <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
     </ul>
     <div class="footer-social">
@@ -1493,6 +1508,25 @@
   // ─── Nav scroll ──────────────────────────────────────────────────
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // ─── Footer contact -> FAQ contact item ──────────────────────────
+  (function() {
+    const contactLink = document.getElementById('footer-contact-link');
+    const faqSection = document.getElementById('faq');
+    const contactFaqItem = document.getElementById('faq-contact-item');
+    if (!contactLink || !faqSection || !contactFaqItem) return;
+
+    contactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      document.querySelectorAll('#faq .faq-item[open]').forEach((item) => {
+        if (item !== contactFaqItem) item.open = false;
+      });
+      contactFaqItem.open = true;
+
+      faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
 
   // ─── Scroll reveal ───────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal');
