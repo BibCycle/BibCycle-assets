@@ -27,11 +27,33 @@
       font-family: var(--sans);
       background: var(--navy);
       color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding: 24px;
       text-align: center;
+    }
+
+    .top-nav {
+      max-width: 1200px;
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .top-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .top-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
     }
 
     .wrap {
@@ -41,6 +63,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin: 0 auto;
+      min-height: calc(100vh - 130px);
     }
 
     .nav-logo {
@@ -50,10 +74,18 @@
       color: #fff;
       letter-spacing: 0.02em;
       text-decoration: none;
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
 
     .nav-logo span { color: var(--amber); }
+
+    .top-nav-link {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .top-nav-link.active { color: var(--amber); }
 
     .dl-logo {
       font-family: var(--serif);
@@ -65,13 +97,13 @@
     }
     .dl-logo span { color: var(--amber); }
 
-.dl-bird {
-  width: 304px;
-  height: 304px;
-  object-fit: contain;
-  opacity: 0.8;
-  margin-bottom: -100px;
-}
+    .dl-bird {
+      width: 304px;
+      height: 304px;
+      object-fit: contain;
+      opacity: 0.8;
+      margin-bottom: -100px;
+    }
 
     h1 {
       font-family: var(--serif);
@@ -82,20 +114,13 @@
       letter-spacing: 0.04em;
     }
 
-    .sub-label {
-      font-size: 14px;
+    .dl-sub {
+      font-size: 13px;
       color: var(--amber);
-      letter-spacing: 0.15em;
-      margin-bottom: 48px;
+      letter-spacing: 0.2em;
+      margin-bottom: 44px;
+      font-weight: 400;
     }
-
-.dl-sub {
-  font-size: 13px;
-  color: var(--amber);
-  letter-spacing: 0.2em;
-  margin-bottom: 44px;
-  font-weight: 400;
-}
 
     .btn-group {
       display: flex;
@@ -105,7 +130,6 @@
       flex-direction: row;
       width: 100%;
       max-width: 520px;
-      width: 100%;
     }
 
     .dl-btn-group .btn {
@@ -152,6 +176,14 @@
 
     .footer-link:hover { color: rgba(255,255,255,0.55); }
 
+    @media (max-width: 900px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .top-nav-right { margin-top: 4px; }
+    }
+
     @media (max-width: 600px) {
       .dl-btn-group {
         flex-direction: column;
@@ -165,6 +197,23 @@
   </style>
 </head>
 <body>
+  <nav class="top-nav" aria-label="Main navigation">
+    <div class="top-nav-left">
+      <a href="index.html" class="nav-logo">Bib<span>Cycle</span></a>
+      <a href="index.html#video-section" class="top-nav-link">介紹影片</a>
+      <a href="index.html#mission" class="top-nav-link">使命</a>
+      <a href="index.html#how" class="top-nav-link">成為翼使</a>
+      <a href="index.html#get-card" class="top-nav-link">取得卡片</a>
+      <a href="wingbearer.html" class="top-nav-link">翼使資源</a>
+      <a href="download.html" class="top-nav-link active">下載</a>
+    </div>
+    <div class="top-nav-right">
+      <span>繁</span>
+      <span>简</span>
+      <span>EN</span>
+    </div>
+  </nav>
+
   <main class="wrap">
     <div class="dl-logo">Bib<span>Cycle</span></div>
     <img class="dl-bird" src="assets/logo_bird002.png" alt="BibCycle bird">
