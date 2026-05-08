@@ -32,11 +32,11 @@
       transition: background 0.3s, backdrop-filter 0.3s;
     }
     nav.scrolled { background: rgba(42,63,92,0.96); backdrop-filter: blur(12px); }
-    .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
+    .nav-logo { font-family: var(--serif); font-size: 33px; font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
     .nav-logo span { color: var(--amber); }
     .nav-right { display: flex; align-items: center; gap: 36px; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 21px; letter-spacing: 0.05em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--amber); }
     .nav-links a.nav-key-link {
       color: var(--amber);
@@ -62,7 +62,7 @@
     }
     .lang-btn {
       padding: 5px 11px;
-      font-size: 12px;
+      font-size: 18px;
       font-weight: 500;
       letter-spacing: 0.04em;
       color: rgba(255,255,255,0.45);
@@ -75,12 +75,12 @@
     }
     .lang-btn:hover { color: rgba(255,255,255,0.75); }
     .lang-btn.active { color: var(--amber); background: rgba(255,210,127,0.1); }
-    .lang-sep { color: rgba(255,255,255,0.15); font-size: 11px; user-select: none; }
+    .lang-sep { color: rgba(255,255,255,0.15); font-size: 16.5px; user-select: none; }
     .wing-term { color: var(--amber); }
 
     section { padding: 100px 60px; }
     .section-label {
-      font-size: 12px;
+      font-size: 18px;
       letter-spacing: 0.1em;
       color: var(--amber-dark);
       text-transform: uppercase;
@@ -96,7 +96,7 @@
       font-weight: 500;
     }
     .section-subtitle {
-      font-size: 18px;
+      font-size: 27px;
       line-height: 1.8;
       color: var(--text-muted);
       max-width: 560px;
@@ -109,7 +109,7 @@
     }
     .wb-hero-label {
       font-family: var(--sans);
-      font-size: 26px;
+      font-size: 39px;
       letter-spacing: 0.12em;
       color: var(--amber);
       text-transform: uppercase;
@@ -118,7 +118,7 @@
     [data-i18n="wb-identity-label"],
     #wb-res-label,
     #wb-cta-label {
-      font-size: 24px;
+      font-size: 36px;
     }
     .wb-hero-title {
       font-family: var(--serif);
@@ -129,7 +129,7 @@
       margin-bottom: 24px;
     }
     .wb-hero-sub {
-      font-size: 18px;
+      font-size: 27px;
       color: rgba(248,246,241,0.7);
       max-width: 560px;
       margin: 0 auto;
@@ -153,14 +153,15 @@
       padding: 100px 60px;
     }
     .wb-resources-inner {
-      max-width: 800px;
+      max-width: 2200px;
       margin: 0 auto;
     }
     .wb-card-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
       gap: 24px;
       margin-top: 48px;
+      align-items: start;
     }
     .wb-card {
       background: var(--bg-warm);
@@ -176,15 +177,15 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(42,63,92,0.1);
     }
-    .wb-card-icon { font-size: 28px; }
+    .wb-card-icon { font-size: 42px; }
     .wb-card-title {
       font-family: var(--serif);
-      font-size: 18px;
+      font-size: 27px;
       font-weight: 500;
       color: var(--navy);
     }
     .wb-card-desc {
-      font-size: 14px;
+      font-size: 21px;
       color: var(--text-muted);
       line-height: 1.7;
       flex: 1;
@@ -197,7 +198,7 @@
       background: var(--amber);
       color: var(--navy);
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 19.5px;
       font-weight: 600;
       text-decoration: none;
       width: fit-content;
@@ -220,7 +221,7 @@
     .wb-promo-btn-row .wb-card-btn {
       margin-top: 0;
       padding: 10px 14px;
-      font-size: 12px;
+      font-size: 18px;
       white-space: nowrap;
     }
     .wb-coming {
@@ -229,7 +230,7 @@
     }
     .wb-tag {
       display: inline-block;
-      font-size: 11px;
+      font-size: 16.5px;
       padding: 3px 10px;
       border-radius: 20px;
       font-weight: 600;
@@ -249,18 +250,18 @@
       gap: 20px;
     }
     .footer-brand-wrap { display: flex; flex-direction: column; gap: 8px; }
-    .footer-brand { font-family: var(--serif); font-size: 22px; color: #fff; }
+    .footer-brand { font-family: var(--serif); font-size: 33px; color: #fff; }
     .footer-brand span { color: var(--amber); }
     .footer-links { display: flex; gap: 24px; list-style: none; }
-    .footer-links a { font-size: 16px; color: rgba(255,255,255,0.55); text-decoration: none; }
-    .footer-tagline { font-size: 14px; }
+    .footer-links a { font-size: 24px; color: rgba(255,255,255,0.55); text-decoration: none; }
+    .footer-tagline { font-size: 21px; }
     .footer-social { display: flex; gap: 12px; }
     .footer-social a { color: #fff; opacity: 0.8; }
     .footer-copyright {
       background: #1a283c;
       color: rgba(255,255,255,0.45);
       text-align: center;
-      font-size: 12px;
+      font-size: 18px;
       padding: 12px;
     }
 
@@ -276,8 +277,31 @@
       .wb-identity { padding: 60px 24px; }
       .wb-resources { padding: 60px 24px; }
       .wb-promo-btn-row { flex-wrap: wrap; }
-      .wb-promo-btn-row .wb-card-btn { font-size: 13px; padding: 10px 20px; }
+      .wb-promo-btn-row .wb-card-btn { font-size: 19.5px; padding: 10px 20px; }
     }
+    .wb-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .wb-lightbox.active { display: flex; }
+    .wb-lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+    .wb-thumb {
+      cursor: zoom-in;
+      transition: opacity 0.2s;
+    }
+    .wb-thumb:hover { opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -321,7 +345,7 @@
     <div class="wb-identity" style="padding: 0;">
       <p class="section-label" data-i18n="wb-identity-label"></p>
       <p class="wb-identity-text" data-i18n="wb-identity-text" data-i18n-html="true"></p>
-      <p style="font-family: var(--serif); font-size: 16px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;" data-i18n="wb-identity-quote" data-i18n-html="true"></p>
+      <p style="font-family: var(--serif); font-size: 24px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;" data-i18n="wb-identity-quote" data-i18n-html="true"></p>
       <p class="wb-identity-text" data-i18n="wb-identity-boundary" data-i18n-html="true"></p>
     </div>
   </section>
@@ -335,12 +359,32 @@
 
       <div class="wb-card-grid">
 
+        <!-- Prepare PDF — 新翼使從這裡開始 -->
+        <div class="wb-card" style="border: 1.5px solid var(--amber); position: relative;">
+          <span class="wb-card-icon">🧠</span>
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <span style="position:absolute; top:16px; right:16px; font-size: 15px; letter-spacing:0.1em; color:var(--amber); font-weight:600; background:rgba(255,210,127,0.12); border:1px solid rgba(255,210,127,0.3); padding:3px 8px; border-radius:99px;" data-i18n="wb-start-here"></span>
+          <h3 class="wb-card-title" data-i18n="wb-prepare-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-prepare-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_prepare.png" alt="心理準備預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);">
+          <a href="assets/docs/BibCycle_prepare_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-prepare-btn"></span>
+          </a>
+        </div>
+
         <!-- SOP -->
         <div class="wb-card">
           <span class="wb-card-icon">📋</span>
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-sop-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-sop-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_sop.png" alt="翼使指引預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);">
           <a href="assets/docs/BibCycle_SOP_v1.pdf" class="wb-card-btn" download>
             <span data-i18n="wb-sop-btn"></span>
           </a>
@@ -352,6 +396,10 @@
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-qa-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-qa-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_qa.png" alt="Q&A 問答庫預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);">
           <a href="assets/docs/BibCycle_QA_v1.pdf" class="wb-card-btn" download>
             <span data-i18n="wb-qa-btn"></span>
           </a>
@@ -363,6 +411,14 @@
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-promo-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-promo-desc" data-i18n-html="true"></p>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:16px 0; height:260px;">
+            <img src="assets/images/bibcycle_instruction.png" alt="" aria-hidden="true"
+                 style="width:100%; height:100%; border-radius:6px; object-fit:cover;">
+            <img src="assets/images/bibcycle_poster.png" alt="" aria-hidden="true"
+                 style="width:100%; height:100%; border-radius:6px; object-fit:cover;">
+            <img src="assets/images/bibcycle_QR.png" alt="" aria-hidden="true"
+                 style="width:100%; height:100%; border-radius:6px; object-fit:cover;">
+          </div>
           <div class="wb-promo-btn-row">
             <a href="assets/images/bibcycle_instruction.png" class="wb-card-btn" download>
               <span data-i18n="wb-promo-dark-btn"></span>
@@ -376,23 +432,16 @@
           </div>
         </div>
 
-        <!-- Prepare PDF -->
-        <div class="wb-card">
-          <span class="wb-card-icon">🧠</span>
-          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
-          <h3 class="wb-card-title" data-i18n="wb-prepare-title"></h3>
-          <p class="wb-card-desc" data-i18n="wb-prepare-desc" data-i18n-html="true"></p>
-          <a href="assets/docs/BibCycle_prepare_v1.pdf" class="wb-card-btn" download>
-            <span data-i18n="wb-prepare-btn"></span>
-          </a>
-        </div>
-
         <!-- 動員者指引 -->
         <div class="wb-card">
           <span class="wb-card-icon">🕊️</span>
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-mobilizer-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-mobilizer-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_mobilizer.png" alt="動員者指引預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);">
           <a href="assets/docs/BibCycle_mobilizer_v1.pdf" class="wb-card-btn" download>
             <span data-i18n="wb-mobilizer-btn"></span>
           </a>
@@ -406,8 +455,8 @@
   <section style="background: var(--navy); text-align: center; padding: 100px 60px;">
     <p class="section-label" style="color: var(--amber);" data-i18n="wb-cta-label"></p>
     <h2 style="font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); color: var(--bg); font-weight: 500; margin-bottom: 16px;" data-i18n="wb-cta-title"></h2>
-    <p style="font-size: 16px; color: rgba(248,246,241,0.7); margin-bottom: 32px; line-height: 1.8;" data-i18n="wb-cta-body" data-i18n-html="true"></p>
-    <a href="mailto:bibcyclebib@gmail.com" style="display: inline-block; font-size: 15px; color: var(--amber); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--amber); padding-bottom: 2px;">
+    <p style="font-size: 24px; color: rgba(248,246,241,0.7); margin-bottom: 32px; line-height: 1.8;" data-i18n="wb-cta-body" data-i18n-html="true"></p>
+    <a href="mailto:bibcyclebib@gmail.com" style="display: inline-block; font-size: 22.5px; color: var(--amber); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--amber); padding-bottom: 2px;">
       bibcyclebib@gmail.com
     </a>
   </section>
@@ -452,7 +501,8 @@
         'wb-resources-label': '翼使資源',
         'wb-resources-title': '你需要的，都在這裡',
         'wb-resources-subtitle': '以下資源幫助你更清楚地參與這場運動——一個人遞卡，或者帶一群人一起進來。',
-        'wb-tag-ready': '已備妥',
+        'wb-tag-ready':  '已備妥',
+        'wb-start-here': '新翼使從這裡開始',
         'wb-sop-title': '翼使指引',
         'wb-sop-desc': '對已信者、對未信者的說辭口徑，<br>遞卡時的常見問題處理，<br>一份讓你有備無患的指引。',
         'wb-sop-btn': '下載指引',
@@ -460,7 +510,7 @@
         'wb-qa-desc': '38 條常見問題與標準答案，<br>涵蓋卡片、App、信仰問題，<br>信徒與未信者的場景都有。',
         'wb-qa-btn': '下載 Q&A',
         'wb-promo-title': '翼旅推廣圖',
-        'wb-promo-desc': '推廣指引圖、推廣海報圖與<br>QR 圖三款素材，<br>可直接下載分享使用。',
+        'wb-promo-desc': '三款素材，各有用途：<br>指引圖 → WhatsApp 一對一分享<br>海報圖 → 社交媒體廣播<br>QR 圖 → 列印或數碼展示',
         'wb-promo-dark-btn': '下載指引圖',
         'wb-promo-light-btn': '下載海報圖',
         'wb-promo-qr-btn': '下載 QR 圖',
@@ -497,7 +547,8 @@
         'wb-resources-label': '翼使资源',
         'wb-resources-title': '你需要的，都在这里',
         'wb-resources-subtitle': '以下资源帮助你更清楚地参与这场运动——一个人递卡，或者带一群人一起进来。',
-        'wb-tag-ready': '已备妥',
+        'wb-tag-ready':  '已备妥',
+        'wb-start-here': '新翼使从这里开始',
         'wb-sop-title': '翼使指引',
         'wb-sop-desc': '对已信者、对未信者的说辞口径，<br>递卡时的常见问题处理，<br>一份让你有备无患的指引。',
         'wb-sop-btn': '下载指引',
@@ -505,7 +556,7 @@
         'wb-qa-desc': '38 条常见问题与标准答案，<br>涵盖卡片、App、信仰问题，<br>信徒与未信者的场景都有。',
         'wb-qa-btn': '下载 Q&A',
         'wb-promo-title': '翼旅推广图',
-        'wb-promo-desc': '推广指引图、推广海报图与<br>QR 图三款素材，<br>可直接下载分享使用。',
+        'wb-promo-desc': '三款素材，各有用途：<br>指引图 → WhatsApp 一对一分享<br>海报图 → 社交媒体广播<br>QR 图 → 打印或数码展示',
         'wb-promo-dark-btn': '下载指引图',
         'wb-promo-light-btn': '下载海报图',
         'wb-promo-qr-btn': '下载 QR 图',
@@ -542,7 +593,8 @@
         'wb-resources-label': 'Wing Bearer Resources',
         'wb-resources-title': 'Everything You Need Is Here',
         'wb-resources-subtitle': 'The resources below help you participate in this movement — whether you\'re giving a card yourself, or bringing a group in together.',
-        'wb-tag-ready': 'Ready',
+        'wb-tag-ready':  'Ready',
+        'wb-start-here': 'Start here',
         'wb-sop-title': 'Wing Bearer Guide',
         'wb-sop-desc': 'Suggested language for believers and non-believers,<br>common scenarios when handing over a card,<br>and practical guidance so you can be prepared.',
         'wb-sop-btn': 'Download Guide',
@@ -550,7 +602,7 @@
         'wb-qa-desc': '38 common questions with standard answers,<br>covering the card, the app, and faith questions,<br>for both believers and seekers.',
         'wb-qa-btn': 'Download Q&A',
         'wb-promo-title': 'Promotion Images',
-        'wb-promo-desc': 'Instruction graphic, poster graphic, and<br>QR graphic resources,<br>ready to download and share.',
+        'wb-promo-desc': 'Three graphics, each with a purpose:<br>Instruction → WhatsApp one-to-one sharing<br>Poster → Social media broadcast<br>QR → Print or digital display',
         'wb-promo-dark-btn': 'Download Instruction',
         'wb-promo-light-btn': 'Download Poster',
         'wb-promo-qr-btn': 'Download QR',
@@ -621,7 +673,24 @@
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
     applyLang(activeLang);
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('wb-lightbox-img').src = src;
+      document.getElementById('wb-lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('wb-lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
   </script>
 
+  <div class="wb-lightbox" id="wb-lightbox" onclick="closeLightbox()">
+    <img id="wb-lightbox-img" src="" alt="">
+  </div>
 </body>
 </html>
