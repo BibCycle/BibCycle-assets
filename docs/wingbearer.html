@@ -269,6 +269,7 @@
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       section { padding: 72px 24px; }
+      .wb-identity-grid { grid-template-columns: 1fr !important; }
       footer { flex-direction: column; gap: 24px; text-align: center; }
     }
     @media (max-width: 640px) {
@@ -342,11 +343,18 @@
 
   <!-- IDENTITY -->
   <section style="background: var(--bg-warm); padding: 100px 60px;">
-    <div class="wb-identity" style="padding: 0;">
-      <p class="section-label" data-i18n="wb-identity-label"></p>
-      <p class="wb-identity-text" data-i18n="wb-identity-text" data-i18n-html="true"></p>
-      <p style="font-family: var(--serif); font-size: 24px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;" data-i18n="wb-identity-quote" data-i18n-html="true"></p>
-      <p class="wb-identity-text" data-i18n="wb-identity-boundary" data-i18n-html="true"></p>
+    <div class="wb-identity-grid" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center;">
+      <div class="wb-identity" style="padding: 0;">
+        <p class="section-label" data-i18n="wb-identity-label"></p>
+        <p class="wb-identity-text" data-i18n="wb-identity-text" data-i18n-html="true"></p>
+        <p style="font-family: var(--serif); font-size: 24px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;" data-i18n="wb-identity-quote" data-i18n-html="true"></p>
+        <p class="wb-identity-text" data-i18n="wb-identity-boundary" data-i18n-html="true"></p>
+      </div>
+      <div style="flex-shrink: 0;">
+        <img src="assets/images/pain_001.png" alt=""
+             aria-hidden="true"
+             style="width: 260px; display: block; border-radius: 16px;">
+      </div>
     </div>
   </section>
 
@@ -361,7 +369,7 @@
 
         <!-- Prepare PDF — 新翼使從這裡開始 -->
         <div class="wb-card" style="border: 1.5px solid var(--amber); position: relative;">
-          <span class="wb-card-icon">🧠</span>
+          <img src="assets/images/wingbearer_001.png" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;">
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <span style="position:absolute; top:16px; right:16px; font-size: 15px; letter-spacing:0.1em; color:var(--amber); font-weight:600; background:rgba(255,210,127,0.12); border:1px solid rgba(255,210,127,0.3); padding:3px 8px; border-radius:99px;" data-i18n="wb-start-here"></span>
           <h3 class="wb-card-title" data-i18n="wb-prepare-title"></h3>
@@ -377,7 +385,7 @@
 
         <!-- SOP -->
         <div class="wb-card">
-          <span class="wb-card-icon">📋</span>
+          <img src="assets/images/wingbearer_002.png" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;">
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-sop-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-sop-desc" data-i18n-html="true"></p>
@@ -392,7 +400,7 @@
 
         <!-- Q&A -->
         <div class="wb-card">
-          <span class="wb-card-icon">💬</span>
+          <img src="assets/images/wingbearer_001.png" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;">
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-qa-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-qa-desc" data-i18n-html="true"></p>
@@ -407,7 +415,7 @@
 
         <!-- 翼旅推廣圖 -->
         <div class="wb-card">
-          <span class="wb-card-icon">🖼️</span>
+          <img src="assets/images/wingbearer_002.png" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;">
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-promo-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-promo-desc" data-i18n-html="true"></p>
@@ -434,7 +442,7 @@
 
         <!-- 動員者指引 -->
         <div class="wb-card">
-          <span class="wb-card-icon">🕊️</span>
+          <img src="assets/images/wingbearer_001.png" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;">
           <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
           <h3 class="wb-card-title" data-i18n="wb-mobilizer-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-mobilizer-desc" data-i18n-html="true"></p>
