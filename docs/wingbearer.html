@@ -363,7 +363,7 @@
     <div class="wb-resources-inner">
       <p class="section-label" data-i18n="wb-resources-label"></p>
       <h2 class="section-title" data-i18n="wb-resources-title"></h2>
-      <p class="section-subtitle" style="margin: 0 auto 0;" data-i18n="wb-resources-subtitle" data-i18n-html="true"></p>
+      <p class="section-subtitle" style="margin: 0 auto 0; max-width: 820px; text-wrap: balance;" data-i18n="wb-resources-subtitle" data-i18n-html="true"></p>
 
       <div class="wb-card-grid">
 
@@ -420,11 +420,17 @@
           <h3 class="wb-card-title" data-i18n="wb-promo-title"></h3>
           <p class="wb-card-desc" data-i18n="wb-promo-desc" data-i18n-html="true"></p>
           <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:16px 0; height:260px;">
-            <img src="assets/images/bibcycle_instruction.png" alt="" aria-hidden="true"
+            <img src="assets/images/bibcycle_instruction.png" alt="推廣指引圖預覽"
+                 class="wb-thumb"
+                 onclick="openLightbox(this.src)"
                  style="width:100%; height:100%; border-radius:6px; object-fit:cover;">
-            <img src="assets/images/bibcycle_poster.png" alt="" aria-hidden="true"
+            <img src="assets/images/bibcycle_poster.png" alt="推廣海報圖預覽"
+                 class="wb-thumb"
+                 onclick="openLightbox(this.src)"
                  style="width:100%; height:100%; border-radius:6px; object-fit:cover;">
-            <img src="assets/images/bibcycle_QR.png" alt="" aria-hidden="true"
+            <img src="assets/images/bibcycle_QR.png" alt="推廣 QR 圖預覽"
+                 class="wb-thumb"
+                 onclick="openLightbox(this.src)"
                  style="width:100%; height:100%; border-radius:6px; object-fit:cover;">
           </div>
           <div class="wb-promo-btn-row">
