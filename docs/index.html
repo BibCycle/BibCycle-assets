@@ -1742,6 +1742,10 @@
   (function() {
     const lightbox = document.getElementById('img-lightbox');
     const lightboxImg = document.getElementById('img-lightbox-content');
+    const cardImgs = document.querySelectorAll('#card-showcase .card-img');
+    const missionPoster = document.getElementById('mission-poster');
+    const afterCardInstruction = document.getElementById('after-card-instruction');
+    const getCardQr = document.getElementById('get-card-qr');
     const overviewImg = document.querySelector('.overview-image');
     const cyclePoster = document.querySelector('#cycle img');
     const clickableImgs = [...cardImgs, ...(missionPoster ? [missionPoster] : []), ...(afterCardInstruction ? [afterCardInstruction] : []), ...(getCardQr ? [getCardQr] : []), ...(overviewImg ? [overviewImg] : []), ...(cyclePoster ? [cyclePoster] : [])];
