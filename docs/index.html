@@ -862,6 +862,7 @@
       width: 100%;
       height: auto;
       display: block;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -1100,7 +1101,7 @@
       <p style="font-size: 13px; letter-spacing: 0.16em; color: var(--amber-dark); margin-bottom: 28px; font-weight: 500;" data-i18n="cycle-label"></p>
       <img src="assets/images/bibcycle_Cycle.png"
            alt="成為翼使：記掛那個人，遞卡，朋友走進聖經，循環流動"
-           style="width: 100%; border-radius: 20px; box-shadow: 0 24px 64px rgba(42,63,92,0.15);">
+           style="width: 100%; border-radius: 20px; box-shadow: 0 24px 64px rgba(42,63,92,0.15); cursor: pointer;">
     </div>
   </section>
 
@@ -1741,11 +1742,9 @@
   (function() {
     const lightbox = document.getElementById('img-lightbox');
     const lightboxImg = document.getElementById('img-lightbox-content');
-    const cardImgs = document.querySelectorAll('#card-showcase .card-img');
-    const missionPoster = document.getElementById('mission-poster');
-    const afterCardInstruction = document.getElementById('after-card-instruction');
-    const getCardQr = document.getElementById('get-card-qr');
-    const clickableImgs = [...cardImgs, ...(missionPoster ? [missionPoster] : []), ...(afterCardInstruction ? [afterCardInstruction] : []), ...(getCardQr ? [getCardQr] : [])];
+    const overviewImg = document.querySelector('.overview-image');
+    const cyclePoster = document.querySelector('#cycle img');
+    const clickableImgs = [...cardImgs, ...(missionPoster ? [missionPoster] : []), ...(afterCardInstruction ? [afterCardInstruction] : []), ...(getCardQr ? [getCardQr] : []), ...(overviewImg ? [overviewImg] : []), ...(cyclePoster ? [cyclePoster] : [])];
     if (!lightbox || !lightboxImg || !clickableImgs.length) return;
 
     function closeLightbox() {
