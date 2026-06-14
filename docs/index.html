@@ -839,6 +839,29 @@
       .hero-title { font-size: 34px; }
       .hero-anchor { font-size: 14px; margin-bottom: 36px; }
     }
+
+    .overview-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .overview-label {
+      font-size: 13px;
+      color: var(--amber);
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+    .overview-image-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .overview-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -1060,6 +1083,13 @@
         </div>
       </div>
       <p class="screenshot-caption reveal" style="margin-top:32px;" data-i18n="ss-caption"></p>
+    </div>
+  </section>
+
+  <section class="overview-section">
+    <p class="overview-label" data-i18n="overview-label"></p>
+    <div class="overview-image-wrap">
+      <img src="assets/images/bibcycle_Cycle002.png" alt="神的話、記掛那個人、遞出App/卡" class="overview-image">
     </div>
   </section>
 
@@ -1348,6 +1378,7 @@
       'phone3-label':   '1,189 章 · 已走過 238 章',
       'bk1': '摩西五經', 'bk2': '歷史書', 'bk3': '詩歌書', 'bk4': '先知書', 'bk5': '新約',
       'cycle-label':      '這場運動，是這樣流動的。',
+      'overview-label':   '一句話，這場運動是這樣開始的',
       'after-card-label': '遞出去之後',
       'after-card-title': '三步，就夠了。',
       'cta-label':        '開始你的旅程',
@@ -1450,6 +1481,7 @@
       'phone3-label':   '1,189 章 · 已走过 238 章',
       'bk1': '摩西五经', 'bk2': '历史书', 'bk3': '诗歌书', 'bk4': '先知书', 'bk5': '新约',
       'cycle-label':      '这场运动，是这样流动的。',
+      'overview-label':   '一句话，这场运动是这样开始的',
       'after-card-label': '递出去之后',
       'after-card-title': '三步，就够了。',
       'cta-label':        '开始你的旅程',
@@ -1552,6 +1584,7 @@
       'phone3-label':   '1,189 chapters · 238 visited',
       'bk1': 'Pentateuch', 'bk2': 'History', 'bk3': 'Poetry', 'bk4': 'Prophets', 'bk5': 'NT',
       'cycle-label':      'This is how the movement flows.',
+      'overview-label':   'This is how it begins',
       'after-card-label': 'After you give the card',
       'after-card-title': 'Three steps. That\'s all.',
       'cta-label':        'Start your journey',
