@@ -4,21 +4,21 @@
 
   <!-- 主頁 / Homepage -->
   <url>
-    <loc>https://bibcycle.github.io/BibCycle-assets/</loc>
+    <loc>https://bibcycle.org/</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <!-- hreflang: 三語言 -->
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bibcycle.github.io/BibCycle-assets/"/>
-    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://bibcycle.github.io/BibCycle-assets/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bibcycle.github.io/BibCycle-assets/"/>
-    <xhtml:link rel="alternate" hreflang="en"    href="https://bibcycle.github.io/BibCycle-assets/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibcycle.github.io/BibCycle-assets/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibcycle.org/"/>
   </url>
 
   <!-- 隱私政策 / Privacy Policy -->
   <url>
-    <loc>https://bibcycle.github.io/BibCycle-assets/privacy.html</loc>
+    <loc>https://bibcycle.org/privacy.html</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
