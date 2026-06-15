@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="partner-page-title">合作 — BibCycle 翼旅</title>
+  <link rel="icon" type="image/webp" href="assets/logo_bird001.webp">
+  <link rel="shortcut icon" type="image/webp" href="assets/logo_bird001.webp">
+  <link rel="apple-touch-icon" href="assets/logo_bird001.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2a3f5c;
+      --amber: #FFD27F;
+      --amber-dark: #e8b84b;
+      --bg: #f8f6f1;
+      --serif: 'Noto Serif TC', serif;
+      --sans: 'Noto Sans TC', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--sans);
+      background: var(--navy);
+      color: #fff;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .top-nav {
+      max-width: 1200px;
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .top-nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .top-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      margin-bottom: 0;
+    }
+
+    .nav-logo span { color: var(--amber); }
+
+    .top-nav-link {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .top-nav-link.active { color: var(--amber); }
+
+    .top-nav-link.partner-link {
+      border: 1px solid rgba(255,210,127,0.4);
+      border-radius: 999px;
+      padding: 6px 16px;
+      color: var(--amber);
+    }
+    .top-nav-link.partner-link:hover {
+      background: rgba(255,210,127,0.08);
+    }
+
+    .footer-link {
+      margin-top: 48px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover { color: rgba(255,255,255,0.55); }
+
+    @media (max-width: 900px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .top-nav-right { margin-top: 4px; }
+    }
+
+    /* Partner page specific styles */
+    .partner-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      text-align: center;
+    }
+    .partner-section {
+      margin-bottom: 72px;
+    }
+    .partner-anchor {
+      font-size: 18px;
+      color: var(--amber);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .partner-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+    .partner-body {
+      font-size: 15px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.85);
+      font-weight: 300;
+    }
+    .partner-image-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .partner-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+      transition: opacity 0.25s ease;
+    }
+    .partner-image:hover {
+      opacity: 0.92;
+    }
+    .partner-contact {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .partner-contact-email {
+      font-family: var(--sans);
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 12px;
+    }
+    .wing-term { color: var(--amber); }
+
+    .partner-header {
+      margin-bottom: 64px;
+      padding-top: 16px;
+    }
+    .partner-eyebrow {
+      font-size: 13px;
+      color: var(--amber);
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    .partner-h1 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+    .partner-section + .partner-section {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 48px;
+    }
+    .partner-cta {
+      background: rgba(255,210,127,0.06);
+      border-radius: 16px;
+      padding: 40px 24px;
+      border-top: none !important;
+    }
+    .partner-cta-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 32px;
+      background: var(--amber);
+      color: var(--navy);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: transform 0.2s;
+    }
+    .partner-cta-btn:hover { transform: translateY(-2px); }
+
+    /* ── IMAGE LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 1000;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-img {
+      max-width: min(96vw, 1200px);
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Main navigation">
+    <div class="top-nav-left">
+      <a href="index.html" class="nav-logo">Bib<span>Cycle</span></a>
+      <a href="index.html#video-section" class="top-nav-link" data-i18n="nav-intro"></a>
+      <a href="index.html#mission" class="top-nav-link" data-i18n="nav-mission"></a>
+      <a href="index.html#how" class="top-nav-link" data-i18n="nav-become"></a>
+      <a href="index.html#get-card" class="top-nav-link" data-i18n="nav-getcard"></a>
+      <a href="wingbearer.html" class="top-nav-link" data-i18n="nav-wingbearer"></a>
+      <a href="download.html" class="top-nav-link" data-i18n="nav-download"></a>
+      <a href="partner.html" class="top-nav-link partner-link" data-i18n="nav-partner"></a>
+    </div>
+    <div class="top-nav-right">
+      <span onclick="setLang('zh-TW')" style="cursor:pointer;">繁</span>
+      <span onclick="setLang('zh-CN')" style="cursor:pointer;">简</span>
+      <span onclick="setLang('en')" style="cursor:pointer;">EN</span>
+    </div>
+  </nav>
+
+  <main class="partner-wrap">
+    <header class="partner-header">
+      <p class="partner-eyebrow" data-i18n="partner-eyebrow"></p>
+      <h1 class="partner-h1" data-i18n="partner-h1"></h1>
+    </header>
+
+    <!-- Section 1: BibCycle 係咩 -->
+    <section class="partner-section">
+      <p class="partner-anchor" data-i18n="partner-s1-anchor"></p>
+      <p class="partner-body" data-i18n="partner-s1-body" data-i18n-html="true"></p>
+    </section>
+
+    <!-- Section 2: 運動邏輯 -->
+    <section class="partner-section">
+      <h2 class="partner-title" data-i18n="partner-s2-title"></h2>
+      <div class="partner-image-wrap">
+        <img src="assets/images/bibcycle_Cycle.png" alt="運動循環圖" class="partner-image">
+      </div>
+      <p class="partner-body" data-i18n="partner-s2-body" data-i18n-html="true"></p>
+    </section>
+
+    <!-- Section 3: 翼旅卡與傳統派發的分別 -->
+    <section class="partner-section">
+      <h2 class="partner-title" data-i18n="partner-s3-title"></h2>
+      <div class="partner-image-wrap">
+        <img src="assets/images/bibcycle_tradition_bridge_vertical.png" alt="翼旅卡與傳統派發對比圖" class="partner-image">
+      </div>
+      <p class="partner-body" data-i18n="partner-s3-body" data-i18n-html="true"></p>
+    </section>
+
+    <!-- Section 4: 我們能提供什麼 -->
+    <section class="partner-section partner-cta">
+      <h2 class="partner-title" data-i18n="partner-s4-title"></h2>
+      <p class="partner-body" data-i18n="partner-s4-body" data-i18n-html="true"></p>
+      <a href="mailto:bibcyclebib@gmail.com" class="partner-cta-btn" data-i18n="partner-cta-btn"></a>
+    </section>
+
+    <!-- Section 5: 聯絡方式 -->
+    <section class="partner-section partner-contact">
+      <p class="partner-contact-email">bibcyclebib@gmail.com</p>
+      <a class="footer-link" href="https://bibcycle.org/">🕊️BibCycle 翼旅 · bibcycle.org</a>
+    </section>
+
+  </main>
+
+  <div id="img-lightbox" class="lightbox" aria-hidden="true">
+    <img id="img-lightbox-content" class="lightbox-img" alt="">
+  </div>
+
+  <script>
+  const T = {
+    'zh-TW': {
+      'partner-page-title': '合作 — BibCycle 翼旅',
+      'partner-eyebrow': '給教會與機構',
+      'partner-h1': '如果你也想，把神的話帶給更多人',
+      'nav-intro':      '介紹影片',
+      'nav-video':      '介紹影片',
+      'nav-mission':    '使命',
+      'nav-become':     '成為翼使',
+      'nav-how':        '成為翼使',
+      'nav-getcard':    '取得卡片',
+      'nav-wingbearer': '翼使資源',
+      'nav-download':   '下載',
+      'nav-partner':    '教會與機構',
+      'partner-s1-anchor': '一個安靜的讀經 App，與一張可以親手遞出的卡。',
+      'partner-s1-body': 'BibCycle 同時是一個讀經軟件，也是一個運動的核心——用的人讀的時候覺得好，再把神的話帶到記掛緊的人面前。',
+      'partner-s2-title': '這場運動，是這樣流動的',
+      'partner-s2-body': '成為翼使 → 記掛那個人 → 遞卡 → 朋友走進聖經 → 循環延續。<br>每一張卡的背後，是一個具體記掛緊的人——不是廣派，是一個人遞給一個人。',
+      'partner-s3-title': '翼旅卡與傳統派發的分別',
+      'partner-s3-body': '翼旅卡，延續著派發聖經的那份心意——<br>但它承載的，是一張卡，對應一個你心裡記掛著的人。<br>它不是聖經的替代，只是一個記號——遞出之後，指向 App 裡一段安靜的相遇。<br>輕，可隨身；低成本，隨時可遞。',
+      'partner-s4-title': '我們能提供什麼',
+      'partner-s4-body': '翼旅卡（實體）可供索取，翼使指引可供參考。歡迎 email 聯絡，我們會視乎情況提供。',
+      'partner-cta-btn': '透過 Email 聯絡我們',
+    },
+    'zh-CN': {
+      'partner-page-title': '合作 — BibCycle 翼旅',
+      'partner-eyebrow': '给教会与机构',
+      'partner-h1': '如果你也想，把神的话带给更多人',
+      'nav-intro':      '介绍影片',
+      'nav-video':      '介绍影片',
+      'nav-mission':    '使命',
+      'nav-become':     '成为翼使',
+      'nav-how':        '成为翼使',
+      'nav-getcard':    '取得卡片',
+      'nav-wingbearer': '翼使资源',
+      'nav-download':   '下载',
+      'nav-partner':    '教会与机构',
+      'partner-s1-anchor': '一个安静的读经 App，与一张可以亲手递出的卡。',
+      'partner-s1-body': 'BibCycle 同时是一个读经软件，也是一个运动的核心——用的人读的时候觉得好，再把神的话带到记挂着的人面前。',
+      'partner-s2-title': '这场运动，是这样流动的',
+      'partner-s2-body': '成为翼使 → 记挂那个人 → 递卡 → 朋友走进圣经 → 循环延续。<br>每一张卡的背后，是一个具体记挂着的人——不是广派，是一个人递给一个人。',
+      'partner-s3-title': '翼旅卡与传统派发的区别',
+      'partner-s3-body': '翼旅卡，延续着派发圣经的那份心意——<br>但它承载的，是一张卡，对应一个你心里记挂着的人。<br>它不是圣经的替代，只是一个记号——递出之后，指向 App 里一段安静的相遇。<br>轻，可随身；低成本，随时可递。',
+      'partner-s4-title': '我们能提供什么',
+      'partner-s4-body': '翼旅卡（实体）可供索取，翼使指引可供参考。欢迎 email 联系，我们会视情况提供。',
+      'partner-cta-btn': '通过 Email 联系我们',
+    },
+    'en': {
+      'partner-page-title': 'Partners — BibCycle',
+      'partner-eyebrow': 'For Churches & Organizations',
+      'partner-h1': 'If you’d also like to bring God’s word to more people',
+      'nav-intro':      'Intro Video',
+      'nav-video':      'Intro Video',
+      'nav-mission':    'Mission',
+      'nav-become':     'Become a Wing Bearer',
+      'nav-how':        'Become a Wing Bearer',
+      'nav-getcard':    'Get the card',
+      'nav-wingbearer': 'Wing Bearer',
+      'nav-download':   'Download',
+      'nav-partner':    'Churches & Orgs',
+      'partner-s1-anchor': 'A quiet Bible-reading app, and a card you can hand to someone.',
+      'partner-s1-body': 'BibCycle is both a Bible-reading app and the core of a movement — where readers who find it good can bring God\'s word to the ones they carry in their hearts.',
+      'partner-s2-title': 'This is how the movement flows',
+      'partner-s2-body': 'Become a Wing Bearer → Keep that person in mind → Hand them the card → Friend walks into the Bible → The cycle continues.<br>Behind every card is a specific person you carry in your heart — not mass distribution, but one person handing it to another.',
+      'partner-s3-title': 'The difference between BibCycle cards and traditional distribution',
+      'partner-s3-body': 'BibCycle cards carry on the same heart as distributing Bibles —<br>but what it carries is a single card, meant for one specific person in your heart.<br>It is not a replacement for the Bible, but a sign — once handed out, it points to a quiet encounter inside the app.<br>Lightweight and pocket-sized; low cost, ready to be given at any moment.',
+      'partner-s4-title': 'What we can provide',
+      'partner-s4-body': 'Physical BibCycle cards are available for request, and Wing Bearer guides are available for reference. Feel free to contact us via email, and we will provide them based on availability.',
+      'partner-cta-btn': 'Contact us via email',
+    }
+  };
+
+  let currentLang = localStorage.getItem('bibcycle-lang') || 'zh-TW';
+
+  function setLang(lang) {
+    applyLang(lang);
+  }
+
+  function highlightWingTerm(text) {
+    return text.replace(/翼使/g, '<span class="wing-term">翼使</span>');
+  }
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('bibcycle-lang', lang);
+    const dict = T[lang];
+    if (!dict) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = dict[key];
+      if (val === undefined) return;
+      const isZh = lang === 'zh-TW' || lang === 'zh-CN';
+      const shouldHighlightWingTerm = isZh
+        && val.includes('翼使')
+        && el.tagName !== 'TITLE';
+      if (el.getAttribute('data-i18n-html') === 'true') {
+        el.innerHTML = shouldHighlightWingTerm ? highlightWingTerm(val) : val;
+      } else if (shouldHighlightWingTerm) {
+        el.innerHTML = highlightWingTerm(val);
+      } else {
+        el.textContent = val;
+      }
+    });
+
+    // Update html lang attr
+    document.documentElement.lang = lang === 'zh-TW' ? 'zh-TW' : lang === 'zh-CN' ? 'zh-CN' : 'en';
+
+    // Update font for English
+    const serif = lang === 'en'
+      ? "'Noto Serif', serif"
+      : (lang === 'zh-CN' ? "'Noto Serif SC', 'Noto Serif TC', serif" : "'Noto Serif TC', serif");
+    document.documentElement.style.setProperty('--serif', serif);
+    const sans = lang === 'en'
+      ? "'Noto Sans', sans-serif"
+      : (lang === 'zh-CN' ? "'Noto Sans SC', 'Noto Sans TC', sans-serif" : "'Noto Sans TC', sans-serif");
+    document.documentElement.style.setProperty('--sans', sans);
+
+    // Update active class on top-nav-right spans
+    const spans = document.querySelectorAll('.top-nav-right span');
+    spans.forEach(span => {
+      const onclickAttr = span.getAttribute('onclick');
+      if (onclickAttr && onclickAttr.includes(lang)) {
+        span.style.color = 'var(--amber)';
+        span.style.fontWeight = '500';
+      } else {
+        span.style.color = 'rgba(255,255,255,0.6)';
+        span.style.fontWeight = 'normal';
+      }
+    });
+  }
+
+  // Run on load
+  applyLang(currentLang);
+
+  // ─── Lightbox ────────────────────────────────────────────────────
+  (function() {
+    const lightbox = document.getElementById('img-lightbox');
+    const lightboxImg = document.getElementById('img-lightbox-content');
+    const clickableImgs = document.querySelectorAll('.partner-image');
+    if (!lightbox || !lightboxImg || !clickableImgs.length) return;
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.removeAttribute('src');
+    }
+
+    clickableImgs.forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  })();
+  </script>
+</body>
+</html>
