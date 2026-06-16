@@ -24,4 +24,28 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- 下載頁 / Download -->
+  <url>
+    <loc>https://bibcycle.org/download.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 翼使資源 / Wing Bearer -->
+  <url>
+    <loc>https://bibcycle.org/wingbearer.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 教會與機構合作 / Partner -->
+  <url>
+    <loc>https://bibcycle.org/partner.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
