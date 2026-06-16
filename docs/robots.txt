@@ -1,6 +1,7 @@
 # BibCycle 翼旅 — https://bibcycle.org/
 User-agent: *
 Allow: /
+Disallow: /assets/docs/
 
 # Sitemap location
 Sitemap: https://bibcycle.org/sitemap.xml
