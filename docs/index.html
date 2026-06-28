@@ -459,6 +459,44 @@
 
     .screenshot-caption { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 20px; letter-spacing: 0.05em; }
 
+    #bird-identity {
+      background: var(--bg);
+      padding: 100px 40px;
+    }
+    .bird-identity-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .bird-identity-img img {
+      width: 100%;
+      max-width: 280px;
+      display: block;
+      margin: 0 auto;
+    }
+    .bird-identity-text .section-label {
+      margin-bottom: 24px;
+    }
+    .bird-poem {
+      font-size: 17px;
+      line-height: 2.2;
+      color: var(--text);
+      white-space: pre-line;
+    }
+    @media (max-width: 700px) {
+      .bird-identity-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+      .bird-identity-img img {
+        max-width: 180px;
+      }
+    }
+
     /* ── FAQ ── */
     #faq { background: var(--navy); }
     #faq .section-title { color: #fff; text-align: center; margin-bottom: 40px; }
@@ -1100,6 +1138,21 @@
     </div>
   </section>
 
+  <!-- BIRD IDENTITY -->
+  <section id="bird-identity">
+    <div class="bird-identity-inner reveal">
+      <div class="bird-identity-img">
+        <img src="assets/images/bird_real.png"
+             alt="小白鳥"
+             aria-hidden="true">
+      </div>
+      <div class="bird-identity-text">
+        <p class="section-label" data-i18n="bird-label"></p>
+        <div class="bird-poem" data-i18n="bird-poem" data-i18n-html="true"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="overview-section">
     <p class="overview-label" data-i18n="overview-label"></p>
     <div class="overview-image-wrap">
@@ -1332,6 +1385,8 @@
       'pain3-title':    '你不需要看見結果',
       'pain3-desc':     '你只需要把它放到他手裡。',
       'pain3-solution': '',
+      'bird-label':     '牠一直在這裡',
+      'bird-poem':      '每一幅圖裡，有一隻很小的白鳥。<br>小到你第一眼可能沒有看見。<br><br>牠不說話。<br>不解釋。<br>不替你做任何事。<br><br>只是在那裡——<br>每一章，都在。<br>你來的時候，牠在。<br>你離開的時候，牠在。<br>你很久沒來，牠還是在。<br><br>牠是誰？<br>讀著讀著，你會有自己的答案。',
       'mission-label':  '為什麼這場運動存在',
       'mission-text':   '你身邊可能有一個人，<br>你一直記掛著他。<br><br>也許他久未踏入教會。<br>也許他正在低谷，開始問一些大問題。<br>也許你只是覺得，他需要一點什麼。<br><br>你想讓他接觸神的話。<br>只是不知道怎樣開始。<br><br>翼旅想做的，就是把這一步變得簡單一點。<br>一張卡，從你手裡，到他手裡。',
       'mission-builder':'一位回應呼召的神學生，用今天的工具服事下一代。',
@@ -1436,6 +1491,8 @@
       'pain3-title':    '你不需要看见结果',
       'pain3-desc':     '你只需要把它放到他手里。',
       'pain3-solution': '',
+      'bird-label':     '它一直在这里',
+      'bird-poem':      '每一幅图里，有一只很小的白鸟。<br>小到你第一眼可能没有看见。<br><br>它不说话。<br>不解释。<br>不替你做任何事。<br><br>只是在那里——<br>每一章，都在。<br>你来的时候，它在。<br>你离开的时候，它在。<br>你很久没来，它还是在。<br><br>它是谁？<br>读着读着，你会有自己的答案。',
       'mission-label':  '为什么这场运动存在',
       'mission-text':   '你身边可能有一个人，<br>你一直记挂着他。<br><br>也许他久未踏入教会。<br>也许他正在低谷，开始问一些大问题。<br>也许你只是觉得，他需要一点什么。<br><br>你想让他接触神的话。<br>只是不知道怎样开始。<br><br>翼旅想做的，就是把这一步变得简单一点。<br>一张卡，从你手里，到他手里。',
       'mission-builder':'一位回应呼召的神学生，用今天的工具服事下一代。',
@@ -1540,6 +1597,8 @@
       'pain3-title':    'You don\'t need to see the result',
       'pain3-desc':     'You just need to put it in their hands.',
       'pain3-solution': '',
+      'bird-label':     'It has always been here',
+      'bird-poem':      'In every image, there is a very small white bird.<br>Small enough that you might not notice it at first.<br><br>It doesn\'t speak.<br>It doesn\'t explain.<br>It doesn\'t do anything for you.<br><br>It is simply there —<br>in every chapter.<br>When you come, it is here.<br>When you leave, it is here.<br>When you\'ve been gone a long time — it is still here.<br><br>Who is it?<br>Keep reading. You\'ll find your own answer.',
       'mission-label':  'Why this movement exists',
       'mission-text':   'There\'s probably someone in your life<br>you\'ve been carrying in your heart.<br><br>Maybe they haven\'t been to church in years.<br>Maybe they\'re going through something hard, starting to ask bigger questions.<br>Maybe you just feel like they need something — you\'re not sure what.<br><br>You want them to encounter God\'s word.<br>You just don\'t know how to begin.<br><br>Word & Wings exists to make that one step simpler.<br>One card, from your hands to theirs.',
       'mission-builder':'A seminary student answering a call, building for the next generation with today\'s tools.',
