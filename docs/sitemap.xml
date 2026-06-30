@@ -16,6 +16,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bibcycle.org/"/>
   </url>
 
+  <!-- 文章索引 / Articles index -->
+  <url>
+    <loc>https://bibcycle.org/articles/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 文章：讀經計劃停咗 -->
+  <url>
+    <loc>https://bibcycle.org/articles/reading-plan-stopped.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 文章：讀經跟不上進度 -->
+  <url>
+    <loc>https://bibcycle.org/articles/guilt-and-grace.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- 隱私政策 / Privacy Policy -->
   <url>
     <loc>https://bibcycle.org/privacy.html</loc>

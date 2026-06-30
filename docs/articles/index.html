@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="BibCycle 翼旅文章 — 關於讀經、靈修節奏與恩典的思考。寫給讀經卡關、帶著罪疚感看進度表的你。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibcycle.org/articles/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="BibCycle 翼旅">
+  <meta property="og:title"       content="文章 — BibCycle 翼旅">
+  <meta property="og:description" content="關於讀經、靈修節奏與恩典的思考。">
+  <meta property="og:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+  <meta property="og:url"         content="https://bibcycle.org/articles/">
+  <meta property="og:locale"      content="zh_TW">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="文章 — BibCycle 翼旅">
+  <meta name="twitter:description" content="關於讀經、靈修節奏與恩典的思考。">
+  <meta name="twitter:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+
+  <title>文章 — BibCycle 翼旅</title>
+  <link rel="icon" type="image/webp" href="/assets/logo_bird001.webp">
+  <link rel="shortcut icon" type="image/webp" href="/assets/logo_bird001.webp">
+  <link rel="apple-touch-icon" href="/assets/logo_bird001.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD: CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://bibcycle.org/articles/#collectionpage",
+    "url": "https://bibcycle.org/articles/",
+    "name": "文章 — BibCycle 翼旅",
+    "isPartOf": { "@id": "https://bibcycle.org/#website" },
+    "inLanguage": "zh-TW"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2a3f5c;
+      --amber: #FFD27F;
+      --amber-dark: #e8b84b;
+      --bg: #f8f6f1;
+      --bg-warm: #f2ede4;
+      --text: #1a1a1a;
+      --text-muted: #6b6b6b;
+      --serif: 'Noto Serif TC', serif;
+      --sans: 'Noto Sans TC', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(42,63,92,0.96); backdrop-filter: blur(12px);
+    }
+    .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; letter-spacing: 0.04em; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-links a.active { color: var(--amber); }
+
+    main { max-width: 860px; margin: 0 auto; padding: 160px 24px 100px; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    .page-header { margin-bottom: 64px; }
+    .page-label { font-size: 27.5px; font-weight: 400; letter-spacing: 0.25em; color: var(--amber-dark); text-transform: uppercase; margin-bottom: 16px; }
+    h1 { font-family: var(--serif); font-size: clamp(30px, 4vw, 44px); font-weight: 500; color: var(--navy); letter-spacing: 0.03em; margin-bottom: 16px; line-height: 1.4; }
+    .page-sub { font-size: 16px; font-weight: 300; color: var(--text-muted); margin-bottom: 0; line-height: 1.8; max-width: 560px; }
+
+    .article-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .article-card {
+      display: block; text-decoration: none; color: inherit;
+      background: #fff; border-radius: 20px; padding: 34px 30px;
+      border: 1px solid rgba(42,63,92,0.06);
+      border-left: 3px solid var(--amber);
+      box-shadow: 0 8px 28px rgba(42,63,92,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .article-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--amber); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+    }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(42,63,92,0.1); }
+    .article-card:hover::before { transform: scaleX(1); }
+    .article-title { font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--navy); margin-bottom: 14px; line-height: 1.5; }
+    .article-excerpt { font-size: 15px; color: var(--text-muted); line-height: 1.9; }
+    .article-meta {
+      display: inline-block; margin-top: 20px; padding: 6px 12px; border-radius: 999px;
+      font-size: 12px; color: var(--text-muted); letter-spacing: 0.05em;
+      background: rgba(42,63,92,0.04);
+    }
+
+    footer { text-align: center; padding: 40px 24px; font-size: 13px; color: var(--text-muted); }
+    footer a { color: var(--navy); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 16px; }
+      main { padding: 120px 20px 80px; }
+      .page-header { margin-bottom: 40px; }
+      .page-label { font-size: 20px; letter-spacing: 0.2em; }
+      .article-list { grid-template-columns: 1fr; gap: 18px; }
+      .article-card { padding: 28px 24px; }
+      .article-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="nav-logo">Bib<span>Cycle</span></a>
+    <ul class="nav-links">
+      <li><a href="/index.html">主頁</a></li>
+      <li><a href="/articles/" class="active">文章</a></li>
+      <li><a href="/wingbearer.html">翼使資源</a></li>
+      <li><a href="/download.html">下載</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header reveal">
+      <p class="page-label">文章</p>
+      <h1>關於讀經、靈修節奏與恩典</h1>
+      <p class="page-sub">寫給讀經卡關、帶著罪疚感看進度表的你。陳述多過呼籲，不催促。</p>
+    </div>
+
+    <div class="article-list">
+      <a href="/articles/reading-plan-stopped.html" class="article-card reveal reveal-delay-1">
+        <div class="article-title">讀經計劃停咗，唔代表你失敗咗</div>
+        <p class="article-excerpt">線性讀經計劃假設你嘅閱讀生活係連貫、無中斷嘅。問題係，呢個假設同大部分人嘅真實生活唔脗合。</p>
+        <div class="article-meta">讀經習慣</div>
+      </a>
+
+      <a href="/articles/guilt-and-grace.html" class="article-card reveal reveal-delay-2">
+        <div class="article-title">讀經跟不上進度，是失敗，還是被計劃本身困住？</div>
+        <p class="article-excerpt">「我又沒讀了。神會不會覺得我不夠委身？」這個念頭很快，常常在打開讀經 App 那一刻就浮現。</p>
+        <div class="article-meta">靈修與恩典</div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/index.html">bibcycle.org</a>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
