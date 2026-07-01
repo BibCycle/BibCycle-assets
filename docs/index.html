@@ -624,6 +624,7 @@
     .footer-links { display: flex; gap: 32px; list-style: none; }
     .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-social { display: flex; align-items: center; gap: 10px; }
     .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); text-decoration: none; transition: background 0.2s, color 0.2s; }
     .footer-social a:hover { background: rgba(255,210,127,0.15); color: var(--amber); border-color: rgba(255,210,127,0.3); }
     .footer-copyright {
@@ -886,6 +887,9 @@
       .mobile-cta-bar { display: flex; }
     }
     @media (max-width: 960px) {
+      body {
+        padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px));
+      }
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       section { padding: 72px 24px; }
@@ -1294,8 +1298,17 @@
       <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
     </ul>
     <div class="footer-social">
-      <a href="https://www.facebook.com/profile.php?id=61555773296475" target="_blank" rel="noopener" title="Facebook">
+      <a href="https://www.facebook.com/profile.php?id=61555773296475" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.threads.com/@bibcycle_bible" target="_blank" rel="noopener" title="Threads" aria-label="Threads">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.47 10.78c-.27-.13-.55-.25-.84-.35-.05-1.72-.83-2.7-2.24-2.76-1.47-.06-2.46.79-2.98 2.54l-1.64-.49c.76-2.59 2.41-3.87 4.95-3.76 2.4.1 3.72 1.73 3.94 4.83 1.19.59 2.05 1.44 2.32 2.81.49 2.48-1.08 4.54-4.2 5.04-3.66.58-6.13-1.09-6.94-4.53l1.73-.41c.56 2.4 2.15 3.5 4.93 3.06 2.15-.34 3.18-1.57 2.88-3.08-.17-.87-.77-1.46-1.91-1.84-.48 2.07-1.79 3.21-3.65 3.21-1.68 0-2.86-1.02-2.86-2.47 0-1.78 1.47-3.04 3.77-3.19.27-.02.54-.03.8-.01-.09-1.61-.66-2.37-1.89-2.42-1.03-.04-1.77.52-2.21 1.7l-1.67-.43c.63-2.03 2.04-3.07 4.01-2.99 2.39.1 3.59 1.63 3.7 4.7.11.04.22.08.33.13l-.33.81Zm-3.89 1.08c-1.28.08-2.07.67-2.07 1.46 0 .56.45.96 1.16.96.98 0 1.74-.73 2.02-2.18-.37-.04-.74-.05-1.11-.24Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/bibcycle_bible/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5ZM18 6.35a1.15 1.15 0 1 1-1.15 1.15A1.15 1.15 0 0 1 18 6.35Z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@Bibcycle" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.7V8.3l6.3 3.7-6.3 3.7Z"/></svg>
       </a>
     </div>
   </footer>
