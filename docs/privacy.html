@@ -9,7 +9,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--sans);
       background: #f9f9f7;
       color: #222;
       line-height: 1.75;
@@ -17,7 +17,7 @@
 
     /* -- header -- */
     header {
-      background: #1A3A5C;
+      background: var(--navy);
       color: #fff;
       padding: 48px 24px 40px;
       text-align: center;
@@ -25,6 +25,7 @@
     header .dove { font-size: 2.4rem; margin-bottom: 12px; }
     header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: 0.02em; }
     header p  { margin-top: 8px; font-size: 0.95rem; opacity: 0.75; }
+    .privacy-language-link { margin-bottom: 28px; text-align: right; font-size: 0.9rem; }
 
     /* -- layout -- */
     main {
@@ -36,12 +37,12 @@
     /* -- notice banner -- */
     .notice {
       background: #EBF3FA;
-      border-left: 4px solid #1A3A5C;
+      border-left: 4px solid var(--navy);
       border-radius: 6px;
       padding: 16px 20px;
       margin-bottom: 40px;
       font-size: 0.95rem;
-      color: #1A3A5C;
+      color: var(--navy);
     }
     .notice strong { display: block; margin-bottom: 4px; font-size: 1rem; }
 
@@ -49,10 +50,10 @@
     section { margin-bottom: 40px; }
 
     h2 {
-      font-family: 'Noto Serif TC', serif;
+      font-family: var(--serif);
       font-size: 1.1rem;
       font-weight: 500;
-      color: #1A3A5C;
+      color: var(--navy);
       border-bottom: 2px solid #EBF3FA;
       padding-bottom: 6px;
       margin-bottom: 14px;
@@ -85,7 +86,7 @@
       font-size: 0.93rem;
     }
     th {
-      background: #1A3A5C;
+      background: var(--navy);
       color: #fff;
       padding: 10px 14px;
       text-align: left;
@@ -98,7 +99,7 @@
     tr:nth-child(even) td { background: #f5f9fd; }
 
     a {
-      color: #1A3A5C;
+      color: var(--navy);
       font-weight: 600;
       text-decoration: none;
     }
@@ -112,11 +113,27 @@
       color: #999;
       border-top: 1px solid #e4e4e4;
     }
-    footer span { color: #1A3A5C; font-weight: 600; }
+    footer span { color: var(--navy); font-weight: 600; }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bibcycle-core.css">
+  <link rel="stylesheet" href="assets/css/bibcycle-nav.css">
 </head>
 <body>
+<nav class="bc-nav bc-nav--privacy" aria-label="Main">
+    <a class="bc-nav__logo" href="index.html">Bib<span>Cycle</span></a>
+    <ul class="bc-nav__links" id="bc-nav-links">
+      <li><a href="index.html#video-section">介紹影片</a></li>
+      <li><a href="index.html#mission">使命</a></li>
+      <li><a href="index.html#how">成為翼使</a></li>
+      <li><a href="index.html#get-card">取得卡片</a></li>
+      <li><a href="wingbearer.html">翼使資源</a></li>
+      <li><a href="articles/">文章</a></li>
+      <li><a href="download.html">下載</a></li>
+      <li><a href="partner.html">教會與機構</a></li>
+    </ul>
+    <button type="button" class="bc-nav__toggle" aria-expanded="false" aria-controls="bc-nav-links" aria-label="選單">選單</button>
+  </nav>
 
 <header>
   <a href="https://bibcycle.org/" style="display:inline-block; color:rgba(255,255,255,0.6); font-size:13px; letter-spacing:0.08em; text-decoration:none; margin-bottom:20px;">← 返回 bibcycle.org</a>
@@ -126,6 +143,7 @@
 </header>
 
 <main>
+  <p class="privacy-language-link"><a href="#en">English ↓</a></p>
 
   <div class="notice">
     <strong>簡短版本</strong>
@@ -276,9 +294,9 @@
   </section>
 
   <!-- ENGLISH VERSION DIVIDER -->
-  <div style="border-top: 2px solid #1A3A5C; margin: 60px 0 48px; padding-top: 48px;">
-    <p style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #1A3A5C; opacity: 0.5; margin-bottom: 8px;">English Version</p>
-    <h2 style="font-size: 1.5rem; font-weight: 700; color: #1A3A5C; border: none; padding: 0; margin-bottom: 4px;">BibCycle · Privacy Policy</h2>
+  <div id="en" style="border-top: 2px solid var(--navy); margin: 60px 0 48px; padding-top: 48px;">
+    <p style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy); opacity: 0.5; margin-bottom: 8px;">English Version</p>
+    <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--navy); border: none; padding: 0; margin-bottom: 4px;">BibCycle · Privacy Policy</h2>
     <p style="font-size: 0.9rem; color: #999; margin-bottom: 40px;">Last updated: May 2026 &nbsp;|&nbsp; Version 1.0 (current)</p>
 
     <div class="notice">
@@ -393,5 +411,6 @@
   🕊 &nbsp;<span>「BibCycle 翼旅」</span> &nbsp;·&nbsp; 隱私權政策 v1.0 &nbsp;·&nbsp; 目前版本
 </footer>
 
+  <script src="assets/js/bibcycle-nav.js"></script>
 </body>
 </html>
