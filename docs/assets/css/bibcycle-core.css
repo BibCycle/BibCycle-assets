@@ -29,8 +29,8 @@
 
 .wing-term { color: var(--amber); }
 
-/* Intrinsic dimensions reserve space; authored display-size rules still override this. */
-img[width][height] { height: auto; }
+/* Keep intrinsic dimensions as aspect-ratio hints without overriding component sizing. */
+img { height: auto; }
 
 :focus-visible {
   outline: 3px solid var(--amber);
