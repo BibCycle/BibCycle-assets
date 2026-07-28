@@ -247,25 +247,28 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
   </style>
+  <link rel="stylesheet" href="assets/css/bibcycle-core.css">
+  <link rel="stylesheet" href="assets/css/bibcycle-nav.css">
 </head>
 <body>
-  <nav class="top-nav" aria-label="Main navigation">
-    <div class="top-nav-left">
-      <a href="index.html" class="nav-logo">Bib<span>Cycle</span></a>
-      <a href="index.html#video-section" class="top-nav-link" data-i18n="nav-intro"></a>
-      <a href="index.html#mission" class="top-nav-link" data-i18n="nav-mission"></a>
-      <a href="index.html#how" class="top-nav-link" data-i18n="nav-become"></a>
-      <a href="index.html#get-card" class="top-nav-link" data-i18n="nav-getcard"></a>
-      <a href="wingbearer.html" class="top-nav-link" data-i18n="nav-wingbearer"></a>
-      <a href="articles/" class="top-nav-link" data-i18n="nav-articles"></a>
-      <a href="download.html" class="top-nav-link" data-i18n="nav-download"></a>
-      <a href="partner.html" class="top-nav-link partner-link" data-i18n="nav-partner"></a>
+  <nav class="bc-nav" aria-label="Main">
+    <a class="bc-nav__logo" href="index.html">Bib<span>Cycle</span></a>
+    <ul class="bc-nav__links" id="bc-nav-links">
+      <li><a href="index.html#video-section" data-i18n="nav-video">介紹影片</a></li>
+      <li><a href="index.html#mission" data-i18n="nav-mission">使命</a></li>
+      <li><a href="index.html#how" data-i18n="nav-how">成為翼使</a></li>
+      <li><a href="index.html#get-card" data-i18n="nav-getcard">取得卡片</a></li>
+      <li><a href="wingbearer.html" data-i18n="nav-wingbearer">翼使資源</a></li>
+      <li><a href="articles/" data-i18n="nav-articles">文章</a></li>
+      <li><a href="download.html" data-i18n="nav-download">下載</a></li>
+      <li><a href="partner.html" data-i18n="nav-partner" class="is-active" aria-current="page">教會與機構</a></li>
+    </ul>
+    <div class="bc-nav__lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang="zh-TW" aria-pressed="true">繁</button>
+      <button type="button" class="lang-btn" data-lang="zh-CN" aria-pressed="false">简</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
-    <div class="top-nav-right">
-      <span onclick="setLang('zh-TW')" style="cursor:pointer;">繁</span>
-      <span onclick="setLang('zh-CN')" style="cursor:pointer;">简</span>
-      <span onclick="setLang('en')" style="cursor:pointer;">EN</span>
-    </div>
+    <button type="button" class="bc-nav__toggle" aria-expanded="false" aria-controls="bc-nav-links" aria-label="選單">選單</button>
   </nav>
 
   <main class="partner-wrap">
@@ -284,7 +287,7 @@
     <section class="partner-section">
       <h2 class="partner-title" data-i18n="partner-s2-title"></h2>
       <div class="partner-image-wrap">
-        <img src="assets/images/bibcycle_Cycle.png" alt="運動循環圖" class="partner-image">
+        <img width="1080" height="1350" src="assets/images/bibcycle_Cycle.png" alt="運動循環圖" class="partner-image" loading="lazy">
       </div>
       <p class="partner-body" data-i18n="partner-s2-body" data-i18n-html="true"></p>
     </section>
@@ -293,7 +296,7 @@
     <section class="partner-section">
       <h2 class="partner-title" data-i18n="partner-s3-title"></h2>
       <div class="partner-image-wrap">
-        <img src="assets/images/bibcycle_tradition_bridge_vertical.png" alt="翼旅卡與傳統派發對比圖" class="partner-image">
+        <img width="1080" height="1350" src="assets/images/bibcycle_tradition_bridge_vertical.png" alt="翼旅卡與傳統派發對比圖" class="partner-image" loading="lazy">
       </div>
       <p class="partner-body" data-i18n="partner-s3-body" data-i18n-html="true"></p>
     </section>
@@ -313,149 +316,22 @@
 
   </main>
 
+  <footer class="bc-footer">
+  <a class="bc-footer__brand" href="index.html">Bib<span>Cycle</span></a>
+  <p class="bc-footer__tagline" data-i18n="footer-tagline"></p>
+  <ul class="bc-footer__links">
+    <li><a href="privacy.html" data-i18n="footer-privacy"></a></li>
+    <li><a href="mailto:bibcyclebib@gmail.com" data-i18n="footer-contact"></a></li>
+    <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
+  </ul>
+  <div class="bc-footer__copyright" data-i18n="footer-copyright"></div>
+</footer>
+
   <div id="img-lightbox" class="lightbox" aria-hidden="true">
-    <img id="img-lightbox-content" class="lightbox-img" alt="">
+    <img id="img-lightbox-content" class="lightbox-img" alt="" width="1200" height="900">
   </div>
 
   <script>
-  const T = {
-    'zh-TW': {
-      'partner-page-title': '合作 — BibCycle 翼旅',
-      'partner-eyebrow': '給教會與機構',
-      'partner-h1': '如果你也想，把神的話帶給更多人',
-      'nav-intro':      '介紹影片',
-      'nav-video':      '介紹影片',
-      'nav-mission':    '使命',
-      'nav-become':     '成為翼使',
-      'nav-how':        '成為翼使',
-      'nav-getcard':    '取得卡片',
-      'nav-wingbearer': '翼使資源',
-      'nav-articles':   '文章',
-      'nav-download':   '下載',
-      'nav-partner':    '教會與機構',
-      'partner-s1-anchor': '一個安靜的讀經 App，與一張可以親手遞出的卡。',
-      'partner-s1-body': 'BibCycle 同時是一個讀經軟件，也是一個運動的核心——用的人讀的時候覺得好，再把神的話帶到記掛緊的人面前。',
-      'partner-s2-title': '這場運動，是這樣流動的',
-      'partner-s2-body': '成為翼使 → 記掛那個人 → 遞卡 → 朋友走進聖經 → 循環延續。<br>每一張卡的背後，是一個具體記掛緊的人——不是廣派，是一個人遞給一個人。',
-      'partner-s3-title': '翼旅卡與傳統派發的分別',
-      'partner-s3-body': '翼旅卡，延續著派發聖經的那份心意——<br>但它承載的，是一張卡，對應一個你心裡記掛著的人。<br>它不是聖經的替代，只是一個記號——遞出之後，指向 App 裡一段安靜的相遇。<br>輕，可隨身；低成本，隨時可遞。',
-      'partner-s4-title': '我們能提供什麼',
-      'partner-s4-body': '翼旅卡（實體）可供索取，翼使指引可供參考。歡迎 email 聯絡，我們會視乎情況提供。',
-      'partner-cta-btn': '透過 Email 聯絡我們',
-    },
-    'zh-CN': {
-      'partner-page-title': '合作 — BibCycle 翼旅',
-      'partner-eyebrow': '给教会与机构',
-      'partner-h1': '如果你也想，把神的话带给更多人',
-      'nav-intro':      '介绍影片',
-      'nav-video':      '介绍影片',
-      'nav-mission':    '使命',
-      'nav-become':     '成为翼使',
-      'nav-how':        '成为翼使',
-      'nav-getcard':    '取得卡片',
-      'nav-wingbearer': '翼使资源',
-      'nav-articles':   '文章',
-      'nav-download':   '下载',
-      'nav-partner':    '教会与机构',
-      'partner-s1-anchor': '一个安静的读经 App，与一张可以亲手递出的卡。',
-      'partner-s1-body': 'BibCycle 同时是一个读经软件，也是一个运动的核心——用的人读的时候觉得好，再把神的话带到记挂着的人面前。',
-      'partner-s2-title': '这场运动，是这样流动的',
-      'partner-s2-body': '成为翼使 → 记挂那个人 → 递卡 → 朋友走进圣经 → 循环延续。<br>每一张卡的背后，是一个具体记挂着的人——不是广派，是一个人递给一个人。',
-      'partner-s3-title': '翼旅卡与传统派发的区别',
-      'partner-s3-body': '翼旅卡，延续着派发圣经的那份心意——<br>但它承载的，是一张卡，对应一个你心里记挂着的人。<br>它不是圣经的替代，只是一个记号——递出之后，指向 App 里一段安静的相遇。<br>轻，可随身；低成本，随时可递。',
-      'partner-s4-title': '我们能提供什么',
-      'partner-s4-body': '翼旅卡（实体）可供索取，翼使指引可供参考。欢迎 email 联系，我们会视情况提供。',
-      'partner-cta-btn': '通过 Email 联系我们',
-    },
-    'en': {
-      'partner-page-title': 'Partners — BibCycle',
-      'partner-eyebrow': 'For Churches & Organizations',
-      'partner-h1': 'If you’d also like to bring God’s word to more people',
-      'nav-intro':      'Intro Video',
-      'nav-video':      'Intro Video',
-      'nav-mission':    'Mission',
-      'nav-become':     'Become a Wing Bearer',
-      'nav-how':        'Become a Wing Bearer',
-      'nav-getcard':    'Get the card',
-      'nav-wingbearer': 'Wing Bearer',
-      'nav-articles':   'Articles',
-      'nav-download':   'Download',
-      'nav-partner':    'Churches & Orgs',
-      'partner-s1-anchor': 'A quiet Bible-reading app, and a card you can hand to someone.',
-      'partner-s1-body': 'BibCycle is both a Bible-reading app and the core of a movement — where readers who find it good can bring God\'s word to the ones they carry in their hearts.',
-      'partner-s2-title': 'This is how the movement flows',
-      'partner-s2-body': 'Become a Wing Bearer → Keep that person in mind → Hand them the card → Friend walks into the Bible → The cycle continues.<br>Behind every card is a specific person you carry in your heart — not mass distribution, but one person handing it to another.',
-      'partner-s3-title': 'The difference between BibCycle cards and traditional distribution',
-      'partner-s3-body': 'BibCycle cards carry on the same heart as distributing Bibles —<br>but what it carries is a single card, meant for one specific person in your heart.<br>It is not a replacement for the Bible, but a sign — once handed out, it points to a quiet encounter inside the app.<br>Lightweight and pocket-sized; low cost, ready to be given at any moment.',
-      'partner-s4-title': 'What we can provide',
-      'partner-s4-body': 'Physical BibCycle cards are available for request, and Wing Bearer guides are available for reference. Feel free to contact us via email, and we will provide them based on availability.',
-      'partner-cta-btn': 'Contact us via email',
-    }
-  };
-
-  let currentLang = localStorage.getItem('bibcycle-lang') || 'zh-TW';
-
-  function setLang(lang) {
-    applyLang(lang);
-  }
-
-  function highlightWingTerm(text) {
-    return text.replace(/翼使/g, '<span class="wing-term">翼使</span>');
-  }
-
-  function applyLang(lang) {
-    currentLang = lang;
-    localStorage.setItem('bibcycle-lang', lang);
-    const dict = T[lang];
-    if (!dict) return;
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      const val = dict[key];
-      if (val === undefined) return;
-      const isZh = lang === 'zh-TW' || lang === 'zh-CN';
-      const shouldHighlightWingTerm = isZh
-        && val.includes('翼使')
-        && el.tagName !== 'TITLE';
-      if (el.getAttribute('data-i18n-html') === 'true') {
-        el.innerHTML = shouldHighlightWingTerm ? highlightWingTerm(val) : val;
-      } else if (shouldHighlightWingTerm) {
-        el.innerHTML = highlightWingTerm(val);
-      } else {
-        el.textContent = val;
-      }
-    });
-
-    // Update html lang attr
-    document.documentElement.lang = lang === 'zh-TW' ? 'zh-TW' : lang === 'zh-CN' ? 'zh-CN' : 'en';
-
-    // Update font for English
-    const serif = lang === 'en'
-      ? "'Noto Serif', serif"
-      : (lang === 'zh-CN' ? "'Noto Serif SC', 'Noto Serif TC', serif" : "'Noto Serif TC', serif");
-    document.documentElement.style.setProperty('--serif', serif);
-    const sans = lang === 'en'
-      ? "'Noto Sans', sans-serif"
-      : (lang === 'zh-CN' ? "'Noto Sans SC', 'Noto Sans TC', sans-serif" : "'Noto Sans TC', sans-serif");
-    document.documentElement.style.setProperty('--sans', sans);
-
-    // Update active class on top-nav-right spans
-    const spans = document.querySelectorAll('.top-nav-right span');
-    spans.forEach(span => {
-      const onclickAttr = span.getAttribute('onclick');
-      if (onclickAttr && onclickAttr.includes(lang)) {
-        span.style.color = 'var(--amber)';
-        span.style.fontWeight = '500';
-      } else {
-        span.style.color = 'rgba(255,255,255,0.6)';
-        span.style.fontWeight = 'normal';
-      }
-    });
-  }
-
-  // Run on load
-  applyLang(currentLang);
-
   // ─── Lightbox ────────────────────────────────────────────────────
   (function() {
     const lightbox = document.getElementById('img-lightbox');
@@ -487,5 +363,9 @@
     });
   })();
   </script>
+  <script src="assets/js/i18n/common.js"></script>
+  <script src="assets/js/i18n/partner.js"></script>
+  <script src="assets/js/bibcycle-i18n.js"></script>
+  <script src="assets/js/bibcycle-nav.js"></script>
 </body>
 </html>
