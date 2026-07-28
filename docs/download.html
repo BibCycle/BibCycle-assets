@@ -224,6 +224,25 @@
     }
 
     @media (max-width: 640px) {
+      body { padding: 0; }
+      .bc-nav { margin-bottom: 8px; }
+      .wrap {
+        min-height: 0;
+        padding: 8px 24px 40px;
+      }
+      .dl-logo { margin-bottom: -52px; }
+      .dl-bird {
+        width: min(260px, 100%);
+        height: auto;
+        aspect-ratio: 1;
+        margin-bottom: -54px;
+      }
+      h1 {
+        max-width: 100%;
+        line-height: 1.45;
+        text-wrap: balance;
+      }
+      .download-facts { width: 100%; }
       .dl-btn-group {
         flex-direction: column;
         align-items: center;
