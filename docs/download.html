@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="非線性聖經讀經 App，免費，iOS 及 Android。從 1,189 章隨機抽取，無壓力走完整本聖經。">
   <meta name="twitter:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
 
-  <title>下載 BibCycle 翼旅 — 免費聖經讀經 App · iOS & Android</title>
+  <title data-i18n="download-page-title">下載 BibCycle 翼旅 — 免費聖經讀經 App · iOS & Android</title>
   <link rel="icon" type="image/webp" href="assets/logo_bird001.webp">
   <link rel="shortcut icon" type="image/webp" href="assets/logo_bird001.webp">
   <link rel="apple-touch-icon" href="assets/logo_bird001.webp">
@@ -153,6 +153,14 @@
       font-weight: 400;
     }
 
+    .download-facts {
+      display: grid;
+      gap: 8px;
+      margin-top: 28px;
+      color: rgba(255,255,255,.72);
+      font-size: 14px;
+    }
+
     .btn-group {
       display: flex;
       gap: 16px;
@@ -215,7 +223,7 @@
       .top-nav-right { margin-top: 4px; }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .dl-btn-group {
         flex-direction: column;
         align-items: center;
@@ -226,52 +234,76 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/css/bibcycle-core.css">
+  <link rel="stylesheet" href="assets/css/bibcycle-nav.css">
 </head>
 <body>
-  <nav class="top-nav" aria-label="Main navigation">
-    <div class="top-nav-left">
-      <a href="index.html" class="nav-logo">Bib<span>Cycle</span></a>
-      <a href="index.html#video-section" class="top-nav-link">介紹影片</a>
-      <a href="index.html#mission" class="top-nav-link">使命</a>
-      <a href="index.html#how" class="top-nav-link">成為翼使</a>
-      <a href="index.html#get-card" class="top-nav-link">取得卡片</a>
-      <a href="wingbearer.html" class="top-nav-link">翼使資源</a>
-      <a href="articles/" class="top-nav-link">文章</a>
-      <a href="download.html" class="top-nav-link active">下載</a>
-      <a href="partner.html" class="top-nav-link partner-link" data-i18n="nav-partner">教會與機構</a>
+  <nav class="bc-nav" aria-label="Main">
+    <a class="bc-nav__logo" href="index.html">Bib<span>Cycle</span></a>
+    <ul class="bc-nav__links" id="bc-nav-links">
+      <li><a href="index.html#video-section" data-i18n="nav-video">介紹影片</a></li>
+      <li><a href="index.html#mission" data-i18n="nav-mission">使命</a></li>
+      <li><a href="index.html#how" data-i18n="nav-how">成為翼使</a></li>
+      <li><a href="index.html#get-card" data-i18n="nav-getcard">取得卡片</a></li>
+      <li><a href="wingbearer.html" data-i18n="nav-wingbearer">翼使資源</a></li>
+      <li><a href="articles/" data-i18n="nav-articles">文章</a></li>
+      <li><a href="download.html" data-i18n="nav-download" class="is-active" aria-current="page">下載</a></li>
+      <li><a href="partner.html" data-i18n="nav-partner">教會與機構</a></li>
+    </ul>
+    <div class="bc-nav__lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang="zh-TW" aria-pressed="true">繁</button>
+      <button type="button" class="lang-btn" data-lang="zh-CN" aria-pressed="false">简</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
-    <div class="top-nav-right">
-      <span>繁</span>
-      <span>简</span>
-      <span>EN</span>
-    </div>
+    <button type="button" class="bc-nav__toggle" aria-expanded="false" aria-controls="bc-nav-links" aria-label="選單">選單</button>
   </nav>
 
   <main class="wrap">
     <div class="dl-logo">Bib<span>Cycle</span></div>
-    <img class="dl-bird" src="assets/logo_bird002.png" alt="BibCycle bird">
+    <img width="2760" height="1504" class="dl-bird" src="assets/logo_bird002.png" alt="BibCycle bird" loading="eager" fetchpriority="high">
 
-    <h1>願你展翼，旅程開始</h1>
-    <p class="dl-sub">Word &amp; Wings</p>
+    <h1 data-i18n="download-title">願你展翼，旅程開始</h1>
+    <p class="dl-sub" data-i18n="download-subtitle">Word &amp; Wings</p>
 
     <div class="btn-group dl-btn-group">
       <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990" class="btn btn-primary" target="_blank" rel="noopener">
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
         <div>
-          <span class="btn-label-sub">Download on the</span>
+          <span class="btn-label-sub" data-i18n="btn-download-on">Download on the</span>
           App Store
         </div>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle" class="btn btn-secondary" target="_blank" rel="noopener">
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg>
         <div>
-          <span class="btn-label-sub">Get it on</span>
+          <span class="btn-label-sub" data-i18n="btn-get-on">Get it on</span>
           Google Play
         </div>
       </a>
     </div>
 
-    <a class="footer-link" href="https://bibcycle.org/">bibcycle.org</a>
+    <!-- Update the local-progress claim when optional cloud sync ships; see privacy.html §7. -->
+    <div class="download-facts" aria-label="App facts">
+      <p data-i18n="download-free">完全免費</p>
+      <p data-i18n="download-no-ads">無廣告及追蹤</p>
+      <p data-i18n="download-local-progress">閱讀進度只留在裝置</p>
+    </div>
+
+    <!-- Update the local-progress claim when optional cloud sync ships; see privacy.html §7. -->
+    <footer class="bc-footer">
+  <a class="bc-footer__brand footer-link" href="index.html" data-i18n="download-return">還未認識翼旅？先看看這段旅程 →</a>
+  <p class="bc-footer__tagline" data-i18n="footer-tagline"></p>
+  <ul class="bc-footer__links">
+    <li><a href="privacy.html" data-i18n="footer-privacy"></a></li>
+    <li><a href="mailto:bibcyclebib@gmail.com" data-i18n="footer-contact"></a></li>
+    <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
+  </ul>
+  <div class="bc-footer__copyright" data-i18n="footer-copyright"></div>
+</footer>
   </main>
+  <script src="assets/js/i18n/common.js"></script>
+  <script src="assets/js/i18n/download.js"></script>
+  <script src="assets/js/bibcycle-i18n.js"></script>
+  <script src="assets/js/bibcycle-nav.js"></script>
 </body>
 </html>
