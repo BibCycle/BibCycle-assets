@@ -6,7 +6,7 @@
 |---|---|---|
 | Console errors | Pass | Fresh tabs for all five pages produced no errors. |
 | Horizontal overflow | Pass | No overflow found at 320px in fresh tabs; the full 320, 375, 768, 960, and 1440px sweep also found none after cache refresh. |
-| Image dimensions | Pass | All 37 page `<img>` elements now have explicit `width` and `height`; source images have an appropriate `loading` value. |
+| Image dimensions | Reverted | Explicit `width`/`height` attributes conflict with the pages’ existing CSS width rules and visibly stretch artwork. They were removed in the follow-up visual fix; safe loading priorities remain. |
 | Hero image loading | Pass | The download bird is `loading="eager" fetchpriority="high"`; non-hero source images are lazy-loaded. |
 | Mobile menu | Pass | At 375px it opens the full-screen link panel, changes `aria-expanded` to `true`, locks scroll, moves focus to the first link, and Escape restores focus to the toggle and unlocks scroll. |
 | Resize reset | Pass (code) | `matchMedia` and `resize` handlers force-close the panel and unlock body scrolling at 960px+. The in-app responsive viewport does not apply a live width change to an existing tab, so this assertion was inspected in code rather than exercised by the harness. |
