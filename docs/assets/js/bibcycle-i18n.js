@@ -37,6 +37,12 @@
       }
     });
 
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      var altKey = el.getAttribute('data-i18n-alt');
+      var alt = dict[altKey];
+      if (alt !== undefined) el.setAttribute('alt', alt);
+    });
+
     document.documentElement.lang = lang === 'zh-TW' ? 'zh-TW' : lang === 'zh-CN' ? 'zh-CN' : 'en';
     var serif = lang === 'en' ? "'Noto Serif', serif" : (lang === 'zh-CN' ? "'Noto Serif SC', 'Noto Serif TC', serif" : "'Noto Serif TC', serif");
     document.documentElement.style.setProperty('--serif', serif);

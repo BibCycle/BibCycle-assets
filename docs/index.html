@@ -104,9 +104,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bibcycle-core.css">
+  <link rel="stylesheet" href="assets/css/bibcycle-nav.css">
   <link rel="stylesheet" href="assets/css/scroll-effects.css">
   <script>document.documentElement.classList.add('js')</script>
-  <script src="assets/js/scroll-effects.js" defer></script>
+  <script defer src="assets/js/scroll-effects.js"></script>
 
   <script>
     const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -121,94 +123,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --navy: #2a3f5c;
-      --amber: #FFD27F;
-      --amber-dark: #e8b84b;
-      --bg: #f8f6f1;
-      --bg-warm: #f2ede4;
-      --text: #1a1a1a;
-      --text-muted: #6b6b6b;
-      --serif: 'Noto Serif TC', serif;
-      --sans: 'Noto Sans TC', sans-serif;
-      --nav-logo-size: 22px;
-      --nav-link-size: 14px;
-      --nav-padding-x: 60px;
-      --nav-padding-y: 20px;
-    }
-
     @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
     body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: var(--nav-padding-y) var(--nav-padding-x);
-      display: flex; align-items: center; justify-content: space-between;
-      transition: background 0.3s, backdrop-filter 0.3s;
-      --scroll-nav-transition: background 0.3s, backdrop-filter 0.3s, transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    nav.scrolled { background: rgba(42,63,92,0.96); backdrop-filter: blur(12px); }
-
-    .nav-logo { font-family: var(--serif); font-size: var(--nav-logo-size); font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
-    .nav-logo span { color: var(--amber); }
-
-    .nav-right { display: flex; align-items: center; gap: 36px; }
-
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: var(--nav-link-size); letter-spacing: 0.05em; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--amber); }
-    .nav-links a.nav-key-link {
-      color: var(--amber);
-      border: 1px solid rgba(255,210,127,0.42);
-      background: rgba(255,210,127,0.12);
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-    .nav-links a.nav-key-link:hover {
-      color: #fff;
-      border-color: rgba(255,210,127,0.7);
-      background: rgba(255,210,127,0.28);
-    }
-
-    .top-nav-link.partner-link {
-      border: 1px solid rgba(255,210,127,0.4);
-      border-radius: 999px;
-      padding: 6px 16px;
-      color: var(--amber);
-    }
-    .top-nav-link.partner-link:hover {
-      background: rgba(255,210,127,0.08);
-      color: var(--amber);
-    }
-
-    /* Language switcher */
-    .lang-switcher {
-      display: flex; align-items: center;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-    .lang-btn {
-      padding: 5px 11px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.45);
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      font-family: var(--sans);
-      transition: color 0.2s, background 0.2s;
-      line-height: 1;
-    }
-    .lang-btn:hover { color: rgba(255,255,255,0.75); }
-    .lang-btn.active { color: var(--amber); background: rgba(255,210,127,0.1); }
-    .lang-sep { color: rgba(255,255,255,0.15); font-size: 11px; user-select: none; }
-    .wing-term { color: var(--amber); }
 
     /* ── HERO ── */
     #hero {
@@ -411,7 +327,7 @@
     .phone-mockup.center { transform: scale(1.08) translateY(-16px); }
     .phone-mockup.center:hover { transform: scale(1.08) translateY(-24px); }
     .phone-screen { background: #fff; border-radius: 28px; overflow: hidden; aspect-ratio: 9/19.5; position: relative; }
-    .phone-img {
+    img.phone-img[width][height] {
       width: 100%;
       height: 100%;
       display: block;
@@ -623,28 +539,6 @@
     #cta .section-label { color: var(--amber); }
     .cta-subtitle { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 48px; line-height: 1.9; }
 
-    /* ── FOOTER ── */
-    footer { background: #1a2b3f; padding: 48px 60px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .footer-brand-wrap { display: flex; flex-direction: column; gap: 8px; }
-    .footer-brand { font-family: var(--serif); font-size: 18px; font-weight: 500; color: rgba(255,255,255,0.6); }
-    .footer-brand span { color: var(--amber); }
-    .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; }
-    .footer-links { display: flex; gap: 32px; list-style: none; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: rgba(255,255,255,0.8); }
-    .footer-social { display: flex; align-items: center; gap: 10px; }
-    .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); text-decoration: none; transition: background 0.2s, color 0.2s; }
-    .footer-social a:hover { background: rgba(255,210,127,0.15); color: var(--amber); border-color: rgba(255,210,127,0.3); }
-    .footer-copyright {
-      background: #1a2b3f;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-      padding: 14px 24px 24px;
-      color: rgba(255,255,255,0.42);
-      font-size: 12px;
-      letter-spacing: 0.04em;
-    }
-
     /* ── REVEAL ── */
     html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     html.js .reveal.visible { opacity: 1; transform: none; }
@@ -707,6 +601,7 @@
     }
 .card-img {
       width: 100%;
+      height: auto;
       max-width: 420px;
       border-radius: 16px;
       box-shadow: 0 24px 64px rgba(42,63,92,0.15);
@@ -819,7 +714,6 @@
     }
 
     /* ── READABILITY BOOST ── */
-    .nav-links a { font-size: 16px; }
     .hero-subtitle { font-size: 22px; line-height: 1.8; }
     .btn { font-size: 17px; }
     .btn-label-sub { font-size: 13px; }
@@ -834,8 +728,6 @@
     .faq-q { font-size: 19px; }
     .faq-a { font-size: 18px; line-height: 1.95; }
     .cta-subtitle { font-size: 19px; line-height: 2; color: rgba(255,255,255,0.72); }
-    .footer-links a { font-size: 16px; color: rgba(255,255,255,0.55); }
-    .footer-tagline { font-size: 14px; }
 
     @media (max-width: 960px) {
       .card-showcase-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -899,14 +791,11 @@
       body {
         padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px));
       }
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
       section { padding: 72px 24px; }
       .mission-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
       .pain-grid, .testimonials-grid, .steps-container { grid-template-columns: 1fr; }
       .screenshots-wrapper { gap: 16px; }
       .phone-mockup { width: 160px; }
-      footer { flex-direction: column; gap: 24px; text-align: center; }
       #get-card > div { grid-template-columns: 1fr !important; gap: 24px !important; }
       .qr-block { display: block; }
       .hero-title { font-size: 34px; }
@@ -938,13 +827,11 @@
       cursor: pointer;
     }
   </style>
-  <link rel="stylesheet" href="assets/css/bibcycle-core.css">
-  <link rel="stylesheet" href="assets/css/bibcycle-nav.css">
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="bc-nav" id="main-nav" data-scroll-nav data-scroll-nav-mode="fixed" aria-label="Main">
+  <nav class="bc-nav bc-nav--fixed" id="main-nav" data-scroll-nav data-scroll-nav-mode="fixed" aria-label="Main">
     <a class="bc-nav__logo is-active" href="index.html" aria-current="page">Bib<span>Cycle</span></a>
     <ul class="bc-nav__links" id="bc-nav-links">
       <li><a href="index.html#video-section" data-i18n="nav-video">介紹影片</a></li>
@@ -1022,7 +909,7 @@
         <div class="mission-builder" data-i18n="mission-builder" data-i18n-html="true"></div>
       </div>
       <div class="reveal reveal-delay-2" style="text-align:center;">
-        <img src="assets/images/wait_001.png"
+        <img src="assets/images/wait_001.png" width="1149" height="689"
              alt=""
              aria-hidden="true"
              style="width:100%; max-width:300px; border-radius:20px;" loading="lazy">
@@ -1041,21 +928,21 @@
       <div class="pain-grid">
         <div class="pain-card reveal reveal-delay-1">
           <div class="pain-number">01</div>
-          <img src="assets/images/pain_001.png" alt="" aria-hidden="true"
+          <img src="assets/images/pain_001.png" width="1738" height="933" alt="" aria-hidden="true"
                style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;" loading="lazy">
           <h3 class="pain-title" data-i18n="pain1-title"></h3>
           <p class="pain-desc" data-i18n="pain1-desc"></p>
         </div>
         <div class="pain-card reveal reveal-delay-2">
           <div class="pain-number">02</div>
-          <img src="assets/images/pain_002.png" alt="" aria-hidden="true"
+          <img src="assets/images/pain_002.png" width="1656" height="1474" alt="" aria-hidden="true"
                style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;" loading="lazy">
           <h3 class="pain-title" data-i18n="pain2-title"></h3>
           <p class="pain-desc" data-i18n="pain2-desc"></p>
         </div>
         <div class="pain-card reveal reveal-delay-3">
           <div class="pain-number">03</div>
-          <img src="assets/images/pain_003.png" alt="" aria-hidden="true"
+          <img src="assets/images/pain_003.png" width="1952" height="2166" alt="" aria-hidden="true"
                style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;" loading="lazy">
           <h3 class="pain-title" data-i18n="pain3-title"></h3>
           <p class="pain-desc" data-i18n="pain3-desc"></p>
@@ -1068,12 +955,12 @@
   <section id="card-showcase">
     <div class="card-showcase-inner">
       <div class="card-image-wrap reveal">
-        <img class="card-img" src="assets/card/here_enough/card-front.png" alt="Here is enough 正面" loading="lazy">
-        <img class="card-img" src="assets/card/here_enough/card-back.png" alt="Here is enough 背面" loading="lazy">
-        <img class="card-img" src="assets/card/carried_card/card-front.png" alt="You are carried 正面" loading="lazy">
-        <img class="card-img" src="assets/card/word_wind_Card/card-front.jpg" alt="BibCycle 翼旅 正面" loading="lazy">
-        <img class="card-img" src="assets/card/carried_card/card-back.png" alt="You are carried 背面" loading="lazy">
-        <img class="card-img" src="assets/card/word_wind_Card/card-back.jpg" alt="BibCycle 翼旅 背面" loading="lazy">
+        <img class="card-img" src="assets/card/here_enough/card-front.png" width="450" height="788" alt="Here is enough 正面" loading="lazy">
+        <img class="card-img" src="assets/card/here_enough/card-back.png" width="450" height="788" alt="Here is enough 背面" loading="lazy">
+        <img class="card-img" src="assets/card/carried_card/card-front.png" width="788" height="450" alt="You are carried 正面" loading="lazy">
+        <img class="card-img" src="assets/card/word_wind_Card/card-front.jpg" width="788" height="450" alt="BibCycle 翼旅 正面" loading="lazy">
+        <img class="card-img" src="assets/card/carried_card/card-back.png" width="788" height="450" alt="You are carried 背面" loading="lazy">
+        <img class="card-img" src="assets/card/word_wind_Card/card-back.jpg" width="788" height="450" alt="BibCycle 翼旅 背面" loading="lazy">
         <p class="card-img-caption" data-i18n="card-caption"></p>
       </div>
       <div class="card-text-wrap reveal reveal-delay-2">
@@ -1142,19 +1029,19 @@
       <div class="screenshots-wrapper">
         <div class="phone-mockup reveal reveal-delay-1">
           <div class="phone-screen">
-            <img class="phone-img" src="assets/screen1.jpg" alt="BibCycle home screen" loading="lazy">
+            <img class="phone-img" src="assets/screen1.jpg" width="1220" height="2712" alt="BibCycle home screen" loading="lazy">
           </div>
         </div>
 
         <div class="phone-mockup center reveal reveal-delay-2">
           <div class="phone-screen">
-            <img class="phone-img" src="assets/screen2.jpg" alt="BibCycle reading screen" loading="lazy">
+            <img class="phone-img" src="assets/screen2.jpg" width="1242" height="2688" alt="BibCycle reading screen" loading="lazy">
           </div>
         </div>
 
         <div class="phone-mockup reveal reveal-delay-3">
           <div class="phone-screen">
-            <img class="phone-img" src="assets/screen3.jpg" alt="BibCycle plan screen" loading="lazy">
+            <img class="phone-img" src="assets/screen3.jpg" width="1242" height="2688" alt="BibCycle plan screen" loading="lazy">
           </div>
         </div>
       </div>
@@ -1166,7 +1053,7 @@
   <section id="bird-identity">
     <div class="bird-identity-inner reveal">
       <div class="bird-identity-img">
-        <img src="assets/images/bird_real.png"
+        <img src="assets/images/bird_real.png" width="1271" height="601"
              alt="小白鳥"
              aria-hidden="true" loading="lazy">
       </div>
@@ -1180,7 +1067,7 @@
   <section class="overview-section">
     <p class="overview-label" data-i18n="overview-label"></p>
     <div class="overview-image-wrap">
-      <img src="assets/images/bibcycle_Cycle002.png" alt="神的話、記掛那個人、遞出App/卡" class="overview-image" loading="lazy">
+      <img src="assets/images/bibcycle_Cycle002.png" width="1080" height="1350" alt="神的話、記掛那個人、遞出App/卡" class="overview-image" loading="lazy">
     </div>
   </section>
 
@@ -1188,7 +1075,7 @@
   <section id="cycle" style="background: var(--bg); text-align: center; padding-bottom: 24px;">
     <div class="reveal" style="max-width: 480px; margin: 0 auto;">
       <p style="font-size: 13px; letter-spacing: 0.16em; color: var(--amber-dark); margin-bottom: 28px; font-weight: 500;" data-i18n="cycle-label"></p>
-      <img src="assets/images/bibcycle_Cycle.png"
+      <img src="assets/images/bibcycle_Cycle.png" width="1080" height="1350"
            alt="成為翼使：記掛那個人，遞卡，朋友走進聖經，循環流動"
            style="width: 100%; border-radius: 20px; box-shadow: 0 24px 64px rgba(42,63,92,0.15); cursor: pointer;" loading="lazy">
     </div>
@@ -1199,7 +1086,7 @@
     <div class="reveal" style="max-width: 900px; margin: 0 auto;">
       <p class="section-label" style="color: var(--amber-dark);" data-i18n="after-card-label"></p>
       <h2 class="section-title" style="margin: 0 auto 48px; max-width: 500px;" data-i18n="after-card-title"></h2>
-      <img id="after-card-instruction" src="assets/images/bibcycle_instruction.png"
+      <img id="after-card-instruction" src="assets/images/bibcycle_instruction.png" width="3375" height="4219"
            alt="三步就夠了：把卡親手交給他，問可不可以留 WhatsApp，傳圖加話"
            style="width: 100%; max-width: 480px; border-radius: 20px; box-shadow: 0 24px 64px rgba(42,63,92,0.12); cursor:pointer;" loading="lazy">
     </div>
@@ -1220,7 +1107,7 @@
         </a>
       </div>
       <div class="reveal reveal-delay-2 qr-block">
-        <img id="get-card-qr" src="assets/images/bibcycle_QR.png"
+        <img id="get-card-qr" src="assets/images/bibcycle_QR.png" width="3375" height="4219"
              alt="掃描下載 BibCycle 翼旅"
              style="width: 200px; border-radius: 16px; box-shadow: 0 16px 48px rgba(42,63,92,0.12); cursor:pointer;" loading="lazy">
         <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 10px; letter-spacing: 0.06em;">bibcycle.org/download</p>
@@ -1295,17 +1182,17 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand-wrap">
-      <div class="footer-brand">Bib<span>Cycle</span> 翼旅</div>
-      <p class="footer-tagline" data-i18n="footer-tagline"></p>
+  <footer class="bc-footer">
+    <div class="bc-footer__brand-wrap">
+      <div class="bc-footer__brand">Bib<span>Cycle</span> 翼旅</div>
+      <p class="bc-footer__tagline" data-i18n="footer-tagline"></p>
     </div>
-    <ul class="footer-links">
+    <ul class="bc-footer__links">
       <li><a href="https://bibcycle.org/privacy.html" target="_blank" rel="noopener" data-i18n="footer-privacy"></a></li>
       <li><a href="#faq" data-i18n="footer-contact" id="footer-contact-link"></a></li>
       <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
     </ul>
-    <div class="footer-social">
+    <div class="bc-footer__social">
       <a href="https://www.facebook.com/profile.php?id=61555773296475" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
       </a>
@@ -1319,8 +1206,8 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.7V8.3l6.3 3.7-6.3 3.7Z"/></svg>
       </a>
     </div>
+    <div class="bc-footer__copyright" data-i18n="footer-copyright"></div>
   </footer>
-  <div class="footer-copyright" data-i18n="footer-copyright"></div>
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-cta-bar" id="mobile-cta-bar">
@@ -1338,7 +1225,7 @@
     <a href="wingbearer.html" class="mcta-link" data-i18n="nav-wingbearer"></a>
   </div>
   <div id="img-lightbox" class="lightbox" aria-hidden="true">
-    <img id="img-lightbox-content" class="lightbox-img" alt="">
+    <img id="img-lightbox-content" class="lightbox-img" width="1" height="1" alt="">
   </div>
 
   <!-- TWEAKS PANEL -->
@@ -1497,9 +1384,9 @@
   })();
 
   </script>
-  <script src="assets/js/i18n/common.js"></script>
-  <script src="assets/js/i18n/index.js"></script>
-  <script src="assets/js/bibcycle-i18n.js"></script>
-  <script src="assets/js/bibcycle-nav.js"></script>
+  <script defer src="assets/js/i18n/common.js"></script>
+  <script defer src="assets/js/i18n/index.js"></script>
+  <script defer src="assets/js/bibcycle-i18n.js"></script>
+  <script defer src="assets/js/bibcycle-nav.js"></script>
 </body>
 </html>

@@ -104,7 +104,7 @@
       progressLine.style.opacity = state.atTop ? '0' : '1';
     }
     if (nav && state.navMode === 'fixed') {
-      nav.classList.toggle('scrolled', !state.atTop);
+      nav.classList.toggle('is-scrolled', !state.atTop);
       if (state.isMobile) {
         nav.classList.remove('compact');
         if (!state.reduced && hero) nav.classList.toggle('is-hidden', state.direction === 'down' && state.pastHero);

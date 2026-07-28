@@ -29,6 +29,9 @@
 
 .wing-term { color: var(--amber); }
 
+/* Intrinsic dimensions reserve space; authored display-size rules still override this. */
+img[width][height] { height: auto; }
+
 :focus-visible {
   outline: 3px solid var(--amber);
   outline-offset: 3px;
@@ -39,14 +42,28 @@
 }
 
 .bc-footer {
-  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 48px 60px 24px;
+  background: #1a2b3f;
   color: rgba(255,255,255,.72);
-  padding: 48px 24px 24px;
-  text-align: center;
 }
-.bc-footer__brand { font-family: var(--serif); color: #fff; font-size: 22px; text-decoration: none; }
+.bc-footer__brand-wrap { display: flex; flex-direction: column; gap: 8px; }
+.bc-footer__brand { font: 500 18px/1 var(--serif); color: rgba(255,255,255,.6); text-decoration: none; }
 .bc-footer__brand span { color: var(--amber); }
-.bc-footer__tagline { margin: 12px 0 22px; font-size: var(--text-sm); }
-.bc-footer__links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; list-style: none; }
-.bc-footer__links a { color: rgba(255,255,255,.72); text-decoration: none; font-size: var(--text-sm); }
-.bc-footer__copyright { padding-top: 20px; font-size: var(--text-xs); color: rgba(255,255,255,.45); }
+.bc-footer__tagline { font-size: 14px; color: rgba(255,255,255,.45); letter-spacing: .04em; }
+.bc-footer__links { display: flex; gap: 32px; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
+.bc-footer__links a { color: rgba(255,255,255,.55); font-size: 16px; text-decoration: none; transition: color .2s; }
+.bc-footer__links a:hover { color: rgba(255,255,255,.8); }
+.bc-footer__social { display: flex; align-items: center; gap: 10px; }
+.bc-footer__social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.1); border-radius: 8px; color: rgba(255,255,255,.5); background: rgba(255,255,255,.06); text-decoration: none; transition: background .2s, color .2s; }
+.bc-footer__social a:hover { border-color: rgba(255,210,127,.3); color: var(--amber); background: rgba(255,210,127,.15); }
+.bc-footer__copyright { flex: 1 0 100%; margin-top: 0; padding: 14px 24px 0; border-top: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.42); font-size: 12px; letter-spacing: .04em; text-align: center; }
+
+@media (max-width: 959px) {
+  .bc-footer { flex-direction: column; padding: 48px 24px 24px; text-align: center; }
+  .bc-footer__links { justify-content: center; }
+}
