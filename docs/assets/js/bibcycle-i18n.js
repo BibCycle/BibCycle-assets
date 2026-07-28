@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  // Translation contracts: data-i18n writes text, data-i18n-html writes trusted markup,
+  // and data-i18n-alt writes an image's accessible alt text.
+
   function resolveLang() {
     var stored = localStorage.getItem('bibcycle-lang');
     if (stored) return stored;

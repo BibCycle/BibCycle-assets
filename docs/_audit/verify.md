@@ -6,7 +6,7 @@
 |---|---|---|
 | Console errors | Pass | Fresh tabs for all five pages produced no errors. |
 | Horizontal overflow | Pass | No overflow found at 320px in fresh tabs; the full 320, 375, 768, 960, and 1440px sweep also found none after cache refresh. |
-| Image dimensions | Pass | All 37 `<img>` elements now carry a dimension pair read from the source asset. `img[width][height] { height: auto; }` reserves aspect ratio without overriding intentional fixed-size rules; empty runtime lightbox placeholders use `1×1` until their scripts assign a source. |
+| Image dimensions | Pass | Every asset-backed image carries the dimensions read from its source file. The three runtime lightbox placeholders have no source on initial load and intentionally carry no dimension attributes. Generic image sizing uses `height: auto` without raising selector specificity. |
 | Hero image loading | Pass | The download bird is `loading="eager" fetchpriority="high"`; non-hero source images are lazy-loaded. |
 | Mobile menu | Pass | At 375px it opens the full-screen link panel, changes `aria-expanded` to `true`, locks scroll, moves focus to the first link, and Escape restores focus to the toggle and unlocks scroll. |
 | Resize reset | Pass (code) | `matchMedia` and `resize` handlers force-close the panel and unlock body scrolling at 960px+. The in-app responsive viewport does not apply a live width change to an existing tab, so this assertion was inspected in code rather than exercised by the harness. |
@@ -27,6 +27,9 @@
 | Mobile overflow | Pass | All five pages were checked at the 375px responsive viewport with no horizontal overflow. |
 | C-a: `.wing-term` | Core stylesheet | It lives in `bibcycle-core.css`; all page-local copies were deleted. |
 | C-b: initial `refreshMetrics()` | Pass | All external scripts use `defer` in document order. On index, `scroll-effects.js` therefore initializes before the i18n engine invokes `refreshMetrics()` on initial load. |
+| N1: runtime lightboxes | Pass | The three lightbox placeholders have no numeric dimensions; when opened, their CSS max-size constraints preserve the assigned asset's natural ratio. |
+| N2: image selectors | Pass | The bird and phone rules use their original class selectors. The download bird intentionally remains a square `object-fit: contain` box: `304×304` desktop and `260×260` at 375px. |
+| N3: image alt translations | Pass | `data-i18n-alt` is documented and applied by the i18n engine. Partner's two meaningful images switch to their English alt text; decorative imagery remains empty-alt and hidden from assistive technology. |
 
 ## Screenshots
 
