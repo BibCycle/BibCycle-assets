@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-scroll-progress data-scroll-reveal>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,6 +104,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/scroll-effects.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/scroll-effects.js" defer></script>
 
   <script>
     const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -128,27 +131,32 @@
       --text-muted: #6b6b6b;
       --serif: 'Noto Serif TC', serif;
       --sans: 'Noto Sans TC', sans-serif;
+      --scroll-offset: 88px;
+      --nav-logo-size: 22px;
+      --nav-link-size: 14px;
+      --nav-padding-x: 60px;
+      --nav-padding-y: 20px;
     }
 
-    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
     body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 20px 60px;
+      padding: var(--nav-padding-y) var(--nav-padding-x);
       display: flex; align-items: center; justify-content: space-between;
-      transition: background 0.3s, backdrop-filter 0.3s;
+      transition: background 0.3s, backdrop-filter 0.3s, transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     nav.scrolled { background: rgba(42,63,92,0.96); backdrop-filter: blur(12px); }
 
-    .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
+    .nav-logo { font-family: var(--serif); font-size: var(--nav-logo-size); font-weight: 600; color: #fff; letter-spacing: 0.02em; text-decoration: none; }
     .nav-logo span { color: var(--amber); }
 
     .nav-right { display: flex; align-items: center; gap: 36px; }
 
     .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: var(--nav-link-size); letter-spacing: 0.05em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--amber); }
     .nav-links a.nav-key-link {
       color: var(--amber);
@@ -638,11 +646,12 @@
     }
 
     /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
+    html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    html.js .reveal.visible { opacity: 1; transform: none; }
+    html.js.anim-off .reveal { transition: none; }
+    html.js .reveal-delay-1 { transition-delay: 0.1s; }
+    html.js .reveal-delay-2 { transition-delay: 0.2s; }
+    html.js .reveal-delay-3 { transition-delay: 0.3s; }
 
     /* ── TWEAKS PANEL ── */
     #tweaks-panel { display: none; position: fixed; bottom: 24px; right: 24px; background: #fff; border: 1px solid rgba(42,63,92,0.12); border-radius: 16px; padding: 20px 24px; z-index: 999; box-shadow: 0 8px 40px rgba(0,0,0,0.12); min-width: 240px; font-family: var(--sans); }
@@ -933,7 +942,8 @@
 <body>
 
   <!-- NAV -->
-  <nav id="main-nav">
+  <nav id="main-nav" data-scroll-nav data-scroll-nav-mode="fixed">
+    <div data-scroll-nav-inner>
     <a href="index.html" class="nav-logo">Bib<span>Cycle</span> 翼旅</a>
     <div class="nav-right">
       <ul class="nav-links">
@@ -954,10 +964,11 @@
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
     </div>
+    </div>
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
+  <section id="hero" data-scroll-hero>
     <p class="hero-eyebrow" data-i18n="hero-eyebrow"></p>
     <h1 class="hero-title" data-i18n="hero-title" data-i18n-html="true"></h1>
     <p class="hero-subtitle" data-i18n="hero-subtitle" data-i18n-html="true"></p>
@@ -1363,21 +1374,6 @@
   </div>
 
   <script>
-  // ─── MOBILE CTA BAR ─────────────────────────────────────────────
-  (function() {
-    var bar = document.getElementById('mobile-cta-bar');
-    var hero = document.getElementById('hero');
-    if (!bar || !hero) return;
-    function onScroll() {
-      var heroBottom = hero.getBoundingClientRect().bottom;
-      if (heroBottom < 0) {
-        bar.classList.add('visible');
-      } else {
-        bar.classList.remove('visible');
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-  })();
   // ─── TRANSLATIONS ───────────────────────────────────────────────
   const T = {
     'zh-TW': {
@@ -1751,6 +1747,7 @@
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+    window.BibCycleScroll?.refreshMetrics();
   }
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -1771,10 +1768,6 @@
     }
   })();
 
-  // ─── Nav scroll ──────────────────────────────────────────────────
-  const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-
   // ─── Footer contact -> FAQ contact item ──────────────────────────
   (function() {
     const contactLink = document.getElementById('footer-contact-link');
@@ -1790,7 +1783,11 @@
       });
       contactFaqItem.open = true;
 
-      faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.BibCycleScroll?.scrollToEl) {
+        window.BibCycleScroll.scrollToEl(faqSection, { block: 'start' });
+      } else {
+        faqSection.scrollIntoView({ block: 'start' });
+      }
     });
   })();
 
@@ -1835,11 +1832,15 @@
     window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { headingFont: this.value } }, '*');
   });
   document.getElementById('tw-scroll-anim').addEventListener('change', function() {
-    document.querySelectorAll('.reveal').forEach(el => {
-      el.style.transition = this.checked ? 'opacity 0.7s ease, transform 0.7s ease' : 'none';
-    });
+    document.documentElement.classList.toggle('anim-off', !this.checked);
     window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { showScrollAnim: this.checked } }, '*');
   });
+
+  const scrollAnimToggle = document.getElementById('tw-scroll-anim');
+  if (scrollAnimToggle) {
+    scrollAnimToggle.checked = TWEAK_DEFAULTS.showScrollAnim !== false;
+    document.documentElement.classList.toggle('anim-off', !scrollAnimToggle.checked);
+  }
 
   // ─── Init ────────────────────────────────────────────────────────
   (function() {

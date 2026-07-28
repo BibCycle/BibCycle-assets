@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.classList.add('js')</script>
 
   <!-- SEO -->
   <meta name="description" content="BibCycle 翼旅文章 — 關於讀經、靈修節奏與恩典的思考。寫給讀經卡關、帶著罪疚感看進度表的你。">
@@ -60,7 +61,7 @@
       --sans: 'Noto Sans TC', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
     body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; }
 
     nav {
@@ -78,11 +79,11 @@
 
     main { max-width: 860px; margin: 0 auto; padding: 160px 24px 100px; }
 
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
+    html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    html.js .reveal.visible { opacity: 1; transform: none; }
+    html.js .reveal-delay-1 { transition-delay: 0.1s; }
+    html.js .reveal-delay-2 { transition-delay: 0.2s; }
+    html.js .reveal-delay-3 { transition-delay: 0.3s; }
 
     .page-header { margin-bottom: 64px; }
     .page-label { font-size: 27.5px; font-weight: 400; letter-spacing: 0.25em; color: var(--amber-dark); text-transform: uppercase; margin-bottom: 16px; }
