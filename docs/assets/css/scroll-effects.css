@@ -1,4 +1,5 @@
 /* BibCycle Scroll System v2.1 — shared, opt-in scroll effects */
+/* Pages that override this offset must override both the base and mobile values. */
 :root {
   --scroll-offset: 88px;
   --nav-logo-size: 22px;
@@ -36,6 +37,10 @@ html.anim-off .reveal { transition: none; }
   transition: opacity 200ms ease;
 }
 
+[data-scroll-nav][data-scroll-nav-mode="fixed"] {
+  transition: var(--scroll-nav-transition, transform 240ms cubic-bezier(0.4, 0, 0.2, 1));
+}
+
 [data-scroll-nav][data-scroll-nav-mode="fixed"] [data-scroll-nav-inner] {
   width: 100%;
   display: flex;
@@ -44,9 +49,11 @@ html.anim-off .reveal { transition: none; }
   transition: transform 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-[data-scroll-nav][data-scroll-nav-mode="fixed"].compact [data-scroll-nav-inner] {
-  transform: translateY(-2px) scale(0.97);
-  transform-origin: center top;
+@media (min-width: 961px) {
+  [data-scroll-nav][data-scroll-nav-mode="fixed"].compact [data-scroll-nav-inner] {
+    transform: translateY(-2px) scale(0.97);
+    transform-origin: center top;
+  }
 }
 
 [data-scroll-nav][data-scroll-nav-mode="fixed"] [data-scroll-nav-inner].is-transitioning {
@@ -62,7 +69,7 @@ html.anim-off .reveal { transition: none; }
 @media (prefers-reduced-motion: reduce) {
   [data-scroll-progress] .bibcycle-scroll-progress,
   [data-scroll-nav][data-scroll-nav-mode="fixed"] [data-scroll-nav-inner],
-  [data-scroll-nav] {
+  [data-scroll-nav][data-scroll-nav-mode="fixed"] {
     transition: none;
   }
 }

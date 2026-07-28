@@ -9,12 +9,14 @@
   var navInner = nav && nav.querySelector('[data-scroll-nav-inner]');
   var hero = document.querySelector('[data-scroll-hero]');
   var mobileCta = document.getElementById('mobile-cta-bar');
+  var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   var progressLine = null;
   var framePending = false;
   var metricsFramePending = false;
   var metrics = { documentHeight: 0, maxScroll: 0, heroBoundary: 0 };
   var directionTravel = 0;
   var lastTimestamp = performance.now();
+  var navMode = resolveNavMode();
   var state = {
     y: window.scrollY || 0,
     lastY: window.scrollY || 0,
@@ -25,12 +27,20 @@
     atTop: true,
     pastHero: false,
     isMobile: window.innerWidth <= MOBILE_BREAKPOINT,
-    navMode: nav ? (nav.getAttribute('data-scroll-nav-mode') || 'none') : 'none',
-    reduced: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    navMode: navMode,
+    reduced: reducedMotionQuery.matches
   };
 
+  function resolveNavMode() {
+    if (!nav) return 'none';
+    var mode = nav.getAttribute('data-scroll-nav-mode');
+    if (!mode || mode === 'fixed' || mode === 'static') return mode || 'fixed';
+    console.warn('BibCycleScroll: unrecognised nav mode on ' + (nav.id ? '#' + nav.id : nav.tagName.toLowerCase()) + '; using fixed.');
+    return 'fixed';
+  }
+
   function prefersReducedMotion() {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return reducedMotionQuery.matches;
   }
 
   function scrollToEl(el, opts) {
@@ -86,7 +96,6 @@
     state.progress = Math.min(1, Math.max(0, y / Math.max(1, metrics.maxScroll)));
     state.atTop = y <= 60;
     state.isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
-    state.reduced = prefersReducedMotion();
     state.pastHero = !!hero && y > metrics.heroBoundary;
 
     /* Reads above are complete; writes begin here. */
@@ -96,10 +105,14 @@
     }
     if (nav && state.navMode === 'fixed') {
       nav.classList.toggle('scrolled', !state.atTop);
-      if (!state.reduced && !state.isMobile) nav.classList.toggle('compact', !state.atTop && state.direction === 'down');
-      if (!state.reduced && state.isMobile && hero) nav.classList.toggle('is-hidden', state.direction === 'down' && state.pastHero);
-      if (state.reduced) {
-        nav.classList.remove('compact', 'is-hidden');
+      if (state.isMobile) {
+        nav.classList.remove('compact');
+        if (!state.reduced && hero) nav.classList.toggle('is-hidden', state.direction === 'down' && state.pastHero);
+        else nav.classList.remove('is-hidden');
+      } else {
+        nav.classList.remove('is-hidden');
+        if (!state.reduced) nav.classList.toggle('compact', !state.atTop && state.direction === 'down');
+        else nav.classList.remove('compact');
       }
     }
     if (mobileCta) mobileCta.classList.toggle('visible', state.pastHero);
@@ -123,6 +136,13 @@
   document.addEventListener('toggle', function (event) {
     if (event.target.closest && event.target.closest('#faq')) refreshMetrics();
   }, true);
+
+  function updateReducedMotion(event) {
+    state.reduced = event.matches;
+    scheduleFrame();
+  }
+  if (reducedMotionQuery.addEventListener) reducedMotionQuery.addEventListener('change', updateReducedMotion);
+  else reducedMotionQuery.addListener(updateReducedMotion);
 
   if (nav && nav.getAttribute('data-scroll-nav-mode') === 'fixed' && navInner) {
     navInner.addEventListener('transitionrun', function () { navInner.classList.add('is-transitioning'); });
