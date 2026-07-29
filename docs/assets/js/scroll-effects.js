@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var MOBILE_BREAKPOINT = 960;
+  var MOBILE_BREAKPOINT = 959;
   var DIRECTION_THRESHOLD = 8;
   var root = document.documentElement;
   var nav = document.querySelector('[data-scroll-nav]');
