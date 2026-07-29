@@ -55,4 +55,5 @@ body.bc-menu-open { overflow: hidden !important; }
 
 @media (max-width: 639px) {
   .bc-nav__lang { display: none; }
+  .bc-nav.is-menu-open .bc-nav__lang { display: flex; }
 }
