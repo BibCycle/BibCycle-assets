@@ -30,6 +30,17 @@
 | N1: runtime lightboxes | Pass | The three lightbox placeholders have no numeric dimensions; when opened, their CSS max-size constraints preserve the assigned asset's natural ratio. |
 | N2: image selectors | Pass | The bird and phone rules use their original class selectors. The download bird intentionally remains a square `object-fit: contain` box: `304×304` desktop and `260×260` at 375px. |
 | N3: image alt translations | Pass | `data-i18n-alt` is documented and applied by the i18n engine. Partner's two meaningful images switch to their English alt text; decorative imagery remains empty-alt and hidden from assistive technology. |
+| A1: fixed navbar safety | Pass | A fixed nav is navy by default; only an opted-in `[data-scroll-nav]` starts transparent. Wingbearer therefore remains readable beyond its navy hero. |
+| A2: 959/960 boundary | Pass | Scroll CSS and JS use the same `max-width: 959px` / `min-width: 960px` boundary. |
+| A3: no-JS navigation | Pass | The mobile hide and toggle rules are scoped under `html.js`; without the hook, links remain visible and wrap. All five pages add the hook before stylesheet links. |
+| A4: scroll tokens | Pass | `scroll-effects.css` now owns only `--scroll-offset`; nav tokens remain in core. |
+| T1–T2: store badges | Pass | All store badge labels are hardcoded brand text (`Download on the`, `Get it on`) with no i18n attributes or dictionary keys. |
+| T3–T4: canonical copy | Pass | Partner's translated title is restored to the canonical full title. Privacy's literal footer matches common zh-TW values. |
+| S-a–S-d: shared navigation | Pass | Page dictionaries no longer shadow shared nav/footer keys; dead partner keys are removed; the menu trap includes its toggle; language buttons have a 44×44px hit area without increasing desktop nav height. |
+
+## Known deviation — out of scope for v0.2.2
+
+`index.html` labels its footer contact link with the shared `footer-contact` key but intentionally points it to `#faq`; the other four pages point the same label to `mailto:bibcyclebib@gmail.com`. This predates the migration and remains unchanged because v0.2 required preserving the index `#faq` behavior.
 
 ## Screenshots
 

@@ -1,13 +1,6 @@
     window.BibCyclePageDictionary = {
       'zh-TW': {
         'wb-page-title': '翼使資源 — BibCycle 翼旅',
-        'nav-video': '介紹影片',
-        'nav-mission': '使命',
-        'nav-how': '成為翼使',
-        'nav-getcard': '取得卡片',
-        'nav-wingbearer': '翼使資源',
-        'nav-download': '下載',
-        'nav-partner': '教會與機構',
         'wb-hero-label': 'Wing Bearer · 翼使',
         'wb-hero-title': '把那扇門<br>親手傳遞出去的人',
         'wb-hero-sub': '你不只是一位弟兄姊妹。<br>當你把翼旅卡放到那個人手裡，<br>你就成了一位翼使。',
@@ -40,21 +33,9 @@
         'wb-cta-label': '索取實體卡片',
         'wb-cta-title': '你心裡那個人，值得收到這張卡。',
         'wb-cta-body': '首批 2,000 張翼旅卡片免費提供。<br>聯絡我們，告訴我們他是誰，我們會為你準備好。',
-        'footer-tagline': 'A door into the Bible · Word & Wings',
-        'footer-privacy': '隱私政策',
-        'footer-contact': '聯絡我們',
-        'footer-intro-video': '介紹影片',
-        'footer-copyright': '© 2026 BibCycle'
       },
       'zh-CN': {
         'wb-page-title': '翼使资源 — BibCycle 翼旅',
-        'nav-video': '介绍影片',
-        'nav-mission': '使命',
-        'nav-how': '成为翼使',
-        'nav-getcard': '取得卡片',
-        'nav-wingbearer': '翼使资源',
-        'nav-download': '下载',
-        'nav-partner': '教会与机构',
         'wb-hero-label': 'Wing Bearer · 翼使',
         'wb-hero-title': '把那扇门<br>亲手传递出去的人',
         'wb-hero-sub': '你不只是一位弟兄姊妹。<br>当你把翼旅卡放到那个人手里，<br>你就成了一位翼使。',
@@ -87,21 +68,9 @@
         'wb-cta-label': '索取实体卡片',
         'wb-cta-title': '你心里那个人，值得收到这张卡。',
         'wb-cta-body': '首批 2,000 张翼旅卡片免费提供。<br>联系我们，告诉我们他是谁，我们会为你准备好。',
-        'footer-tagline': 'A door into the Bible · Word & Wings',
-        'footer-privacy': '隐私政策',
-        'footer-contact': '联系我们',
-        'footer-intro-video': '介绍视频',
-        'footer-copyright': '© 2026 BibCycle'
       },
       'en': {
         'wb-page-title': 'Wing Bearer Resources — BibCycle Word & Wings',
-        'nav-video': 'Intro Video',
-        'nav-mission': 'Mission',
-        'nav-how': 'Become a Wing Bearer',
-        'nav-getcard': 'Get the card',
-        'nav-wingbearer': 'Wing Bearer',
-        'nav-download': 'Download',
-        'nav-partner': 'Churches & Orgs',
         'wb-hero-label': 'Wing Bearer',
         'wb-hero-title': 'The one who puts the door<br>in someone\'s hands',
         'wb-hero-sub': 'You are not just a brother or sister.<br>When you place a Word & Wings card in someone\'s hands,<br>you become a Wing Bearer.',
@@ -134,10 +103,5 @@
         'wb-cta-label': 'Request Physical Cards',
         'wb-cta-title': 'The person on your heart deserves this card.',
         'wb-cta-body': 'The first 2,000 Word & Wings cards are free.<br>Contact us, tell us who this person is, and we will prepare it for you.',
-        'footer-tagline': 'A door into the Bible · Word & Wings',
-        'footer-privacy': 'Privacy Policy',
-        'footer-contact': 'Contact Us',
-        'footer-intro-video': 'Intro Video',
-        'footer-copyright': '© 2026 BibCycle'
       }
     };
