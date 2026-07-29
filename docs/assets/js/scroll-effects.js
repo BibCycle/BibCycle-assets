@@ -103,7 +103,7 @@
       progressLine.style.setProperty('--scroll-progress', String(state.progress));
       progressLine.style.opacity = state.atTop ? '0' : '1';
     }
-    if (nav && state.navMode === 'fixed') {
+    if (nav && state.navMode === 'fixed' && !document.body.classList.contains('bc-menu-open')) {
       nav.classList.toggle('is-scrolled', !state.atTop);
       if (state.isMobile) {
         nav.classList.remove('compact');
