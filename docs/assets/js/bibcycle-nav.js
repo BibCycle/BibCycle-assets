@@ -28,7 +28,8 @@
     if (toggle.getAttribute('aria-expanded') !== 'true') return;
     if (event.key === 'Escape') { event.preventDefault(); closeMenu(true); return; }
     if (event.key !== 'Tab') return;
-    var items = [toggle].concat(Array.prototype.slice.call(panel.querySelectorAll(focusable))).filter(function (el) { return !el.hasAttribute('hidden') && el.offsetParent !== null; });
+    var items = Array.prototype.slice.call(nav.querySelectorAll(focusable))
+      .filter(function (el) { return !el.hasAttribute('hidden') && el.getClientRects().length > 0; });
     if (!items.length) return;
     var first = items[0], last = items[items.length - 1];
     if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
