@@ -20,7 +20,7 @@
         'wb-qa-desc': '38 條常見問題與標準答案，<br>涵蓋卡片、App、信仰問題，<br>信徒與未信者的場景都有。',
         'wb-qa-btn': '下載 Q&A',
         'wb-promo-title': '翼旅推廣圖',
-        'wb-promo-desc': '三款素材，各有用途：<br>指引圖 → WhatsApp 一對一分享<br>海報圖 → 社交媒體廣播<br>QR 圖 → 列印或數碼展示',
+        'wb-promo-desc': '三款素材，各有用途：<br>指引圖 → WhatsApp 一對一分享<br>海報圖 → 社交媒體分享<br>QR 圖 → 場地或數碼展示（不與卡片同時遞出）',
         'wb-promo-dark-btn': '下載指引圖',
         'wb-promo-light-btn': '下載海報圖',
         'wb-promo-qr-btn': '下載 QR 圖',
@@ -32,7 +32,7 @@
         'wb-mobilizer-btn': '下載動員者指引',
         'wb-cta-label': '索取實體卡片',
         'wb-cta-title': '你心裡那個人，值得收到這張卡。',
-        'wb-cta-body': '首批 2,000 張翼旅卡片免費提供。<br>聯絡我們，告訴我們他是誰，我們會為你準備好。',
+        'wb-cta-body': '首批 2,000 張翼旅卡片免費提供。<br>聯絡我們，告訴我們你需要幾張，我們會為你準備好。',
       },
       'zh-CN': {
         'wb-page-title': '翼使资源 — BibCycle 翼旅',
@@ -55,7 +55,7 @@
         'wb-qa-desc': '38 条常见问题与标准答案，<br>涵盖卡片、App、信仰问题，<br>信徒与未信者的场景都有。',
         'wb-qa-btn': '下载 Q&A',
         'wb-promo-title': '翼旅推广图',
-        'wb-promo-desc': '三款素材，各有用途：<br>指引图 → WhatsApp 一对一分享<br>海报图 → 社交媒体广播<br>QR 图 → 打印或数码展示',
+        'wb-promo-desc': '三款素材，各有用途：<br>指引图 → WhatsApp 一对一分享<br>海报图 → 社交媒体分享<br>QR 图 → 场地或数码展示（不与卡片同时递出）',
         'wb-promo-dark-btn': '下载指引图',
         'wb-promo-light-btn': '下载海报图',
         'wb-promo-qr-btn': '下载 QR 图',
@@ -67,7 +67,7 @@
         'wb-mobilizer-btn': '下载动员者指引',
         'wb-cta-label': '索取实体卡片',
         'wb-cta-title': '你心里那个人，值得收到这张卡。',
-        'wb-cta-body': '首批 2,000 张翼旅卡片免费提供。<br>联系我们，告诉我们他是谁，我们会为你准备好。',
+        'wb-cta-body': '首批 2,000 张翼旅卡片免费提供。<br>联系我们，告诉我们你需要几张，我们会为你准备好。',
       },
       'en': {
         'wb-page-title': 'Wing Bearer Resources — BibCycle Word & Wings',
@@ -90,7 +90,7 @@
         'wb-qa-desc': '38 common questions with standard answers,<br>covering the card, the app, and faith questions,<br>for both believers and seekers.',
         'wb-qa-btn': 'Download Q&A',
         'wb-promo-title': 'Promotion Images',
-        'wb-promo-desc': 'Three graphics, each with a purpose:<br>Instruction → WhatsApp one-to-one sharing<br>Poster → Social media broadcast<br>QR → Print or digital display',
+        'wb-promo-desc': 'Three graphics, each with a purpose:<br>Instruction → WhatsApp one-to-one sharing<br>Poster → Social media sharing<br>QR → Venue or digital display (never handed out with a card)',
         'wb-promo-dark-btn': 'Download Instruction',
         'wb-promo-light-btn': 'Download Poster',
         'wb-promo-qr-btn': 'Download QR',
@@ -102,6 +102,6 @@
         'wb-mobilizer-btn': 'Download Mobilizer Guide',
         'wb-cta-label': 'Request Physical Cards',
         'wb-cta-title': 'The person on your heart deserves this card.',
-        'wb-cta-body': 'The first 2,000 Word & Wings cards are free.<br>Contact us, tell us who this person is, and we will prepare it for you.',
+        'wb-cta-body': 'The first 2,000 Word & Wings cards are free.<br>Contact us, tell us how many you need, and we will prepare them for you.',
       }
     };
