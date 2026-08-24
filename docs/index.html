@@ -175,6 +175,28 @@
       opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
     }
 
+    .hero-received {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      border: 1px solid rgba(255,210,127,0.34);
+      border-radius: 999px;
+      padding: 11px 26px;
+      margin-top: 20px;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.75s forwards;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .hero-received:hover {
+      color: #fff;
+      border-color: rgba(255,210,127,0.75);
+      background: rgba(255,210,127,0.07);
+    }
+
     .btn-group {
       display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
       opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
@@ -797,6 +819,7 @@
       .qr-block { display: block; }
       .hero-title { font-size: 34px; }
       .hero-anchor { font-size: 14px; margin-bottom: 36px; }
+      .hero-received { font-size: 14px; padding: 10px 22px; margin-top: 16px; margin-bottom: 36px; }
     }
 
     .overview-section {
@@ -854,6 +877,7 @@
     <h1 class="hero-title" data-i18n="hero-title" data-i18n-html="true"></h1>
     <p class="hero-subtitle" data-i18n="hero-subtitle" data-i18n-html="true"></p>
     <p class="hero-anchor" data-i18n="hero-anchor"></p>
+    <a class="hero-received" href="received.html" data-i18n="hero-received"></a>
     <div class="btn-group">
       <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990" target="_blank" rel="noopener" class="btn btn-primary">
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
