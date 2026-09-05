@@ -198,10 +198,16 @@
       right: 0;
       top: 64px;
       max-width: 150px;
-      color: rgba(255,255,255,.7);
-      font-size: 14px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,210,127,.18);
+      border-radius: 12px;
+      color: rgba(255,255,255,.88);
+      background: rgba(20,34,54,.88);
+      box-shadow: 0 12px 32px rgba(5,13,27,.22);
+      font-size: 15px;
       line-height: 1.7;
       letter-spacing: .06em;
+      backdrop-filter: blur(10px);
     }
     .hero-visual-note::before {
       content: '';
@@ -900,10 +906,25 @@
       .hero-copy { max-width: 680px; margin: 0 auto; }
       .hero-copy .hero-subtitle,
       .hero-copy .btn-group { justify-content: center; }
-      .hero-visual { min-height: 440px; width: min(430px, 100%); margin: 0 auto; }
+      .hero-visual {
+        min-height: 500px;
+        width: min(430px, 100%);
+        margin: 0 auto;
+        padding-bottom: 74px;
+      }
       .hero-phone { width: 220px; }
-      .hero-card { width: 230px; bottom: 28px; }
-      .hero-visual-note { right: 4px; top: 36px; text-align: left; }
+      .hero-card { width: 230px; bottom: 92px; }
+      .hero-visual-note {
+        right: auto;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        width: min(310px, 90vw);
+        max-width: none;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+      .hero-visual-note::before { margin: 0 auto 12px; }
       .mission-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
       .pain-grid, .testimonials-grid, .steps-container { grid-template-columns: 1fr; }
       .screenshots-wrapper { gap: 16px; }
@@ -915,6 +936,13 @@
       .hero-received { font-size: 14px; padding: 10px 22px; margin-top: 16px; margin-bottom: 36px; }
       .after-card-body { font-size: 15px; margin-bottom: 36px; }
       #how .how-subtitle { font-size: 15px; margin-top: 20px; }
+    }
+
+    @media (max-width: 520px) {
+      .hero-visual { min-height: 450px; }
+      .hero-phone { width: 190px; }
+      .hero-card { left: 2px; width: 190px; }
+      .hero-visual-note { font-size: 14px; line-height: 1.6; }
     }
 
     .overview-section {
