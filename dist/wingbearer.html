@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="翼使資源 — 成為翼使，把神的話親手傳遞出去。下載翼使指引、申請翼旅卡片、了解如何把那扇門放到他手裡。BibCycle 翼旅運動資源中心。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibcycle.org/wingbearer.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="BibCycle 翼旅">
+  <meta property="og:title"       content="翼使資源 — BibCycle 翼旅">
+  <meta property="og:description" content="成為翼使，把神的話親手傳遞出去。翼旅卡片申請、翼使指引與運動資源。">
+  <meta property="og:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+  <meta property="og:url"         content="https://bibcycle.org/wingbearer.html">
+  <meta property="og:locale"      content="zh_TW">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="翼使資源 — BibCycle 翼旅">
+  <meta name="twitter:description" content="成為翼使，把神的話親手傳遞出去。翼旅卡片申請與翼使指引。">
+  <meta name="twitter:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+
+  <title data-i18n="wb-page-title">翼使資源 — BibCycle 翼旅</title>
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="assets/css/bibcycle-core.css">
+  <link rel="stylesheet" href="assets/css/bibcycle-nav.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    section { padding: 100px 60px; }
+    .section-label {
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      color: var(--amber-dark);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-family: var(--sans);
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(33px, 4vw, 52px);
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .section-subtitle {
+      font-size: 27px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    .wb-hero {
+      background: var(--navy);
+      padding: 120px 60px 80px;
+      text-align: center;
+    }
+    .wb-hero-label {
+      font-family: var(--sans);
+      font-size: 39px;
+      letter-spacing: 0.12em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    [data-i18n="wb-identity-label"],
+    #wb-res-label,
+    #wb-cta-label {
+      font-size: 36px;
+    }
+    .wb-hero-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--bg);
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .wb-hero-sub {
+      font-size: 27px;
+      color: rgba(248,246,241,0.7);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .wb-identity {
+      background: var(--bg-warm);
+      padding: 100px 60px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .wb-identity-text {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 24px);
+      color: var(--navy);
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+    .wb-resources {
+      background: var(--bg);
+      padding: 100px 60px;
+    }
+    .wb-resources-inner {
+      max-width: 2200px;
+      margin: 0 auto;
+    }
+    .wb-card-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    .wb-card {
+      background: var(--bg-warm);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid rgba(42,63,92,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wb-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(42,63,92,0.1);
+    }
+    .wb-card-icon { font-size: 42px; }
+    .wb-card-title {
+      font-family: var(--serif);
+      font-size: 33px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .wb-card-desc {
+      font-size: 21px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .wb-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--amber);
+      color: var(--navy);
+      border-radius: 10px;
+      font-size: 19.5px;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      margin-top: 8px;
+      transition: transform 0.2s;
+    }
+    .wb-card-btn:hover { transform: translateY(-2px); }
+    .wb-card-btn-ghost {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+    }
+    .wb-promo-btn-row {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-top: 8px;
+      align-items: center;
+    }
+    .wb-promo-btn-row .wb-card-btn {
+      margin-top: 0;
+      padding: 10px 14px;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+    .wb-coming {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .wb-tag {
+      display: inline-block;
+      font-size: 16.5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .wb-tag-ready { background: #e8f5e9; color: #2e7d32; }
+    .wb-tag-soon { background: #fff3e0; color: #e65100; }
+
+    @media (max-width: 960px) {
+      section { padding: 72px 24px; }
+      .wb-identity-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 640px) {
+      .wb-card-grid { grid-template-columns: 1fr; }
+      .wb-hero { padding: 100px 24px 60px; }
+      .wb-identity { padding: 60px 24px; }
+      .wb-resources { padding: 60px 24px; }
+      .wb-promo-btn-row { flex-wrap: wrap; }
+      .wb-promo-btn-row .wb-card-btn { font-size: 19.5px; padding: 10px 20px; }
+    }
+    .wb-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .wb-lightbox.active { display: flex; }
+    .wb-lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+    .wb-thumb {
+      cursor: zoom-in;
+      transition: opacity 0.2s;
+    }
+    .wb-thumb:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+<script>
+  // Inherit language from index.html via localStorage, default to zh-TW
+  const currentLang = localStorage.getItem('bibcycle-lang') || 'zh-TW';
+  document.documentElement.lang = currentLang === 'zh-TW' ? 'zh-TW' : currentLang === 'zh-CN' ? 'zh-CN' : 'en';
+</script>
+
+  <!-- NAV：複用 index.html 完整 nav bar -->
+  <nav class="bc-nav bc-nav--fixed" id="main-nav" aria-label="Main">
+    <a class="bc-nav__logo" href="index.html">Bib<span>Cycle</span></a>
+    <ul class="bc-nav__links" id="bc-nav-links">
+      <li><a href="index.html#mission" data-i18n="nav-mission">使命</a></li>
+      <li><a href="index.html#how" data-i18n="nav-how">成為翼使</a></li>
+      <li><a href="wingbearer.html" data-i18n="nav-wingbearer" class="is-active" aria-current="page">翼使資源</a></li>
+      <li><a href="articles/" data-i18n="nav-articles">文章</a></li>
+      <li><a href="download.html" data-i18n="nav-download">下載</a></li>
+      <li><a href="partner.html" class="nav-key-link" data-i18n="nav-partner">教會與機構</a></li>
+    </ul>
+    <div class="bc-nav__lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang="zh-TW" aria-pressed="true">繁</button>
+      <button type="button" class="lang-btn" data-lang="zh-CN" aria-pressed="false">简</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button type="button" class="bc-nav__toggle" aria-expanded="false" aria-controls="bc-nav-links" aria-label="選單">選單</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="wb-hero">
+    <p class="wb-hero-label" data-i18n="wb-hero-label"></p>
+    <h1 class="wb-hero-title" data-i18n="wb-hero-title" data-i18n-html="true"></h1>
+    <p class="wb-hero-sub" data-i18n="wb-hero-sub" data-i18n-html="true"></p>
+  </section>
+
+  <!-- IDENTITY -->
+  <section style="background: var(--bg-warm); padding: 100px 60px;">
+    <div class="wb-identity-grid" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center;">
+      <div class="wb-identity" style="padding: 0;">
+        <p class="section-label" data-i18n="wb-identity-label"></p>
+        <p class="wb-identity-text" data-i18n="wb-identity-text" data-i18n-html="true"></p>
+        <p style="font-family: var(--serif); font-size: 24px; color: var(--navy); border-left: 3px solid var(--amber); padding-left: 16px; line-height: 1.8; margin-bottom: 40px;" data-i18n="wb-identity-quote" data-i18n-html="true"></p>
+        <p class="wb-identity-text" data-i18n="wb-identity-boundary" data-i18n-html="true"></p>
+      </div>
+      <div style="flex-shrink: 0;">
+        <img src="assets/images/pain_001.png" width="1738" height="933" alt=""
+             aria-hidden="true"
+             style="width: 260px; display: block; border-radius: 16px;" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="wb-resources">
+    <div class="wb-resources-inner">
+      <p class="section-label" data-i18n="wb-resources-label"></p>
+      <h2 class="section-title" data-i18n="wb-resources-title"></h2>
+      <p class="section-subtitle" style="margin: 0 auto 0; max-width: 820px; text-wrap: balance;" data-i18n="wb-resources-subtitle" data-i18n-html="true"></p>
+
+      <div class="wb-card-grid">
+
+        <!-- Prepare PDF — 新翼使從這裡開始 -->
+        <div class="wb-card" style="border: 1.5px solid var(--amber); position: relative;">
+          <img src="assets/images/wingbearer_001.png" width="2140" height="1984" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;" loading="lazy">
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <span style="position:absolute; top:16px; right:16px; font-size: 15px; letter-spacing:0.1em; color:var(--amber); font-weight:600; background:rgba(255,210,127,0.12); border:1px solid rgba(255,210,127,0.3); padding:3px 8px; border-radius:99px;" data-i18n="wb-start-here"></span>
+          <h3 class="wb-card-title" data-i18n="wb-prepare-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-prepare-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_prepare.png" width="668" height="948" alt="心理準備預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);" loading="lazy">
+          <a href="assets/docs/BibCycle_prepare_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-prepare-btn"></span>
+          </a>
+        </div>
+
+        <!-- SOP -->
+        <div class="wb-card">
+          <img src="assets/images/wingbearer_002.png" width="1155" height="1077" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;" loading="lazy">
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-sop-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-sop-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_sop.png" width="668" height="948" alt="翼使指引預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);" loading="lazy">
+          <a href="assets/docs/BibCycle_SOP_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-sop-btn"></span>
+          </a>
+        </div>
+
+        <!-- Q&A -->
+        <div class="wb-card">
+          <img src="assets/images/wingbearer_001.png" width="2140" height="1984" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;" loading="lazy">
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-qa-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-qa-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_qa.png" width="668" height="948" alt="Q&A 問答庫預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);" loading="lazy">
+          <a href="assets/docs/BibCycle_QA_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-qa-btn"></span>
+          </a>
+        </div>
+
+        <!-- 翼旅推廣圖 -->
+        <div class="wb-card">
+          <img src="assets/images/wingbearer_002.png" width="1155" height="1077" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;" loading="lazy">
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-promo-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-promo-desc" data-i18n-html="true"></p>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:16px 0; height:260px;">
+            <img src="assets/images/bibcycle_instruction.png" width="3375" height="4219" alt="推廣指引圖預覽"
+                 class="wb-thumb"
+                 onclick="openLightbox(this.src)"
+                 style="width:100%; height:100%; border-radius:6px; object-fit:cover;" loading="lazy">
+            <img src="assets/images/bibcycle_poster.png" width="3375" height="4219" alt="推廣海報圖預覽"
+                 class="wb-thumb"
+                 onclick="openLightbox(this.src)"
+                 style="width:100%; height:100%; border-radius:6px; object-fit:cover;" loading="lazy">
+            <img src="assets/images/bibcycle_QR.png" width="3375" height="4219" alt="推廣 QR 圖預覽"
+                 class="wb-thumb"
+                 onclick="openLightbox(this.src)"
+                 style="width:100%; height:100%; border-radius:6px; object-fit:cover;" loading="lazy">
+          </div>
+          <div class="wb-promo-btn-row">
+            <a href="assets/images/bibcycle_instruction.png" class="wb-card-btn" download>
+              <span data-i18n="wb-promo-dark-btn"></span>
+            </a>
+            <a href="assets/images/bibcycle_poster.png" class="wb-card-btn wb-card-btn-ghost" download>
+              <span data-i18n="wb-promo-light-btn"></span>
+            </a>
+            <a href="assets/images/bibcycle_QR.png" class="wb-card-btn wb-card-btn-ghost" download>
+              <span data-i18n="wb-promo-qr-btn"></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 動員者指引 -->
+        <div class="wb-card">
+          <img src="assets/images/wingbearer_001.png" width="2140" height="1984" alt="" aria-hidden="true" style="width:48px; height:48px; object-fit:contain; margin-bottom:4px; display:block;" loading="lazy">
+          <span class="wb-tag wb-tag-ready" data-i18n="wb-tag-ready"></span>
+          <h3 class="wb-card-title" data-i18n="wb-mobilizer-title"></h3>
+          <p class="wb-card-desc" data-i18n="wb-mobilizer-desc" data-i18n-html="true"></p>
+          <img src="assets/images/thumb_mobilizer.png" width="668" height="948" alt="動員者指引預覽"
+               class="wb-thumb"
+               onclick="openLightbox(this.src)"
+               style="width:100%; border-radius:8px; margin:16px 0; object-fit:cover; object-position:top center; height:260px; display:block; border:1px solid rgba(0,0,0,0.08);" loading="lazy">
+          <a href="assets/docs/BibCycle_mobilizer_v1.pdf" class="wb-card-btn" download>
+            <span data-i18n="wb-mobilizer-btn"></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: var(--navy); text-align: center; padding: 100px 60px;">
+    <p class="section-label" style="color: var(--amber);" data-i18n="wb-cta-label"></p>
+    <h2 style="font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); color: var(--bg); font-weight: 500; margin-bottom: 16px;" data-i18n="wb-cta-title"></h2>
+    <p style="font-size: 24px; color: rgba(248,246,241,0.7); margin-bottom: 32px; line-height: 1.8;" data-i18n="wb-cta-body" data-i18n-html="true"></p>
+    <a href="mailto:bibcyclebib@gmail.com" style="display: inline-block; font-size: 22.5px; color: var(--amber); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--amber); padding-bottom: 2px;">
+      bibcyclebib@gmail.com
+    </a>
+  </section>
+
+  <!-- FOOTER：複用 index.html 完整 footer -->
+  <footer class="bc-footer">
+    <div class="bc-footer__brand-wrap">
+      <div class="bc-footer__brand">Bib<span>Cycle</span> 翼旅</div>
+      <p class="bc-footer__tagline" data-i18n="footer-tagline"></p>
+    </div>
+    <ul class="bc-footer__links">
+      <li><a href="received.html" data-i18n="footer-received"></a></li>
+      <li><a href="privacy.html" data-i18n="footer-privacy"></a></li>
+      <li><a href="mailto:bibcyclebib@gmail.com" data-i18n="footer-contact"></a></li>
+      <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
+    </ul>
+    <div class="bc-footer__social">
+      <a href="https://www.facebook.com/profile.php?id=61555773296475" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.threads.com/@bibcycle_bible" target="_blank" rel="noopener" title="Threads" aria-label="Threads">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.47 10.78c-.27-.13-.55-.25-.84-.35-.05-1.72-.83-2.7-2.24-2.76-1.47-.06-2.46.79-2.98 2.54l-1.64-.49c.76-2.59 2.41-3.87 4.95-3.76 2.4.1 3.72 1.73 3.94 4.83 1.19.59 2.05 1.44 2.32 2.81.49 2.48-1.08 4.54-4.2 5.04-3.66.58-6.13-1.09-6.94-4.53l1.73-.41c.56 2.4 2.15 3.5 4.93 3.06 2.15-.34 3.18-1.57 2.88-3.08-.17-.87-.77-1.46-1.91-1.84-.48 2.07-1.79 3.21-3.65 3.21-1.68 0-2.86-1.02-2.86-2.47 0-1.78 1.47-3.04 3.77-3.19.27-.02.54-.03.8-.01-.09-1.61-.66-2.37-1.89-2.42-1.03-.04-1.77.52-2.21 1.7l-1.67-.43c.63-2.03 2.04-3.07 4.01-2.99 2.39.1 3.59 1.63 3.7 4.7.11.04.22.08.33.13l-.33.81Zm-3.89 1.08c-1.28.08-2.07.67-2.07 1.46 0 .56.45.96 1.16.96.98 0 1.74-.73 2.02-2.18-.37-.04-.74-.05-1.11-.24Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/bibcycle_bible/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5ZM18 6.35a1.15 1.15 0 1 1-1.15 1.15A1.15 1.15 0 0 1 18 6.35Z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@Bibcycle" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.7V8.3l6.3 3.7-6.3 3.7Z"/></svg>
+      </a>
+    </div>
+    <div class="bc-footer__copyright" data-i18n="footer-copyright"></div>
+  </footer>
+
+  <!-- 複用 index.html 的 i18n script -->
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('is-scrolled', window.scrollY > 60));
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('wb-lightbox-img').src = src;
+      document.getElementById('wb-lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('wb-lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+  <div class="wb-lightbox" id="wb-lightbox" onclick="closeLightbox()">
+    <img id="wb-lightbox-img" src="" alt="">
+  </div>
+  <script defer src="assets/js/i18n/common.js"></script>
+  <script defer src="assets/js/i18n/wingbearer.js"></script>
+  <script defer src="assets/js/bibcycle-i18n.js"></script>
+  <script defer src="assets/js/bibcycle-nav.js"></script>
+</body>
+</html>

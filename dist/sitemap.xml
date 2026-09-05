@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 主頁 / Homepage -->
+  <url>
+    <loc>https://bibcycle.org/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <!-- hreflang: 三語言 -->
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://bibcycle.org/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bibcycle.org/"/>
+  </url>
+
+  <!-- 文章索引 / Articles index -->
+  <url>
+    <loc>https://bibcycle.org/articles/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 文章：讀經計劃停咗 -->
+  <url>
+    <loc>https://bibcycle.org/articles/reading-plan-stopped.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 文章：讀經跟不上進度 -->
+  <url>
+    <loc>https://bibcycle.org/articles/guilt-and-grace.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 隱私政策 / Privacy Policy -->
+  <url>
+    <loc>https://bibcycle.org/privacy.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- 下載頁 / Download -->
+  <url>
+    <loc>https://bibcycle.org/download.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 翼使資源 / Wing Bearer -->
+  <url>
+    <loc>https://bibcycle.org/wingbearer.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 教會與機構合作 / Partner -->
+  <url>
+    <loc>https://bibcycle.org/partner.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

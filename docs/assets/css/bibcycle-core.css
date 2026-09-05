@@ -63,6 +63,7 @@
 
 /* Keep intrinsic dimensions as aspect-ratio hints without overriding component sizing. */
 img { height: auto; }
+[hidden] { display: none !important; }
 
 :focus-visible {
   outline: 3px solid var(--amber);

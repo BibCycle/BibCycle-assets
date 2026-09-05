@@ -147,6 +147,71 @@
       pointer-events: none;
     }
 
+    .hero-layout {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      align-items: center;
+      gap: clamp(48px, 7vw, 104px);
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      text-align: left;
+    }
+    .hero-copy { max-width: 650px; }
+    .hero-copy .hero-subtitle,
+    .hero-copy .btn-group { justify-content: flex-start; }
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+    }
+    .hero-phone {
+      width: min(270px, 70%);
+      padding: 9px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 36px;
+      background: #101b2d;
+      box-shadow: 0 38px 80px rgba(5,13,27,.42);
+      transform: rotate(3deg);
+    }
+    .hero-phone img {
+      display: block;
+      width: 100%;
+      border-radius: 28px;
+    }
+    .hero-card {
+      position: absolute;
+      left: 0;
+      bottom: 56px;
+      width: min(280px, 68%);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 18px;
+      box-shadow: 0 24px 56px rgba(5,13,27,.45);
+      transform: rotate(-7deg);
+    }
+    .hero-visual-note {
+      position: absolute;
+      right: 0;
+      top: 64px;
+      max-width: 150px;
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: .06em;
+    }
+    .hero-visual-note::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      margin-bottom: 14px;
+      background: var(--amber);
+    }
+
     .hero-eyebrow {
       font-size: 30px; font-weight: 400; letter-spacing: 0.2em;
       color: var(--amber); margin-bottom: 28px;
@@ -827,9 +892,18 @@
     }
     @media (max-width: 960px) {
       body {
-        padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
       }
       section { padding: 72px 24px; }
+      #hero { min-height: auto; padding: 116px 24px 84px; }
+      .hero-layout { grid-template-columns: 1fr; gap: 54px; text-align: center; }
+      .hero-copy { max-width: 680px; margin: 0 auto; }
+      .hero-copy .hero-subtitle,
+      .hero-copy .btn-group { justify-content: center; }
+      .hero-visual { min-height: 440px; width: min(430px, 100%); margin: 0 auto; }
+      .hero-phone { width: 220px; }
+      .hero-card { width: 230px; bottom: 28px; }
+      .hero-visual-note { right: 4px; top: 36px; text-align: left; }
       .mission-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
       .pain-grid, .testimonials-grid, .steps-container { grid-template-columns: 1fr; }
       .screenshots-wrapper { gap: 16px; }
@@ -875,14 +949,12 @@
   <nav class="bc-nav bc-nav--fixed" id="main-nav" data-scroll-nav data-scroll-nav-mode="fixed" aria-label="Main">
     <a class="bc-nav__logo is-active" href="index.html" aria-current="page">Bib<span>Cycle</span></a>
     <ul class="bc-nav__links" id="bc-nav-links">
-      <li><a href="index.html#video-section" data-i18n="nav-video">介紹影片</a></li>
       <li><a href="index.html#mission" data-i18n="nav-mission">使命</a></li>
       <li><a href="index.html#how" data-i18n="nav-how">成為翼使</a></li>
-      <li><a href="index.html#get-card" data-i18n="nav-getcard">取得卡片</a></li>
       <li><a href="wingbearer.html" data-i18n="nav-wingbearer">翼使資源</a></li>
       <li><a href="articles/" data-i18n="nav-articles">文章</a></li>
       <li><a href="download.html" data-i18n="nav-download">下載</a></li>
-      <li><a href="partner.html" data-i18n="nav-partner">教會與機構</a></li>
+      <li><a href="partner.html" class="nav-key-link" data-i18n="nav-partner">教會與機構</a></li>
     </ul>
     <div class="bc-nav__lang" role="group" aria-label="Language">
       <button type="button" class="lang-btn active" data-lang="zh-TW" aria-pressed="true">繁</button>
@@ -894,26 +966,26 @@
 
   <!-- HERO -->
   <section id="hero" data-scroll-hero>
-    <p class="hero-eyebrow" data-i18n="hero-eyebrow"></p>
-    <h1 class="hero-title" data-i18n="hero-title" data-i18n-html="true"></h1>
-    <p class="hero-subtitle" data-i18n="hero-subtitle" data-i18n-html="true"></p>
-    <p class="hero-anchor" data-i18n="hero-anchor"></p>
-    <a class="hero-received" href="received.html" data-i18n="hero-received"></a>
-    <div class="btn-group">
-      <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
-        <div>
-          <span class="btn-label-sub">Download on the</span>
-          App Store
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <p class="hero-eyebrow" data-i18n="hero-eyebrow"></p>
+        <h1 class="hero-title" data-i18n="hero-title" data-i18n-html="true"></h1>
+        <p class="hero-subtitle" data-i18n="hero-subtitle" data-i18n-html="true"></p>
+        <p class="hero-anchor" data-i18n="hero-anchor"></p>
+        <div class="btn-group">
+          <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
+            <div><span class="btn-label-sub">Download on the</span>App Store</div>
+          </a>
+          <a href="download.html" class="btn btn-secondary" data-i18n="nav-download">下載</a>
         </div>
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle" target="_blank" rel="noopener" class="btn btn-secondary">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg>
-        <div>
-          <span class="btn-label-sub">Get it on</span>
-          Google Play
-        </div>
-      </a>
+        <a class="hero-received" href="received.html" data-i18n="hero-received"></a>
+      </div>
+      <div class="hero-visual" aria-label="BibCycle App 與分享卡片預覽">
+        <div class="hero-phone"><img src="assets/screen2.jpg" width="1242" height="2688" alt="BibCycle 讀經畫面" data-i18n-alt="hero-screen-alt"></div>
+        <img class="hero-card" src="assets/card/carried_card/card-front.png" width="788" height="450" alt="You are carried 分享卡片" data-i18n-alt="hero-card-alt">
+        <p class="hero-visual-note" data-i18n="hero-visual-note" data-i18n-html="true">一次讀一章。<br>把一句話帶給一個人。</p>
+      </div>
     </div>
     <div class="hero-scroll"><div class="scroll-line"></div></div>
   </section>
@@ -960,7 +1032,7 @@
   </section>
 
   <!-- PAIN POINTS -->
-  <section id="pain">
+  <section id="pain" hidden>
     <div style="max-width:1200px; margin:0 auto;">
       <div class="section-header reveal">
         <p class="section-label" data-i18n="pain-label"></p>
@@ -1013,7 +1085,7 @@
     </div>
   </section>
 
-  <section class="overview-section">
+  <section class="overview-section" hidden>
     <p class="overview-label" data-i18n="overview-label"></p>
     <div class="overview-image-wrap">
       <img src="assets/images/bibcycle_Cycle002.png" width="1080" height="1350" alt="神的話、記掛那個人、遞出App/卡" class="overview-image" loading="lazy">
@@ -1021,7 +1093,7 @@
   </section>
 
   <!-- CYCLE POSTER -->
-  <section id="cycle" style="background: var(--bg); text-align: center; padding-bottom: 24px;">
+  <section id="cycle" hidden style="background: var(--bg); text-align: center; padding-bottom: 24px;">
     <div class="reveal" style="max-width: 480px; margin: 0 auto;">
       <p style="font-size: 13px; letter-spacing: 0.16em; color: var(--amber-dark); margin-bottom: 28px; font-weight: 500;" data-i18n="cycle-label"></p>
       <img src="assets/images/bibcycle_Cycle.png" width="1080" height="1350"
@@ -1078,7 +1150,7 @@
   </section>
 
   <!-- AFTER YOU GIVE THE CARD -->
-  <section id="after-card" style="background: var(--bg); text-align: center;">
+  <section id="after-card" hidden style="background: var(--bg); text-align: center;">
     <div class="reveal" style="max-width: 900px; margin: 0 auto;">
       <p class="section-label" style="color: var(--amber-dark);" data-i18n="after-card-label"></p>
       <h2 class="section-title" style="margin: 0 auto 32px; max-width: 500px;" data-i18n="after-card-title"></h2>
@@ -1144,7 +1216,7 @@
   </section>
 
   <!-- BIRD IDENTITY -->
-  <section id="bird-identity">
+  <section id="bird-identity" hidden>
     <div class="bird-identity-inner reveal">
       <div class="bird-identity-img">
         <img src="assets/images/bird_real.png" width="1271" height="601"
@@ -1159,7 +1231,7 @@
   </section>
 
   <!-- INVITE -->
-  <section id="invite">
+  <section id="invite" hidden>
     <div class="invite-inner reveal">
       <h2 class="invite-title" data-i18n="invite-title"></h2>
       <p class="invite-body" data-i18n="invite-body" data-i18n-html="true"></p>
@@ -1265,8 +1337,6 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg>
       Google Play
     </a>
-    <a href="articles/" class="mcta-link" data-i18n="nav-articles"></a>
-    <a href="wingbearer.html" class="mcta-link" data-i18n="nav-wingbearer"></a>
   </div>
   <div id="img-lightbox" class="lightbox" aria-hidden="true">
     <img id="img-lightbox-content" class="lightbox-img" alt="">

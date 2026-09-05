@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-scroll-progress data-scroll-reveal>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BibCycle 翼旅 — 走進聖經的那扇門</title>
+  <link rel="icon" type="image/webp" href="/assets/logo_bird001.webp">
+  <link rel="shortcut icon" type="image/webp" href="/assets/logo_bird001.webp">
+  <link rel="apple-touch-icon" href="/assets/logo_bird001.webp">
+
+  <!-- 基本 SEO -->
+  <meta name="description" content="BibCycle 翼旅是一款聖經讀經 App，一次讀一章。可以抽一章來讀，也可以順序讀下去。1,189 章，走成一個循環。走進聖經的那扇門 — 一張卡，從你手裡，到他手裡。">
+  <meta name="keywords" content="BibCycle, 翼旅, 聖經, 讀經, 讀經App, 聖經App, 抽一章, 順序讀經, 一章一章讀, Bible reading app, Word and Wings, 福音">
+  <meta name="author" content="BibCycle">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bibcycle.org/">
+
+  <!-- Sitemap hint -->
+  <link rel="sitemap" type="application/xml" href="https://bibcycle.org/sitemap.xml">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="zh-TW"     href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="zh-HK"     href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="zh-CN"     href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="en"        href="https://bibcycle.org/">
+  <link rel="alternate" hreflang="x-default" href="https://bibcycle.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="BibCycle 翼旅">
+  <meta property="og:title"       content="BibCycle 翼旅 — 走進聖經的那扇門">
+  <meta property="og:description" content="聖經讀經 App，一次讀一章。可以抽一章來讀，也可以順序讀下去。1,189 章，走成一個循環。一張卡，從你手裡，到他手裡。">
+  <meta property="og:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url"         content="https://bibcycle.org/">
+  <meta property="og:locale"      content="zh_TW">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="BibCycle 翼旅 — 走進聖經的那扇門">
+  <meta name="twitter:description" content="聖經讀經 App。抽一章，或者順序讀。1,189 章，走成一個循環。">
+  <meta name="twitter:image"       content="https://bibcycle.org/assets/carried_card/card-front.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://bibcycle.org/#website",
+        "url": "https://bibcycle.org/",
+        "name": "BibCycle 翼旅",
+        "alternateName": ["BibCycle", "翼旅", "Word & Wings"],
+        "description": "聖經讀經 App，一次讀一章。可以抽一章來讀，也可以順序讀下去，1,189 章走成一個循環。",
+        "inLanguage": ["zh-TW", "zh-CN", "en"],
+        "publisher": {
+          "@id": "https://bibcycle.org/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://bibcycle.org/#organization",
+        "name": "BibCycle",
+        "alternateName": "BibCycle 翼旅",
+        "url": "https://bibcycle.org/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bibcycle.org/assets/logo_bird001.webp"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "bibcyclebib@gmail.com",
+          "contactType": "customer support"
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://bibcycle.org/#app",
+        "name": "BibCycle 翼旅",
+        "alternateName": "BibCycle",
+        "description": "聖經讀經 App，以章為單位。可以從未讀的章裡抽一章來讀，也可以順序讀下去，1,189 章走成一個循環。",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": ["iOS", "Android"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "HKD"
+        },
+        "inLanguage": ["zh-TW", "zh-CN", "en"],
+        "url": "https://bibcycle.org/",
+        "author": {
+          "@id": "https://bibcycle.org/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="assets/css/bibcycle-core.css">
+  <link rel="stylesheet" href="assets/css/bibcycle-nav.css">
+  <link rel="stylesheet" href="assets/css/scroll-effects.css">
+  <script defer src="assets/js/scroll-effects.js"></script>
+
+  <script>
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "primaryColor": "#2a3f5c",
+      "accentColor": "#FFD27F",
+      "bgColor": "#f8f6f1",
+      "headingFont": "Noto Serif TC",
+      "showScrollAnim": true
+    }/*EDITMODE-END*/;
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      text-align: center;
+      padding: 120px 40px 80px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute;
+      width: 700px; height: 700px; border-radius: 50%;
+      border: 1px solid rgba(255,210,127,0.08);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: ''; position: absolute;
+      width: 1000px; height: 1000px; border-radius: 50%;
+      border: 1px solid rgba(255,210,127,0.05);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+
+    .hero-layout {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      align-items: center;
+      gap: clamp(48px, 7vw, 104px);
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      text-align: left;
+    }
+    .hero-copy { max-width: 650px; }
+    .hero-copy .hero-subtitle,
+    .hero-copy .btn-group { justify-content: flex-start; }
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+    }
+    .hero-phone {
+      width: min(270px, 70%);
+      padding: 9px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 36px;
+      background: #101b2d;
+      box-shadow: 0 38px 80px rgba(5,13,27,.42);
+      transform: rotate(3deg);
+    }
+    .hero-phone img {
+      display: block;
+      width: 100%;
+      border-radius: 28px;
+    }
+    .hero-card {
+      position: absolute;
+      left: 0;
+      bottom: 56px;
+      width: min(280px, 68%);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 18px;
+      box-shadow: 0 24px 56px rgba(5,13,27,.45);
+      transform: rotate(-7deg);
+    }
+    .hero-visual-note {
+      position: absolute;
+      right: 0;
+      top: 64px;
+      max-width: 150px;
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: .06em;
+    }
+    .hero-visual-note::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      margin-bottom: 14px;
+      background: var(--amber);
+    }
+
+    .hero-eyebrow {
+      font-size: 30px; font-weight: 400; letter-spacing: 0.2em;
+      color: var(--amber); margin-bottom: 28px;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 72px); font-weight: 500;
+      color: #fff; line-height: 1.3; letter-spacing: 0.04em;
+      max-width: 720px; margin-bottom: 24px; text-wrap: pretty;
+      opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+    }
+    .hero-title em { font-style: normal; color: var(--amber); }
+    .hero-subtitle {
+      font-size: 18px; font-weight: 300;
+      color: rgba(255,255,255,0.6); letter-spacing: 0.12em; margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    }
+    .hero-subtitle span { display: inline-flex; align-items: center; }
+    .hero-subtitle span:not(:last-child)::after { content: '·'; margin: 0 12px; color: #FFD27F; }
+
+    .hero-anchor {
+      font-size: 15px; font-weight: 300;
+      color: rgba(255,255,255,0.4); letter-spacing: 0.06em; margin-bottom: 56px;
+      opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
+    }
+
+    .hero-received {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      border: 1px solid rgba(255,210,127,0.34);
+      border-radius: 999px;
+      padding: 11px 26px;
+      margin-top: 20px;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.75s forwards;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .hero-received:hover {
+      color: #fff;
+      border-color: rgba(255,210,127,0.75);
+      background: rgba(255,210,127,0.07);
+    }
+
+    .btn-group {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+      opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+      position: relative; z-index: 2;
+    }
+    .btn {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 28px; border-radius: 12px; text-decoration: none;
+      font-family: var(--sans); font-size: 15px; font-weight: 500; letter-spacing: 0.02em;
+      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .btn-primary { background: var(--amber); color: var(--navy); }
+    .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+    .btn-icon { width: 24px; height: 24px; flex-shrink: 0; }
+    .btn-label-sub { font-size: 11px; font-weight: 300; opacity: 0.7; display: block; }
+
+    .btn-coming-soon-wrap {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px 28px;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.35);
+      font-family: var(--sans);
+      cursor: default;
+    }
+    .btn-coming-soon-tag {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,210,127,0.6);
+      letter-spacing: 0.06em;
+    }
+
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,210,127,0.4), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+    @keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:.8} }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 60px; }
+    .section-label { font-size: 27.5px; font-weight: 400; letter-spacing: 0.25em; color: var(--amber-dark); text-transform: uppercase; margin-bottom: 16px; }
+    .section-title { font-family: var(--serif); font-size: clamp(28px, 3vw, 44px); font-weight: 500; color: var(--navy); letter-spacing: 0.03em; line-height: 1.4; margin-bottom: 16px; }
+    .section-subtitle { font-size: 16px; font-weight: 300; color: var(--text-muted); line-height: 1.8; max-width: 480px; }
+    .section-header { margin-bottom: 64px; }
+
+    /* ── PAIN POINTS ── */
+    #pain { background: var(--bg); }
+    .pain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; max-width: 1200px; margin: 0 auto; align-items: stretch; }
+    #pain .section-subtitle { max-width: 600px; }
+    .pain-card {
+      background: #fff; border-radius: 20px; padding: 40px 36px;
+      border: 1px solid rgba(42,63,92,0.06);
+      border-left: 3px solid #FFD27F;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .pain-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(42,63,92,0.1); }
+    .pain-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--amber); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+    }
+    .pain-card:hover::before { transform: scaleX(1); }
+    .pain-number { font-family: var(--serif); font-size: 48px; font-weight: 300; color: rgba(42,63,92,0.08); line-height: 1; margin-bottom: 20px; }
+    .pain-problem { font-size: 13px; font-weight: 400; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 12px; padding: 6px 12px; background: rgba(42,63,92,0.04); border-radius: 20px; display: inline-block; }
+    .pain-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--navy); margin-bottom: 12px; line-height: 1.5; }
+    .pain-desc { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.9; }
+    .pain-solution { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(42,63,92,0.06); display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--navy); font-weight: 400; line-height: 1.7; }
+    .solution-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber-dark); flex-shrink: 0; margin-top: 6px; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--bg-warm); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+    .testimonials-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+    .quote-card {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid rgba(42,63,92,0.08);
+      border-left: 3px solid #FFD27F;
+      padding: 30px 26px;
+      box-shadow: 0 10px 30px rgba(42,63,92,0.06);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 280px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .quote-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(42,63,92,0.1); }
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 48px;
+      line-height: 1;
+      color: #FFD27F;
+      display: block;
+    }
+    .quote-mark-open { align-self: flex-start; margin-bottom: 14px; }
+    .quote-mark-close { align-self: flex-end; margin-top: auto; }
+    .quote-text {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: 32px;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+      flex: 1;
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how { background: var(--navy); position: relative; overflow: hidden; }
+    #how .section-title { color: #fff; }
+    #how .section-subtitle { color: rgba(255,255,255,0.5); }
+    #how .section-label { color: var(--amber); }
+    .steps-container { display: grid; grid-template-columns: repeat(3,1fr); max-width: 1100px; margin: 0 auto; position: relative; }
+    .steps-container::before {
+      content: ''; position: absolute;
+      top: 56px; left: calc(33.33% - 20px); right: calc(33.33% - 20px);
+      height: 1px; background: var(--amber); opacity: 0.2;
+    }
+    .step { padding: 40px 48px; text-align: center; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,210,127,0.12); border: 1px solid rgba(255,210,127,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-family: var(--serif); font-size: 18px; color: var(--amber); font-weight: 400; }
+    .step-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: #fff; margin-bottom: 14px; letter-spacing: 0.03em; }
+    .step-desc { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.9; }
+    .how-resource-cta { display: flex; justify-content: center; margin: -28px 0 18px; }
+    .how-resource-cta .btn { min-width: 220px; justify-content: center; }
+
+    /* ── SCREENSHOTS ── */
+    #screenshots { background: var(--bg-warm); overflow: hidden; }
+    .screenshots-wrapper { display: flex; gap: 32px; justify-content: center; align-items: flex-end; padding-top: 20px; }
+    .phone-mockup { width: 220px; background: var(--navy); border-radius: 36px; padding: 10px; box-shadow: 0 32px 80px rgba(42,63,92,0.2), 0 4px 16px rgba(42,63,92,0.1); transition: transform 0.4s; flex-shrink: 0; }
+    .phone-mockup:hover { transform: translateY(-8px); }
+    .phone-mockup.center { transform: scale(1.08) translateY(-16px); }
+    .phone-mockup.center:hover { transform: scale(1.08) translateY(-24px); }
+    .phone-screen { background: #fff; border-radius: 28px; overflow: hidden; aspect-ratio: 9/19.5; position: relative; }
+    .phone-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: center top;
+      background: #f3efe7;
+    }
+
+    /* Phone screen internals */
+    .screen-home { background: var(--navy); padding: 24px 16px 16px; height: 100%; display: flex; flex-direction: column; }
+    .screen-home-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .screen-logo-sm { font-family: var(--serif); font-size: 14px; color: #fff; font-weight: 500; }
+    .screen-logo-sm span { color: var(--amber); }
+    .avatar-sm { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,210,127,0.2); border: 1px solid rgba(255,210,127,0.3); }
+    .screen-week { font-size: 9px; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; margin-bottom: 6px; }
+    .screen-progress-title { font-size: 13px; color: #fff; font-family: var(--serif); margin-bottom: 10px; }
+    .progress-bar-wrap { background: rgba(255,255,255,0.1); border-radius: 4px; height: 4px; margin-bottom: 20px; }
+    .progress-bar-fill { height: 100%; border-radius: 4px; background: var(--amber); width: 62%; }
+    .reading-list { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .reading-item { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; }
+    .reading-item-left { display: flex; flex-direction: column; gap: 3px; }
+    .ri-book { font-size: 10px; color: var(--amber); font-weight: 500; }
+    .ri-chapter { font-size: 9px; color: rgba(255,255,255,0.4); }
+    .ri-check { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; }
+    .ri-check.done { background: var(--amber); color: var(--navy); }
+    .ri-check.todo { background: rgba(255,255,255,0.08); color: transparent; border: 1px solid rgba(255,255,255,0.15); }
+
+    .screen-reading { background: #faf8f3; padding: 20px 14px; height: 100%; display: flex; flex-direction: column; }
+    .screen-back-row { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+    .back-arrow { width: 20px; height: 20px; border-radius: 50%; background: rgba(42,63,92,0.08); display: flex; align-items: center; justify-content: center; font-size: 9px; color: var(--navy); }
+    .screen-book-title { font-family: var(--serif); font-size: 12px; color: var(--navy); font-weight: 500; }
+    .verse-block { flex: 1; }
+    .verse-ref { font-size: 9px; color: var(--amber-dark); letter-spacing: 0.05em; margin-bottom: 10px; }
+    .verse-text { font-family: var(--serif); font-size: 11px; color: #3a3530; line-height: 1.9; }
+    .verse-text .highlight { background: rgba(255,210,127,0.35); border-radius: 2px; padding: 0 2px; }
+    .screen-actions { display: flex; gap: 8px; padding-top: 12px; border-top: 1px solid rgba(42,63,92,0.06); }
+    .action-btn-sm { flex: 1; padding: 8px; border-radius: 8px; background: rgba(42,63,92,0.06); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--navy); }
+    .action-btn-sm.primary-sm { background: var(--navy); color: #fff; }
+
+    .screen-plan { background: #fff; padding: 20px 14px; height: 100%; display: flex; flex-direction: column; }
+    .plan-title-row { margin-bottom: 8px; }
+    .plan-screen-title { font-family: var(--serif); font-size: 14px; color: var(--navy); font-weight: 500; margin-bottom: 4px; }
+    .dot-pool-label { font-size: 9px; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 8px; }
+    .dot-pool { display: grid; grid-template-columns: repeat(10,1fr); gap: 4px; margin-bottom: 14px; }
+    .pool-dot { aspect-ratio: 1; border-radius: 3px; background: rgba(42,63,92,0.1); }
+    .pool-dot.read { background: rgba(232,184,75,0.55); }
+    .books-overview { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .book-row { display: flex; align-items: center; gap: 8px; }
+    .book-name { font-size: 9px; color: var(--navy); width: 36px; flex-shrink: 0; }
+    .book-prog-bg { flex: 1; height: 4px; border-radius: 2px; background: rgba(42,63,92,0.08); }
+    .book-prog-fill { height: 100%; border-radius: 2px; background: var(--amber-dark); }
+    .book-pct { font-size: 8px; color: var(--text-muted); width: 24px; text-align: right; }
+
+    .screenshot-caption { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 20px; letter-spacing: 0.05em; }
+
+    #bird-identity {
+      background: var(--bg);
+      padding: 72px 40px;
+    }
+    .bird-identity-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .bird-identity-img img {
+      width: 100%;
+      max-width: 280px;
+      display: block;
+      margin: 0 auto;
+    }
+    .bird-identity-text .section-label {
+      margin-bottom: 24px;
+    }
+    .bird-poem {
+      font-size: 17px;
+      line-height: 2.2;
+      color: var(--text);
+      white-space: pre-line;
+    }
+    @media (max-width: 640px) {
+      .bird-identity-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+      .bird-identity-img img {
+        max-width: 180px;
+      }
+    }
+
+    /* ── FAQ ── */
+    #faq { background: var(--navy); }
+    #faq .section-title { color: #fff; text-align: center; margin-bottom: 40px; }
+    .faq-wrap { max-width: 900px; margin: 0 auto; display: grid; gap: 14px; }
+    .faq-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,210,127,0.22);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-q {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 20px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.01em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .faq-q::after {
+      content: '+';
+      color: var(--amber);
+      font-size: 20px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .faq-item[open] .faq-q::after { content: '−'; }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-a {
+      padding: 0 20px 18px;
+      color: rgba(255,255,255,0.72);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .faq-a a {
+      color: var(--amber);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,210,127,0.9);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+      word-break: break-word;
+    }
+    .faq-a a:hover,
+    .faq-a a:focus-visible {
+      color: #ffe6aa;
+      text-decoration-color: #ffe6aa;
+      outline: none;
+    }
+
+    /* ── VIDEO ── */
+    #video-section {
+      background: #11202e;
+      padding: 80px 60px;
+      display: flex; flex-direction: column; align-items: center; gap: 40px;
+    }
+    #video-section .section-label { color: var(--amber); }
+    #video-section .section-title { color: #fff; text-align: center; }
+    .video-outer {
+      width: 100%; max-width: 640px;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    /* Landscape phone bezel */
+    .video-phone-bezel {
+      width: 100%;
+      background: var(--navy);
+      border-radius: 32px;
+      padding: 10px 20px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+      position: relative;
+    }
+    /* Side buttons */
+    .video-phone-bezel::before {
+      content: '';
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      left: -4px; width: 4px; height: 40px;
+      background: #1e3450;
+      border-radius: 2px 0 0 2px;
+    }
+    .video-phone-bezel::after {
+      content: '';
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      right: -4px; width: 4px; height: 40px;
+      background: #1e3450;
+      border-radius: 0 2px 2px 0;
+    }
+    .video-player {
+      width: 100%;
+      border-radius: 22px;
+      display: block;
+      background: #0d1820;
+      outline: none;
+    }
+    .video-thumb-caption {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.06em;
+      text-align: center;
+      font-family: var(--sans);
+    }
+
+    /* ── CTA ── */
+    #cta { background: var(--navy); text-align: center; padding: 100px 60px; position: relative; overflow: hidden; }
+    #cta::before {
+      content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,210,127,0.06) 0%, transparent 70%);
+      top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;
+    }
+    #cta .section-title { color: #fff; }
+    #cta .section-label { color: var(--amber); }
+    .cta-subtitle { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 48px; line-height: 1.9; }
+
+    /* ── REVEAL ── */
+    html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    html.js .reveal.visible { opacity: 1; transform: none; }
+    html.js.anim-off .reveal { transition: none; }
+    html.js .reveal-delay-1 { transition-delay: 0.1s; }
+    html.js .reveal-delay-2 { transition-delay: 0.2s; }
+    html.js .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── TWEAKS PANEL ── */
+    #tweaks-panel { display: none; position: fixed; bottom: 24px; right: 24px; background: #fff; border: 1px solid rgba(42,63,92,0.12); border-radius: 16px; padding: 20px 24px; z-index: 999; box-shadow: 0 8px 40px rgba(0,0,0,0.12); min-width: 240px; font-family: var(--sans); }
+    #tweaks-panel h3 { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 16px; letter-spacing: 0.05em; }
+    .tweak-row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+    .tweak-row label { font-size: 11px; color: var(--text-muted); }
+    .tweak-row input[type="color"] { width: 100%; height: 32px; border: 1px solid rgba(42,63,92,0.15); border-radius: 6px; cursor: pointer; background: transparent; }
+    .tweak-row select { font-family: var(--sans); font-size: 12px; border: 1px solid rgba(42,63,92,0.15); border-radius: 6px; padding: 6px 8px; color: var(--navy); background: #fff; }
+    .tweak-row input[type="checkbox"] { width: 16px; height: 16px; }
+
+    /* ── MISSION SECTION ── */
+    #mission { background: var(--bg); }
+    .mission-body {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .mission-text {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2.2vw, 26px);
+      color: var(--navy);
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+      margin-bottom: 48px;
+    }
+    .mission-builder {
+      border-top: 1px solid rgba(42,63,92,0.1);
+      padding-top: 36px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+    .mission-builder strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* ── CARD SHOWCASE ── */
+    #card-showcase { background: var(--bg-warm); }
+    .card-showcase-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+.card-image-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 16px;
+      align-items: start;
+    }
+.card-img {
+      width: 100%;
+      height: auto;
+      max-width: 420px;
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(42,63,92,0.15);
+      cursor: zoom-in;
+    }
+.card-img-caption {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+    .card-text-wrap { display: flex; flex-direction: column; gap: 24px; }
+    .card-headline {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.4;
+      letter-spacing: 0.03em;
+    }
+    .card-body {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+    .card-tagline {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--navy);
+      border-left: 3px solid var(--amber);
+      padding-left: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── STEP WITH BUTTON ── */
+    .step-download {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+      align-items: center;
+    }
+    .step-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .step-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .step-btn-primary { background: var(--amber); color: var(--navy); }
+    .step-btn-secondary { background: rgba(42,63,92,0.08); color: var(--navy); }
+
+    /* ── INVITE SECTION ── */
+    #invite { background: var(--bg-warm); text-align: center; }
+    .invite-inner { max-width: 600px; margin: 0 auto; }
+    .invite-title {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+    .invite-body {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+    .invite-email {
+      display: inline-block;
+      font-size: 15px;
+      color: var(--navy);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+.invite-email:hover { color: var(--amber-dark); }
+
+    /* ── IMAGE LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 1000;
+    }
+    .lightbox.open { display: flex; }
+.lightbox-img {
+      max-width: min(96vw, 1200px);
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ── READABILITY BOOST ── */
+    .hero-subtitle { font-size: 22px; line-height: 1.8; }
+    .btn { font-size: 17px; }
+    .btn-label-sub { font-size: 13px; }
+    .section-subtitle { font-size: 19px; line-height: 1.9; max-width: 560px; }
+    .pain-title { font-size: 24px; line-height: 1.55; }
+    .pain-desc { font-size: 17px; line-height: 2; }
+    .step-title { font-size: 24px; line-height: 1.55; }
+    .step-desc { font-size: 17px; line-height: 2; color: rgba(255,255,255,0.72); }
+    .card-body { font-size: 19px; line-height: 2; }
+    .card-tagline { font-size: 19px; line-height: 1.9; }
+    .invite-body { font-size: 19px; line-height: 2; }
+    .faq-q { font-size: 19px; }
+    .faq-a { font-size: 18px; line-height: 1.95; }
+    .cta-subtitle { font-size: 19px; line-height: 2; color: rgba(255,255,255,0.72); }
+
+    .after-card-body {
+      max-width: 460px;
+      margin: 0 auto 48px;
+      font-size: 16px;
+      line-height: 2.1;
+      font-weight: 300;
+      color: rgba(42, 63, 92, 0.78);
+      text-align: center;
+    }
+
+    #how .how-subtitle {
+      margin: 24px auto 0;
+      max-width: 420px;
+      font-size: 16px;
+      line-height: 2;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    @media (max-width: 960px) {
+      .card-showcase-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .mobile-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 999;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding: 12px 20px 20px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-cta-bar.visible { transform: translateY(0); }
+    .mobile-cta-bar .mcta-btn {
+      flex: 1;
+      max-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .mobile-cta-bar .mcta-ios {
+      background: var(--amber);
+      color: var(--navy);
+    }
+    .mobile-cta-bar .mcta-android {
+      background: rgba(255,255,255,0.10);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.20);
+    }
+    .mobile-cta-bar .mcta-link {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.08em;
+      padding-top: 6px;
+      text-decoration: none;
+    }
+    .mobile-cta-bar .mcta-link:hover { color: var(--amber); }
+    @media (max-width: 960px) {
+      .mobile-cta-bar { display: flex; }
+    }
+    @media (max-width: 960px) {
+      body {
+        padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+      }
+      section { padding: 72px 24px; }
+      #hero { min-height: auto; padding: 116px 24px 84px; }
+      .hero-layout { grid-template-columns: 1fr; gap: 54px; text-align: center; }
+      .hero-copy { max-width: 680px; margin: 0 auto; }
+      .hero-copy .hero-subtitle,
+      .hero-copy .btn-group { justify-content: center; }
+      .hero-visual { min-height: 440px; width: min(430px, 100%); margin: 0 auto; }
+      .hero-phone { width: 220px; }
+      .hero-card { width: 230px; bottom: 28px; }
+      .hero-visual-note { right: 4px; top: 36px; text-align: left; }
+      .mission-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .pain-grid, .testimonials-grid, .steps-container { grid-template-columns: 1fr; }
+      .screenshots-wrapper { gap: 16px; }
+      .phone-mockup { width: 160px; }
+      #get-card > div { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .qr-block { display: block; }
+      .hero-title { font-size: 34px; }
+      .hero-anchor { font-size: 14px; margin-bottom: 36px; }
+      .hero-received { font-size: 14px; padding: 10px 22px; margin-top: 16px; margin-bottom: 36px; }
+      .after-card-body { font-size: 15px; margin-bottom: 36px; }
+      #how .how-subtitle { font-size: 15px; margin-top: 20px; }
+    }
+
+    .overview-section {
+      text-align: center;
+      padding: 60px 24px 24px;
+    }
+    .overview-label {
+      font-size: 13px;
+      color: var(--amber-dark);
+      letter-spacing: 0.16em;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+    .overview-image-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 24px 64px rgba(42,63,92,0.15);
+      overflow: hidden;
+    }
+    .overview-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="bc-nav bc-nav--fixed" id="main-nav" data-scroll-nav data-scroll-nav-mode="fixed" aria-label="Main">
+    <a class="bc-nav__logo is-active" href="index.html" aria-current="page">Bib<span>Cycle</span></a>
+    <ul class="bc-nav__links" id="bc-nav-links">
+      <li><a href="index.html#mission" data-i18n="nav-mission">使命</a></li>
+      <li><a href="index.html#how" data-i18n="nav-how">成為翼使</a></li>
+      <li><a href="wingbearer.html" data-i18n="nav-wingbearer">翼使資源</a></li>
+      <li><a href="articles/" data-i18n="nav-articles">文章</a></li>
+      <li><a href="download.html" data-i18n="nav-download">下載</a></li>
+      <li><a href="partner.html" class="nav-key-link" data-i18n="nav-partner">教會與機構</a></li>
+    </ul>
+    <div class="bc-nav__lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang="zh-TW" aria-pressed="true">繁</button>
+      <button type="button" class="lang-btn" data-lang="zh-CN" aria-pressed="false">简</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button type="button" class="bc-nav__toggle" aria-expanded="false" aria-controls="bc-nav-links" aria-label="選單">選單</button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" data-scroll-hero>
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <p class="hero-eyebrow" data-i18n="hero-eyebrow"></p>
+        <h1 class="hero-title" data-i18n="hero-title" data-i18n-html="true"></h1>
+        <p class="hero-subtitle" data-i18n="hero-subtitle" data-i18n-html="true"></p>
+        <p class="hero-anchor" data-i18n="hero-anchor"></p>
+        <div class="btn-group">
+          <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
+            <div><span class="btn-label-sub">Download on the</span>App Store</div>
+          </a>
+          <a href="download.html" class="btn btn-secondary" data-i18n="nav-download">下載</a>
+        </div>
+        <a class="hero-received" href="received.html" data-i18n="hero-received"></a>
+      </div>
+      <div class="hero-visual" aria-label="BibCycle App 與分享卡片預覽">
+        <div class="hero-phone"><img src="assets/screen2.jpg" width="1242" height="2688" alt="BibCycle 讀經畫面" data-i18n-alt="hero-screen-alt"></div>
+        <img class="hero-card" src="assets/card/carried_card/card-front.png" width="788" height="450" alt="You are carried 分享卡片" data-i18n-alt="hero-card-alt">
+        <p class="hero-visual-note" data-i18n="hero-visual-note" data-i18n-html="true">一次讀一章。<br>把一句話帶給一個人。</p>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section id="video-section">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label" data-i18n="video-label"></p>
+      <h2 class="section-title" data-i18n="video-title"></h2>
+    </div>
+    <div class="video-outer reveal">
+      <div class="video-phone-bezel">
+        <video
+          id="intro-video"
+          class="video-player"
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/tubescreen.png"
+        >
+          <source src="assets/intro.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="video-thumb-caption">BibCycle 翼旅 介紹影片 · Play directly on this page</p>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission">
+    <div class="mission-inner" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div class="mission-body reveal">
+        <p class="section-label" data-i18n="mission-label"></p>
+        <div class="mission-text" data-i18n="mission-text" data-i18n-html="true"></div>
+        <div class="mission-builder" data-i18n="mission-builder" data-i18n-html="true"></div>
+      </div>
+      <div class="reveal reveal-delay-2" style="text-align:center;">
+        <img src="assets/images/wait_001.png" width="1149" height="689"
+             alt=""
+             aria-hidden="true"
+             style="width:100%; max-width:300px; border-radius:20px;" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section id="pain" hidden>
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-header reveal">
+        <p class="section-label" data-i18n="pain-label"></p>
+        <h2 class="section-title" data-i18n="pain-title"></h2>
+        <p class="section-subtitle" data-i18n="pain-subtitle"></p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card reveal reveal-delay-1">
+          <div class="pain-number">01</div>
+          <img src="assets/images/pain_001.png" width="1738" height="933" alt="" aria-hidden="true"
+               style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;" loading="lazy">
+          <h3 class="pain-title" data-i18n="pain1-title"></h3>
+          <p class="pain-desc" data-i18n="pain1-desc"></p>
+        </div>
+        <div class="pain-card reveal reveal-delay-2">
+          <div class="pain-number">02</div>
+          <img src="assets/images/pain_002.png" width="1656" height="1474" alt="" aria-hidden="true"
+               style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;" loading="lazy">
+          <h3 class="pain-title" data-i18n="pain2-title"></h3>
+          <p class="pain-desc" data-i18n="pain2-desc"></p>
+        </div>
+        <div class="pain-card reveal reveal-delay-3">
+          <div class="pain-number">03</div>
+          <img src="assets/images/pain_003.png" width="1952" height="2166" alt="" aria-hidden="true"
+               style="width:100%; max-width:120px; margin-bottom:16px; border-radius:12px; background:#fff;" loading="lazy">
+          <h3 class="pain-title" data-i18n="pain3-title"></h3>
+          <p class="pain-desc" data-i18n="pain3-desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD SHOWCASE -->
+  <section id="card-showcase">
+    <div class="card-showcase-inner">
+      <div class="card-image-wrap reveal">
+        <img class="card-img" src="assets/card/here_enough/card-front.png" width="450" height="788" alt="Here is enough 正面" loading="lazy">
+        <img class="card-img" src="assets/card/here_enough/card-back.png" width="450" height="788" alt="Here is enough 背面" loading="lazy">
+        <img class="card-img" src="assets/card/carried_card/card-front.png" width="788" height="450" alt="You are carried 正面" loading="lazy">
+        <img class="card-img" src="assets/card/word_wind_Card/card-front.jpg" width="788" height="450" alt="BibCycle 翼旅 正面" loading="lazy">
+        <img class="card-img" src="assets/card/carried_card/card-back.png" width="788" height="450" alt="You are carried 背面" loading="lazy">
+        <img class="card-img" src="assets/card/word_wind_Card/card-back.jpg" width="788" height="450" alt="BibCycle 翼旅 背面" loading="lazy">
+      </div>
+      <div class="card-text-wrap reveal reveal-delay-2">
+        <p class="section-label" data-i18n="card-label"></p>
+        <h2 class="card-headline" data-i18n="card-headline"></h2>
+        <p class="card-body" data-i18n="card-body" data-i18n-html="true"></p>
+        <p class="card-tagline" data-i18n="card-tagline"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="overview-section" hidden>
+    <p class="overview-label" data-i18n="overview-label"></p>
+    <div class="overview-image-wrap">
+      <img src="assets/images/bibcycle_Cycle002.png" width="1080" height="1350" alt="神的話、記掛那個人、遞出App/卡" class="overview-image" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CYCLE POSTER -->
+  <section id="cycle" hidden style="background: var(--bg); text-align: center; padding-bottom: 24px;">
+    <div class="reveal" style="max-width: 480px; margin: 0 auto;">
+      <p style="font-size: 13px; letter-spacing: 0.16em; color: var(--amber-dark); margin-bottom: 28px; font-weight: 500;" data-i18n="cycle-label"></p>
+      <img src="assets/images/bibcycle_Cycle.png" width="1080" height="1350"
+           alt="成為翼使：記掛那個人，遞卡，朋友走進聖經，循環流動"
+           style="width: 100%; border-radius: 20px; box-shadow: 0 24px 64px rgba(42,63,92,0.15); cursor: pointer;" loading="lazy">
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-header reveal" style="text-align:center; margin:0 auto 64px; max-width:600px;">
+        <p class="section-label" data-i18n="how-label"></p>
+        <h2 class="section-title" data-i18n="how-title"></h2>
+        <p class="how-subtitle" data-i18n="how-subtitle" data-i18n-html="true"></p>
+      </div>
+      <div class="steps-container">
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num" data-i18n="step1-num"></div>
+          <h3 class="step-title" data-i18n="step1-title"></h3>
+          <p class="step-desc" data-i18n="step1-desc" data-i18n-html="true"></p>
+          <div class="step-download">
+            <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990"
+               target="_blank" rel="noopener" class="btn btn-primary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
+              <div><span class="btn-label-sub">Download on the</span>App Store</div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle"
+               target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg>
+              <div><span class="btn-label-sub">Get it on</span>Google Play</div>
+            </a>
+          </div>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num" data-i18n="step2-num"></div>
+          <h3 class="step-title" data-i18n="step2-title"></h3>
+          <p class="step-desc" data-i18n="step2-desc" data-i18n-html="true"></p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step-num" data-i18n="step3-num"></div>
+          <h3 class="step-title" data-i18n="step3-title"></h3>
+          <p class="step-desc" data-i18n="step3-desc" data-i18n-html="true"></p>
+        </div>
+      </div>
+      <div class="how-resource-cta reveal" style="text-align:center; margin-top: 48px;">
+        <a href="wingbearer.html" class="btn btn-primary" data-i18n="how-resource-btn"></a>
+      </div>
+      <div class="how-mobilize reveal" style="margin-top: 80px; text-align: center; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 64px;">
+        <p class="how-mobilize-text" data-i18n="mobilize-body" data-i18n-html="true" style="font-size: 16px; color: rgba(255,255,255,0.6); line-height: 2; margin-bottom: 28px;"></p>
+        <a href="wingbearer.html#resources" data-i18n="mobilize-cta" style="color: var(--amber); font-size: 15px; letter-spacing: 0.05em; text-decoration: none; border-bottom: 1px solid rgba(255,210,127,0.4); padding-bottom: 2px; transition: border-color 0.2s;"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFTER YOU GIVE THE CARD -->
+  <section id="after-card" hidden style="background: var(--bg); text-align: center;">
+    <div class="reveal" style="max-width: 900px; margin: 0 auto;">
+      <p class="section-label" style="color: var(--amber-dark);" data-i18n="after-card-label"></p>
+      <h2 class="section-title" style="margin: 0 auto 32px; max-width: 500px;" data-i18n="after-card-title"></h2>
+      <p class="after-card-body" data-i18n="after-card-body" data-i18n-html="true"></p>
+      <img id="after-card-instruction" src="assets/images/bibcycle_instruction.png" width="3375" height="4219"
+           alt="兩步就夠了：想起那個人，把卡親手交給他"
+           style="width: 100%; max-width: 480px; border-radius: 20px; box-shadow: 0 24px 64px rgba(42,63,92,0.12); cursor:pointer;" loading="lazy">
+    </div>
+  </section>
+
+  <!-- GET CARD -->
+  <section id="get-card">
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center;">
+      <div class="reveal">
+        <p class="section-label" data-i18n="get-card-label"></p>
+        <h2 class="section-title" data-i18n="get-card-title"></h2>
+        <p class="section-subtitle" style="margin: 0 auto 32px;"
+           data-i18n="get-card-body" data-i18n-html="true"></p>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom: 24px;"
+           data-i18n="get-card-note"></p>
+        <a href="mailto:bibcyclebib@gmail.com" class="invite-email">
+          bibcyclebib@gmail.com
+        </a>
+      </div>
+      <div class="reveal reveal-delay-2 qr-block">
+        <img id="get-card-qr" src="assets/images/bibcycle_QR.png" width="3375" height="4219"
+             alt="掃描下載 BibCycle 翼旅"
+             style="width: 200px; border-radius: 16px; box-shadow: 0 16px 48px rgba(42,63,92,0.12); cursor:pointer;" loading="lazy">
+        <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 10px; letter-spacing: 0.06em;">bibcycle.org/download</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP SCREENSHOTS -->
+  <section id="screenshots">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-header reveal" style="text-align:center; margin:0 auto 48px; max-width:600px;">
+        <p class="section-label" data-i18n="ss-label"></p>
+        <h2 class="section-title" data-i18n="ss-title"></h2>
+        <p class="section-subtitle" style="margin:0 auto;" data-i18n="ss-subtitle" data-i18n-html="true"></p>
+      </div>
+      <div class="screenshots-wrapper">
+        <div class="phone-mockup reveal reveal-delay-1">
+          <div class="phone-screen">
+            <img class="phone-img" src="assets/screen1.jpg" width="1220" height="2712" alt="BibCycle home screen" loading="lazy">
+          </div>
+        </div>
+
+        <div class="phone-mockup center reveal reveal-delay-2">
+          <div class="phone-screen">
+            <img class="phone-img" src="assets/screen2.jpg" width="1242" height="2688" alt="BibCycle reading screen" loading="lazy">
+          </div>
+        </div>
+
+        <div class="phone-mockup reveal reveal-delay-3">
+          <div class="phone-screen">
+            <img class="phone-img" src="assets/screen3.jpg" width="1242" height="2688" alt="BibCycle plan screen" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <p class="screenshot-caption reveal" style="margin-top:32px;" data-i18n="ss-caption"></p>
+    </div>
+  </section>
+
+  <!-- BIRD IDENTITY -->
+  <section id="bird-identity" hidden>
+    <div class="bird-identity-inner reveal">
+      <div class="bird-identity-img">
+        <img src="assets/images/bird_real.png" width="1271" height="601"
+             alt="小白鳥"
+             aria-hidden="true" loading="lazy">
+      </div>
+      <div class="bird-identity-text">
+        <p class="section-label" data-i18n="bird-label"></p>
+        <div class="bird-poem" data-i18n="bird-poem" data-i18n-html="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVITE -->
+  <section id="invite" hidden>
+    <div class="invite-inner reveal">
+      <h2 class="invite-title" data-i18n="invite-title"></h2>
+      <p class="invite-body" data-i18n="invite-body" data-i18n-html="true"></p>
+      <a href="mailto:bibcyclebib@gmail.com" class="invite-email">
+        bibcyclebib@gmail.com
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div class="section-header reveal" style="margin:0 auto 8px; max-width:640px;">
+        <h2 class="section-title" data-i18n="faq-title"></h2>
+      </div>
+      <div class="faq-wrap">
+        <details class="faq-item reveal reveal-delay-1" open>
+          <summary class="faq-q" data-i18n="faq1-q"></summary>
+          <p class="faq-a" data-i18n="faq1-a" data-i18n-html="true"></p>
+        </details>
+        <details class="faq-item reveal reveal-delay-2">
+          <summary class="faq-q" data-i18n="faq2-q"></summary>
+          <p class="faq-a" data-i18n="faq2-a" data-i18n-html="true"></p>
+        </details>
+        <details class="faq-item reveal reveal-delay-3">
+          <summary class="faq-q" data-i18n="faq3-q"></summary>
+          <p class="faq-a" data-i18n="faq3-a" data-i18n-html="true"></p>
+        </details>
+        <details class="faq-item reveal" id="faq-contact-item">
+          <summary class="faq-q" data-i18n="faq5-q"></summary>
+          <p class="faq-a" data-i18n="faq5-a" data-i18n-html="true"></p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-q" data-i18n="faq6-q"></summary>
+          <p class="faq-a" data-i18n="faq6-a" data-i18n-html="true"></p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-q" data-i18n="faq7-q"></summary>
+          <p class="faq-a" data-i18n="faq7-a" data-i18n-html="true"></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div style="position:relative; z-index:1;">
+      <p class="section-label reveal" data-i18n="cta-label"></p>
+      <h2 class="section-title reveal" style="color:#fff; max-width:500px; margin:0 auto 20px; text-align:center;" data-i18n="cta-title"></h2>
+      <p class="cta-subtitle reveal" data-i18n="cta-subtitle" data-i18n-html="true"></p>
+      <div class="btn-group reveal" style="justify-content:center;">
+        <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
+          <div><span class="btn-label-sub">Download on the</span>App Store</div>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg>
+          <div><span class="btn-label-sub">Get it on</span>Google Play</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bc-footer">
+    <div class="bc-footer__brand-wrap">
+      <div class="bc-footer__brand">Bib<span>Cycle</span> 翼旅</div>
+      <p class="bc-footer__tagline" data-i18n="footer-tagline"></p>
+    </div>
+    <ul class="bc-footer__links">
+      <li><a href="received.html" data-i18n="footer-received"></a></li>
+      <li><a href="privacy.html" data-i18n="footer-privacy"></a></li>
+      <li><a href="#faq" data-i18n="footer-contact" id="footer-contact-link"></a></li>
+      <li><a href="https://www.youtube.com/watch?v=nJYDeF-Yg2M" target="_blank" rel="noopener" data-i18n="footer-intro-video"></a></li>
+    </ul>
+    <div class="bc-footer__social">
+      <a href="https://www.facebook.com/profile.php?id=61555773296475" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.threads.com/@bibcycle_bible" target="_blank" rel="noopener" title="Threads" aria-label="Threads">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.47 10.78c-.27-.13-.55-.25-.84-.35-.05-1.72-.83-2.7-2.24-2.76-1.47-.06-2.46.79-2.98 2.54l-1.64-.49c.76-2.59 2.41-3.87 4.95-3.76 2.4.1 3.72 1.73 3.94 4.83 1.19.59 2.05 1.44 2.32 2.81.49 2.48-1.08 4.54-4.2 5.04-3.66.58-6.13-1.09-6.94-4.53l1.73-.41c.56 2.4 2.15 3.5 4.93 3.06 2.15-.34 3.18-1.57 2.88-3.08-.17-.87-.77-1.46-1.91-1.84-.48 2.07-1.79 3.21-3.65 3.21-1.68 0-2.86-1.02-2.86-2.47 0-1.78 1.47-3.04 3.77-3.19.27-.02.54-.03.8-.01-.09-1.61-.66-2.37-1.89-2.42-1.03-.04-1.77.52-2.21 1.7l-1.67-.43c.63-2.03 2.04-3.07 4.01-2.99 2.39.1 3.59 1.63 3.7 4.7.11.04.22.08.33.13l-.33.81Zm-3.89 1.08c-1.28.08-2.07.67-2.07 1.46 0 .56.45.96 1.16.96.98 0 1.74-.73 2.02-2.18-.37-.04-.74-.05-1.11-.24Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/bibcycle_bible/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5ZM18 6.35a1.15 1.15 0 1 1-1.15 1.15A1.15 1.15 0 0 1 18 6.35Z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@Bibcycle" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.7V8.3l6.3 3.7-6.3 3.7Z"/></svg>
+      </a>
+    </div>
+    <div class="bc-footer__copyright" data-i18n="footer-copyright"></div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta-bar" id="mobile-cta-bar">
+    <a href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990"
+       target="_blank" rel="noopener" class="mcta-btn mcta-ios">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg>
+      App Store
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle"
+       target="_blank" rel="noopener" class="mcta-btn mcta-android">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg>
+      Google Play
+    </a>
+  </div>
+  <div id="img-lightbox" class="lightbox" aria-hidden="true">
+    <img id="img-lightbox-content" class="lightbox-img" alt="">
+  </div>
+
+  <!-- TWEAKS PANEL -->
+  <div id="tweaks-panel">
+    <h3>Tweaks</h3>
+    <div class="tweak-row">
+      <label>Primary (Navy)</label>
+      <input type="color" id="tw-primary" value="#2a3f5c">
+    </div>
+    <div class="tweak-row">
+      <label>Accent (Amber)</label>
+      <input type="color" id="tw-accent" value="#FFD27F">
+    </div>
+    <div class="tweak-row">
+      <label>Background</label>
+      <input type="color" id="tw-bg" value="#f8f6f1">
+    </div>
+    <div class="tweak-row">
+      <label>Heading Font</label>
+      <select id="tw-font">
+        <option value="Noto Serif TC">Noto Serif TC</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Noto Sans TC">Noto Sans TC</option>
+      </select>
+    </div>
+    <div class="tweak-row" style="flex-direction:row; align-items:center; gap:8px;">
+      <input type="checkbox" id="tw-scroll-anim" checked>
+      <label style="font-size:12px; color:#333;">Scroll animations</label>
+    </div>
+  </div>
+
+  <script>
+  // ─── Dot pool ────────────────────────────────────────────────────
+  (function() {
+    const pool = document.getElementById('dot-pool');
+    if (!pool) return;
+    const total = 40, readCount = 8;
+    const indices = new Set();
+    while (indices.size < readCount) indices.add(Math.floor(Math.random() * total));
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('div');
+      d.className = 'pool-dot' + (indices.has(i) ? ' read' : '');
+      pool.appendChild(d);
+    }
+  })();
+
+  // ─── Footer contact -> FAQ contact item ──────────────────────────
+  (function() {
+    const contactLink = document.getElementById('footer-contact-link');
+    const faqSection = document.getElementById('faq');
+    const contactFaqItem = document.getElementById('faq-contact-item');
+    if (!contactLink || !faqSection || !contactFaqItem) return;
+
+    contactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      document.querySelectorAll('#faq .faq-item[open]').forEach((item) => {
+        if (item !== contactFaqItem) item.open = false;
+      });
+      contactFaqItem.open = true;
+
+      if (window.BibCycleScroll?.scrollToEl) {
+        window.BibCycleScroll.scrollToEl(faqSection, { block: 'start' });
+      } else {
+        faqSection.scrollIntoView({ block: 'start' });
+      }
+    });
+  })();
+
+  // ─── Scroll reveal ───────────────────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ─── Tweaks ──────────────────────────────────────────────────────
+  window.addEventListener('message', e => {
+    if (e.data?.type === '__activate_edit_mode') document.getElementById('tweaks-panel').style.display = 'block';
+    else if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').style.display = 'none';
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+  function adjustColor(hex, amount) {
+    const r = Math.max(0, Math.min(255, parseInt(hex.slice(1,3),16)+amount));
+    const g = Math.max(0, Math.min(255, parseInt(hex.slice(3,5),16)+amount));
+    const b = Math.max(0, Math.min(255, parseInt(hex.slice(5,7),16)+amount));
+    return `rgb(${r},${g},${b})`;
+  }
+
+  document.getElementById('tw-primary').addEventListener('input', function() {
+    document.documentElement.style.setProperty('--navy', this.value);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { primaryColor: this.value } }, '*');
+  });
+  document.getElementById('tw-accent').addEventListener('input', function() {
+    document.documentElement.style.setProperty('--amber', this.value);
+    document.documentElement.style.setProperty('--amber-dark', adjustColor(this.value, -30));
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { accentColor: this.value } }, '*');
+  });
+  document.getElementById('tw-bg').addEventListener('input', function() {
+    document.documentElement.style.setProperty('--bg', this.value);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { bgColor: this.value } }, '*');
+  });
+  document.getElementById('tw-font').addEventListener('change', function() {
+    document.documentElement.style.setProperty('--serif', `'${this.value}', serif`);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { headingFont: this.value } }, '*');
+  });
+  document.getElementById('tw-scroll-anim').addEventListener('change', function() {
+    document.documentElement.classList.toggle('anim-off', !this.checked);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { showScrollAnim: this.checked } }, '*');
+  });
+
+  const scrollAnimToggle = document.getElementById('tw-scroll-anim');
+  if (scrollAnimToggle) {
+    scrollAnimToggle.checked = TWEAK_DEFAULTS.showScrollAnim !== false;
+    document.documentElement.classList.toggle('anim-off', !scrollAnimToggle.checked);
+  }
+
+  // ─── Init ────────────────────────────────────────────────────────
+  (function() {
+    const lightbox = document.getElementById('img-lightbox');
+    const lightboxImg = document.getElementById('img-lightbox-content');
+    const cardImgs = document.querySelectorAll('#card-showcase .card-img');
+    const missionPoster = document.getElementById('mission-poster');
+    const afterCardInstruction = document.getElementById('after-card-instruction');
+    const getCardQr = document.getElementById('get-card-qr');
+    const overviewImg = document.querySelector('.overview-image');
+    const cyclePoster = document.querySelector('#cycle img');
+    const clickableImgs = [...cardImgs, ...(missionPoster ? [missionPoster] : []), ...(afterCardInstruction ? [afterCardInstruction] : []), ...(getCardQr ? [getCardQr] : []), ...(overviewImg ? [overviewImg] : []), ...(cyclePoster ? [cyclePoster] : [])];
+    if (!lightbox || !lightboxImg || !clickableImgs.length) return;
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.removeAttribute('src');
+    }
+
+    clickableImgs.forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  })();
+
+  </script>
+  <script defer src="assets/js/i18n/common.js"></script>
+  <script defer src="assets/js/i18n/index.js"></script>
+  <script defer src="assets/js/bibcycle-i18n.js"></script>
+  <script defer src="assets/js/bibcycle-nav.js"></script>
+</body>
+</html>
