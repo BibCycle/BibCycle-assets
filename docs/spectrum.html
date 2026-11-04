@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/webp" href="assets/logo_bird001.webp">
+<link rel="stylesheet" href="assets/css/bibcycle-core.css">
+<title>我的讀經光譜 — BibCycle 翼旅</title>
+<style>
+/* Layout: bibcycle.org hero world — navy ground, two faint amber rings, amber serif accents; one question per view, nav right under the spectrum. Single deliberate dark theme, like the site hero and received.html. */
+:root{
+  --navy:#2a3f5c;
+  --navy-deep:#1e3450;
+  --panel:rgba(20,34,54,.88);
+  --amber:#FFD27F;
+  --amber-dark:#e8b84b;
+  --white:#ffffff;
+  --w88:rgba(255,255,255,.88);
+  --w72:rgba(255,255,255,.72);
+  --w60:rgba(255,255,255,.6);
+  --w40:rgba(255,255,255,.4);
+  --w14:rgba(255,255,255,.14);
+  --w08:rgba(255,255,255,.08);
+  --ring:rgba(255,210,127,.08);
+  --ring-2:rgba(255,210,127,.05);
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --radius-card:20px;
+  --radius-button:12px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{min-height:100%}
+body{background:var(--navy);color:var(--white);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.8;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));
+  position:relative;overflow-x:hidden}
+.rings{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.rings::before,.rings::after{content:"";position:absolute;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.rings::before{width:700px;height:700px;border:1px solid var(--ring)}
+.rings::after{width:1000px;height:1000px;border:1px solid var(--ring-2)}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(60% 45% at var(--gx,70%) var(--gy,30%),rgba(255,210,127,.07),transparent 70%);transition:background 2.4s ease}
+
+.top{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding-block:20px 0;display:flex;justify-content:space-between;align-items:center}
+.mark{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.02em;color:var(--w72);text-decoration:none}
+.mark span{color:var(--amber)}
+.top small{font-size:12px;color:var(--w40);letter-spacing:.12em}
+
+main{position:relative;z-index:1;max-width:620px;margin:0 auto;display:flex;flex-direction:column;padding-block:32px 64px}
+main.wide{max-width:1080px}
+.screen{display:flex;flex-direction:column;gap:24px;animation:fadeUp .8s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.screen{animation:none}.glow{transition:none}.dot{transition:none!important}.btn:hover{transform:none}}
+
+h1,h2{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance;letter-spacing:.04em}
+p{margin:0}
+
+/* intro: two columns like the hero */
+.intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);align-items:center;gap:clamp(40px,6vw,96px);min-height:calc(100vh - 160px)}
+.eyebrow{font-size:clamp(20px,3.4vw,28px);letter-spacing:.2em;color:var(--amber);font-weight:400;margin-bottom:22px}
+.intro h1{font-size:clamp(42px,6vw,72px);line-height:1.3;margin-bottom:22px}
+.intro h1 em{font-style:normal;color:var(--amber)}
+.sub{font-size:18px;color:var(--w60);letter-spacing:.12em;margin-bottom:14px}
+.anchor{font-size:15px;color:var(--w40);letter-spacing:.06em;margin-bottom:40px;max-width:30em}
+.copy .row{margin-bottom:22px}
+.privacy{font-size:13px;color:var(--w40);letter-spacing:.04em;max-width:32em}
+
+.visual{position:relative;min-height:480px;display:grid;place-items:center}
+.sample{width:min(300px,82%);transform:rotate(3deg);padding:26px 22px;border-radius:var(--radius-card);
+  background:#101b2d;border:1px solid rgba(255,255,255,.18);box-shadow:0 38px 80px rgba(5,13,27,.42);display:flex;flex-direction:column;gap:14px}
+.sample h3{font-family:var(--serif);font-weight:500;font-size:20px;text-align:center;margin:0;letter-spacing:.06em}
+.note-float{position:absolute;right:0;top:40px;max-width:160px;padding:12px 14px;border:1px solid rgba(255,210,127,.18);border-radius:12px;
+  color:var(--w88);background:var(--panel);box-shadow:0 12px 32px rgba(5,13,27,.22);font-size:15px;line-height:1.7;letter-spacing:.06em;backdrop-filter:blur(10px)}
+.note-float::before{content:"";display:block;width:36px;height:1px;margin-bottom:12px;background:var(--amber)}
+.tag-sample{position:absolute;left:4%;bottom:44px;transform:rotate(-6deg);background:var(--white);color:var(--navy);
+  border-radius:14px;padding:14px 18px;font-family:var(--serif);font-size:15px;box-shadow:0 24px 56px rgba(5,13,27,.45)}
+@media (max-width:900px){.intro{grid-template-columns:1fr;min-height:0}.visual{min-height:380px}}
+@media (max-width:520px){.note-float{display:none}.visual{min-height:330px}}
+
+/* buttons, as on the site */
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+button{font:inherit;cursor:pointer}
+button:focus-visible,.track:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:var(--radius-button);border:none;
+  font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:.02em;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn-primary{background:var(--amber);color:var(--navy)}
+.btn-secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.btn-secondary:hover{background:rgba(255,255,255,.15)}
+.btn-pill{background:transparent;color:var(--w72);border:1px solid rgba(255,210,127,.34);border-radius:999px;padding:10px 22px;font-size:15px;letter-spacing:.06em;transition:color .2s,border-color .2s,background .2s}
+.btn-pill:hover{color:#fff;border-color:rgba(255,210,127,.75);background:rgba(255,210,127,.07)}
+.btn-text{background:none;border:none;padding:8px 2px;color:var(--w60);text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,210,127,.4)}
+.btn-text:hover{color:#fff}
+button[disabled]{opacity:.35;cursor:default;transform:none!important;box-shadow:none!important}
+.small{font-size:13px}
+.muted{color:var(--w60)}
+
+/* walked path */
+.path{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.path i{width:6px;height:6px;border-radius:50%;background:var(--w14);display:block;transition:background .5s}
+.path i.walked{background:rgba(255,210,127,.45)}
+.path i.here{background:var(--amber);width:8px;height:8px;box-shadow:0 0 10px rgba(255,210,127,.7)}
+.path i.gap{width:6px;background:none}
+
+/* question */
+.q-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.dim-name{font-size:15px;letter-spacing:.2em;color:var(--amber)}
+.q-head .muted{font-size:13px;letter-spacing:.06em;color:var(--w40)}
+.statement{font-family:var(--serif);font-weight:500;font-size:clamp(24px,5.4vw,32px);line-height:1.6;letter-spacing:.04em;min-height:3.3em;display:flex;align-items:center}
+.place{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.hint{font-size:14px;color:var(--w40);letter-spacing:.06em;text-align:center;min-height:1.6em}
+.track{position:relative;height:64px;touch-action:none;cursor:pointer;border-radius:999px;outline:none}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;height:4px;transform:translateY(-50%);border-radius:4px;
+  background:linear-gradient(90deg,rgba(255,255,255,.16),rgba(255,210,127,.3) 50%,rgba(255,255,255,.16))}
+.track .tick{position:absolute;top:50%;width:1px;height:14px;background:var(--w40);opacity:.5;transform:translate(-50%,-50%)}
+.dot{position:absolute;top:50%;width:30px;height:30px;border-radius:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 40% 38%,#FFF6DD,var(--amber) 55%,var(--amber-dark));
+  box-shadow:0 0 0 7px rgba(255,210,127,.14),0 0 34px 10px rgba(255,210,127,.4);
+  transition:left .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.dragging .dot{transition:none}
+.poles{display:flex;justify-content:space-between;font-size:15px;color:var(--w60);letter-spacing:.06em}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-top:14px;gap:12px;flex-wrap:wrap}
+
+/* choice steps */
+.choices{display:flex;flex-direction:column;gap:10px}
+.choice{text-align:left;border-radius:var(--radius-button);padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid var(--w14);color:var(--w88);font-family:var(--serif);font-size:18px;letter-spacing:.04em;transition:border-color .2s,background .2s}
+.choice:hover{border-color:rgba(255,210,127,.4)}
+.choice[aria-pressed="true"]{border-color:var(--amber);background:rgba(255,210,127,.1);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border-radius:999px;padding:9px 16px;background:rgba(255,255,255,.05);border:1px solid var(--w14);color:var(--w88);font-size:15px;letter-spacing:.04em}
+.chip[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--navy);font-weight:500}
+
+/* result card */
+.card{background:#101b2d;border-radius:var(--radius-card);padding:34px 24px 26px;display:flex;flex-direction:column;gap:26px;
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 38px 80px rgba(5,13,27,.42);position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid var(--ring);top:-160px;left:50%;transform:translateX(-50%);pointer-events:none}
+.card > *{position:relative}
+.card-title{text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.card-title .eyebrow{font-size:13px;margin:0;letter-spacing:.24em}
+.card-title h2{font-size:32px}
+.card-title .rule{width:36px;height:1px;background:var(--amber)}
+.poem{font-family:var(--serif);font-weight:400;font-size:18px;line-height:2;text-align:center;color:var(--w88);letter-spacing:.06em}
+.spectra{display:flex;flex-direction:column;gap:16px}
+.sp{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline}
+.sp .n{font-size:13px;color:var(--w60);letter-spacing:.12em}
+.sp .w{font-family:var(--serif);font-size:18px;font-weight:500;text-align:right;color:var(--amber)}
+.sp .bar{grid-column:1/-1;position:relative;height:20px}
+.sp .bar::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;transform:translateY(-50%);border-radius:3px;background:var(--w14)}
+.sp .bar b{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 40% 38%,#FFF6DD,var(--amber) 55%,var(--amber-dark));box-shadow:0 0 14px 4px rgba(255,210,127,.4)}
+.sp .bar b.none{background:var(--w40);box-shadow:none}
+.sp .ends{grid-column:1/-1;display:flex;justify-content:space-between;font-size:12px;color:var(--w40);margin-top:-2px}
+.places{display:flex;flex-direction:column;gap:8px;align-items:center}
+.places .chips{justify-content:center}
+.places .chip{font-size:14px;padding:5px 14px;cursor:default;background:transparent;border-color:rgba(255,210,127,.34);color:var(--w88)}
+.hook{border-radius:16px;padding:22px 18px;text-align:center;background:var(--amber);color:var(--navy);display:flex;flex-direction:column;gap:4px}
+.hook small{font-size:14px;letter-spacing:.08em;opacity:.8}
+.hook strong{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.4;letter-spacing:.04em}
+.card-foot{text-align:center;display:flex;flex-direction:column;gap:4px}
+.card-foot .brand{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--w72)}
+.card-foot .brand span{color:var(--amber)}
+.card-foot .q{font-size:13px;color:var(--w40);letter-spacing:.06em}
+.after{display:flex;flex-direction:column;gap:16px;padding-top:6px}
+.after .door{font-size:15px;color:var(--w60);letter-spacing:.04em}
+.note{font-size:12px;color:var(--w40);border-top:1px solid var(--w08);padding-top:14px}
+
+/* press feedback on choice / chip: tactile, not celebratory */
+.choice,.chip{position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent;transition:border-color .2s,background .25s,color .2s,transform .15s}
+.choice:active,.chip:active{transform:scale(.97)}
+.choice.pop,.chip.pop{animation:pop .42s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{0%{transform:scale(.95)}55%{transform:scale(1.03)}100%{transform:scale(1)}}
+.ripple{position:absolute;border-radius:50%;pointer-events:none;width:12px;height:12px;margin:-6px 0 0 -6px;
+  background:radial-gradient(circle,rgba(255,210,127,.55),rgba(255,210,127,0) 70%);animation:ripple .7s ease-out forwards}
+@keyframes ripple{from{transform:scale(1);opacity:1}to{transform:scale(40);opacity:0}}
+.choice[aria-pressed="true"]::after{content:"";position:absolute;right:18px;top:50%;width:10px;height:10px;border-radius:50%;transform:translateY(-50%);
+  background:var(--amber);box-shadow:0 0 12px 3px rgba(255,210,127,.6)}
+.chip.full{animation:nudge .35s ease}
+@keyframes nudge{0%,100%{transform:none}30%{transform:translateX(-4px)}70%{transform:translateX(4px)}}
+.limit{font-size:13px;color:var(--amber);min-height:1.4em;opacity:0;transition:opacity .3s}
+.limit.show{opacity:1}
+@media (prefers-reduced-motion:reduce){.choice.pop,.chip.pop,.chip.full,.ripple{animation:none}}
+
+/* app download block (page only, not in the PNG) */
+.dl{margin-top:28px;padding:36px 22px 30px;border-radius:var(--radius-card);border:1px solid var(--w14);background:rgba(16,27,45,.55);
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.dl-logo{font-family:var(--serif);font-size:24px;font-weight:600;color:#fff}
+.dl-logo span{color:var(--amber)}
+.dl-bird{width:min(240px,64%);height:auto;margin:-6px 0 -10px}
+.dl h3{font-family:var(--serif);font-weight:600;font-size:clamp(26px,6vw,34px);margin:0;letter-spacing:.04em}
+.dl-sub{font-size:14px;color:var(--amber);letter-spacing:.2em;font-weight:400}
+.dl-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.dl-btns .btn{min-width:200px;text-decoration:none;text-align:left;line-height:1.25}
+.btn-icon{width:24px;height:24px;flex-shrink:0}
+.btn-label-sub{font-size:11px;font-weight:300;opacity:.7;display:block}
+.dl-facts{display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--w72);letter-spacing:.06em;margin-top:6px}
+@media (max-width:520px){.dl-btns{flex-direction:column;width:100%}.dl-btns .btn{width:100%;min-width:0}}
+
+/* share image */
+.share{display:flex;flex-direction:column;gap:12px}
+.share-preview{display:none;flex-direction:column;gap:8px;align-items:flex-start}
+.share-preview.show{display:flex}
+.share-preview img{width:min(260px,70%);border-radius:14px;border:1px solid var(--w14);box-shadow:0 18px 40px rgba(5,13,27,.4)}
+
+/* phone layout */
+@media (max-width:520px){
+  main{padding-block:20px 40px}
+  .intro{gap:20px}
+  .eyebrow{font-size:18px;margin-bottom:14px;letter-spacing:.14em}
+  .intro h1{font-size:44px;margin-bottom:14px}
+  .sub{font-size:16px;letter-spacing:.08em}
+  .anchor{margin-bottom:26px}
+  .copy .row{margin-bottom:16px}
+  .copy .btn-primary{flex:1;justify-content:center}
+  .visual{min-height:300px}
+  .sample{width:84%;padding:20px 18px;gap:10px}
+  .tag-sample{font-size:13px;padding:10px 14px;bottom:18px}
+  .statement{font-size:24px;min-height:3.6em}
+  .q-head .muted{display:none}
+  .nav{flex-direction:column-reverse;align-items:stretch;gap:10px;padding-top:8px}
+  .nav .row{width:100%;flex-wrap:nowrap}
+  .nav .row .btn,.nav > .btn{flex:1;justify-content:center}
+  .nav .btn-text{align-self:center}
+  .choice{font-size:17px;padding:13px 16px}
+  .card{padding:28px 18px 22px;gap:22px}
+  .card-title h2{font-size:28px}
+  .poem{font-size:16px}
+  .hook strong{font-size:22px}
+  .share .row .btn{flex:1;justify-content:center}
+}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+
+
+<div class="rings" aria-hidden="true"></div><div class="glow" aria-hidden="true"></div>
+<header class="top"><a class="mark" href="index.html">Bib<span>Cycle</span></a><small>讀經光譜 · alpha</small></header>
+<main id="app" aria-live="polite"></main>
+
+<script>
+const DIMS=[
+ {id:"entry",name:"進入方式",L:"順著讀",M:"兩軌並行",R:"隨處進入",angle:112,
+  lines:["我順著一卷書讀下去，","有時順著讀，有時隨處打開，","我從哪裡打開都可以，"]},
+ {id:"rhythm",name:"節奏",L:"定時讀",M:"看日子",R:"隨時讀",angle:124,
+  lines:["在屬於讀經的時段打開，","有固定的時候，也有空檔的時候，","在生活的空檔打開，"]},
+ {id:"pace",name:"讀法",L:"慢讀細嚼",M:"時慢時快",R:"大段通覽",angle:136,
+  lines:["一章可以讀很久，","有時細讀，有時一口氣讀完，","一口氣看見整個故事，"]},
+ {id:"relation",name:"相處方式",L:"聆聽默想",M:"聽也追問",R:"查考研讀",angle:100,
+  lines:["讀的時候比較像在聽，","一邊聽，一邊追問，","喜歡追問背景和意思，"]},
+ {id:"together",name:"同行",L:"獨自讀",M:"獨處也同行",R:"與人一起讀",angle:146,
+  lines:["多數時候一個人，安靜地讀。","一個人讀，也和人一起讀。","喜歡和人一起讀同一章。"]},
+ {id:"return",name:"停下之後",L:"從頭再來",M:"看情況",R:"接著走",angle:92,
+  lines:["停下了，就翻開新的一頁。","停下之後，怎樣回來都可以。","停下了，就從停下的地方接著走。"]}
+];
+const Q=[
+ [0,"我喜歡知道自己讀到哪一卷、哪一章，接著讀下去。","L"],
+ [0,"從哪一卷開始，對我來說不太重要。","R"],
+ [0,"如果中途跳到別的書卷，我會覺得有點不完整。","L"],
+ [0,"偶爾打開一章沒想過要讀的經文，我會覺得新鮮。","R"],
+ [1,"我讀經通常有一個固定的時段，例如早上或睡前。","L"],
+ [1,"我比較是有空檔、想起來就打開。","R"],
+ [1,"固定時間被打亂了，我會不太想讀。","L"],
+ [1,"一星期裡有幾天讀得多、幾天沒讀，對我來說是正常的。","R"],
+ [2,"一章經文，我寧願讀兩三遍，也不急著讀下一章。","L"],
+ [2,"我喜歡一口氣讀好幾章，看見整個故事的走向。","R"],
+ [2,"讀到一句停下來想很久，是我讀經中常有的事。","L"],
+ [2,"細節我未必記得，但我想先知道整卷書在講甚麼。","R"],
+ [3,"讀經時，我比較像在聽，而不是在分析。","L"],
+ [3,"我會想知道這段經文的背景、原文或作者處境。","R"],
+ [3,"有時候我不想弄明白，只想讓經文停在那裡。","L"],
+ [3,"遇到看不懂的地方，我會去查資料，或問人。","R"],
+ [4,"讀經對我來說，主要是一個人安靜的時間。","L"],
+ [4,"和別人一起讀同一章，我會讀得更投入。","R"],
+ [4,"我讀到的東西，通常不會主動跟人分享。","L"],
+ [4,"我很想知道別人讀同一段時看見了甚麼。","R"],
+ [5,"讀經計劃停了一段時間，我傾向重新開一個新的。","L"],
+ [5,"停了之後，我會從上次停下的地方接著讀。","R"],
+ [5,"重新開始，對我來說像翻開新的一頁。","L"],
+ [5,"我不太在意停了多久，回來就是回來。","R"]
+];
+const FEARS=["一份讀不完的功課","只剩斷開的幾句","一件做給人看的事","別人說甚麼就是甚麼","只在有事時才打開"];
+const PLACES=["律法書","歷史書","詩歌智慧書","先知書","福音書","使徒行傳","書信","啟示錄","說不上來"];
+const TOTAL=Q.length+2; // + fear + places
+
+let st={step:-1,ans:Array(Q.length).fill(null),fear:null,places:[]};
+const app=document.getElementById("app");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const setRay=a=>{const r=document.documentElement.style;r.setProperty("--gx",(20+((a-90)*1.4))+"%");r.setProperty("--gy",(18+((a-90)%30))+"%")};
+
+function pathDots(){
+  let h="";
+  for(let i=0;i<TOTAL;i++){
+    if(i>0 && i<=Q.length && i%4===0) h+='<i class="gap"></i>';
+    h+=`<i class="${i<st.step?"walked":i===st.step?"here":""}"></i>`;
+  }
+  return `<div class="path" aria-label="第 ${st.step+1} 題，共 ${TOTAL} 題">${h}</div>`;
+}
+
+function render(){
+  app.classList.remove("wide");
+  if(st.step<0) return intro();
+  if(st.step<Q.length) return question();
+  if(st.step===Q.length) return fearStep();
+  if(st.step===Q.length+1) return placesStep();
+  return result();
+}
+
+function intro(){
+  setRay(118);app.classList.add("wide");
+  app.innerHTML=`<section class="screen intro">
+    <div class="copy">
+      <p class="eyebrow">你和聖經，是怎樣相處的？</p>
+      <h1>我的讀經<em>光譜</em></h1>
+      <p class="sub">每個人讀聖經的樣子都不一樣</p>
+      <p class="anchor">二十四句話，把光點放在最像自己的位置。兩端都是讀聖經的方式，沒有哪一端比較好。</p>
+      <div class="row"><button class="btn btn-primary" id="go">開始</button><span class="muted small">約 4 分鐘 · 每題都可以跳過</span></div>
+      <p class="privacy">答案只在這個頁面裡計算，不會上傳，也不會留下紀錄。</p>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="sample">
+        <h3>我的讀經光譜</h3>
+        ${["進入方式|順著讀|隨處進入|.22|順著讀","節奏|定時讀|隨時讀|.7|隨時讀","讀法|慢讀細嚼|大段通覽|.3|慢讀細嚼"].map(x=>{const [n,l,r,v,w]=x.split("|");return `<div class="sp"><span class="n">${n}</span><span class="w">${w}</span><div class="bar"><b style="left:${v*100}%"></b></div><div class="ends"><span>${l}</span><span>${r}</span></div></div>`}).join("")}
+      </div>
+      <div class="note-float">一次讀一章。<br>停下的地方，<br>一直都在。</div>
+      <div class="tag-sample">我最怕讀經變成：<br>一份讀不完的功課</div>
+    </div>
+  </section>`;
+  document.getElementById("go").onclick=()=>{st.step=0;render()};
+}
+
+function question(){
+  const [d,text]=Q[st.step];const dim=DIMS[d];setRay(dim.angle);
+  const v=st.ans[st.step];
+  app.innerHTML=`<section class="screen">
+    ${pathDots()}
+    <div class="q-head"><span class="dim-name">${esc(dim.name)}</span><span class="muted small">${dim.L} ⟷ ${dim.R}</span></div>
+    <p class="statement">${esc(text)}</p>
+    <div class="place">
+      <p class="hint" id="hint">${v===null?"把光點拖到最像你的位置":"光點放好了，可以再移動"}</p>
+      <div class="track" id="track" tabindex="0" role="slider" aria-label="這句話有多像你" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${v===null?50:Math.round(v*100)}" aria-valuetext="${v===null?"未放":label(v)}">
+        <span class="tick" style="left:25%"></span><span class="tick" style="left:50%"></span><span class="tick" style="left:75%"></span>
+        <span class="dot" id="dot" style="left:${(v??.5)*100}%"></span>
+      </div>
+      <div class="poles"><span>不像我</span><span>很像我</span></div>
+    </div>
+    <div class="nav">
+      <button class="btn-text" id="back">${st.step===0?"回到開頭":"上一題"}</button>
+      <div class="row">
+        <button class="btn btn-secondary" id="skip">說不上來</button>
+        <button class="btn btn-primary" id="next">下一題</button>
+      </div>
+    </div>
+  </section>`;
+  const track=document.getElementById("track"),dot=document.getElementById("dot"),next=document.getElementById("next"),hint=document.getElementById("hint");
+  const put=x=>{
+    const r=track.getBoundingClientRect();
+    let val=Math.min(1,Math.max(0,(x-r.left)/r.width));
+    set(val);
+  };
+  const set=val=>{
+    st.ans[st.step]=val;dot.classList.remove("unplaced");dot.style.left=(val*100)+"%";
+    track.setAttribute("aria-valuenow",Math.round(val*100));track.setAttribute("aria-valuetext",label(val));
+    next.disabled=false;hint.textContent="光點放好了，可以再移動";
+  };
+  track.addEventListener("pointerdown",e=>{track.setPointerCapture(e.pointerId);put(e.clientX);
+    const mv=ev=>{track.classList.add("dragging");put(ev.clientX)};
+    const up=()=>{track.classList.remove("dragging");track.removeEventListener("pointermove",mv);track.removeEventListener("pointerup",up);track.removeEventListener("pointercancel",up)};
+    track.addEventListener("pointermove",mv);track.addEventListener("pointerup",up);track.addEventListener("pointercancel",up);
+  });
+  track.addEventListener("keydown",e=>{
+    const cur=st.ans[st.step]??.5;
+    if(e.key==="ArrowLeft"||e.key==="ArrowDown"){set(Math.max(0,cur-.05));e.preventDefault()}
+    if(e.key==="ArrowRight"||e.key==="ArrowUp"){set(Math.min(1,cur+.05));e.preventDefault()}
+    if(e.key==="Enter"){if(st.ans[st.step]===null)st.ans[st.step]=.5;st.step++;render()}
+  });
+  document.getElementById("back").onclick=()=>{st.step--;render()};
+  document.getElementById("skip").onclick=()=>{st.ans[st.step]=null;st.step++;render()};
+  next.onclick=()=>{if(st.ans[st.step]===null)st.ans[st.step]=.5;st.step++;render()};
+}
+function label(v){return v<.2?"不像我":v<.4?"不太像我":v<=.6?"一半一半":v<=.8?"有點像我":"很像我"}
+
+function fearStep(){
+  setRay(118);
+  app.innerHTML=`<section class="screen">
+    ${pathDots()}
+    <span class="dim-name">最後兩題</span>
+    <p class="statement">我最怕讀經變成⋯⋯</p>
+    <div class="choices">${FEARS.map((f,i)=>`<button class="choice" data-i="${i}" aria-pressed="${st.fear===i}">${f}</button>`).join("")}</div>
+    <div class="nav"><button class="btn-text" id="back">上一題</button>
+      <div class="row"><button class="btn btn-secondary" id="skip">跳過</button><button class="btn btn-primary" id="next" ${st.fear===null?"disabled":""}>下一題</button></div></div>
+  </section>`;
+  const nextBtn=document.getElementById("next");
+  app.querySelectorAll(".choice").forEach(b=>b.onclick=e=>{
+    st.fear=+b.dataset.i;
+    app.querySelectorAll(".choice").forEach(c=>c.setAttribute("aria-pressed",c===b));
+    nextBtn.disabled=false;press(b,e);
+  });
+  document.getElementById("back").onclick=()=>{st.step--;render()};
+  document.getElementById("skip").onclick=()=>{st.fear=null;st.step++;render()};
+  document.getElementById("next").onclick=()=>{st.step++;render()};
+}
+
+function placesStep(){
+  setRay(130);
+  app.innerHTML=`<section class="screen">
+    ${pathDots()}
+    <span class="dim-name">常去的地方</span>
+    <p class="statement">回想最近讀過的經文，大多在哪裡？</p>
+    <p class="muted small">可以揀一至三個。</p><p class="limit" id="limit">最多揀三個；想換的話，先取消其中一個。</p>
+    <div class="chips">${PLACES.map(p=>`<button class="chip" data-p="${p}" aria-pressed="${st.places.includes(p)}">${p}</button>`).join("")}</div>
+    <div class="nav"><button class="btn-text" id="back">上一題</button>
+      <button class="btn btn-primary" id="next">看我的光譜</button></div>
+  </section>`;
+  const lim=document.getElementById("limit");
+  app.querySelectorAll(".chip").forEach(b=>b.onclick=e=>{
+    const p=b.dataset.p;lim.classList.remove("show");
+    if(p==="說不上來"){st.places=st.places.includes(p)?[]:[p]}
+    else{st.places=st.places.filter(x=>x!=="說不上來");
+      if(st.places.includes(p)) st.places=st.places.filter(x=>x!==p);
+      else if(st.places.length<3) st.places.push(p);
+      else{b.classList.remove("full");void b.offsetWidth;b.classList.add("full");lim.classList.add("show");return}}
+    app.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",st.places.includes(c.dataset.p)));
+    if(st.places.includes(p)) press(b,e);
+  });
+  document.getElementById("back").onclick=()=>{st.step--;render()};
+  document.getElementById("next").onclick=()=>{st.step++;render()};
+}
+
+function press(el,e){
+  el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop");
+  const r=el.getBoundingClientRect(),rp=document.createElement("span");rp.className="ripple";
+  rp.style.left=((e&&e.clientX?e.clientX:r.left+r.width/2)-r.left)+"px";rp.style.top=((e&&e.clientY?e.clientY:r.top+r.height/2)-r.top)+"px";
+  el.appendChild(rp);setTimeout(()=>rp.remove(),750);
+  if(navigator.vibrate){try{navigator.vibrate(8)}catch(_){}}
+}
+
+function scores(){
+  return DIMS.map((dim,d)=>{
+    const vals=[];Q.forEach(([qd,,dir],i)=>{if(qd===d&&st.ans[i]!==null){const v=st.ans[i];vals.push(dir==="R"?v:1-v)}});
+    if(!vals.length) return {pos:.5,none:true};
+    return {pos:vals.reduce((a,b)=>a+b,0)/vals.length,none:false};
+  });
+}
+
+function result(){
+  setRay(128);
+  const sc=scores();
+  const band=p=>p<.4?0:p>.6?2:1;
+  const words=sc.map((s,i)=>s.none?"未作答":[DIMS[i].L,DIMS[i].M,DIMS[i].R][band(s.pos)]);
+  const poemLines=sc.map((s,i)=>s.none?null:DIMS[i].lines[band(s.pos)]).filter(Boolean);
+  if(poemLines.length && !poemLines[0].startsWith("我")) poemLines[0]="我"+poemLines[0];
+  const places=st.places.filter(p=>p!=="說不上來");
+  app.innerHTML=`<section class="screen">
+    <article class="card" aria-label="我的讀經光譜結果卡">
+      <div class="card-title"><p class="eyebrow">你和聖經，是怎樣相處的？</p><h2>我的讀經光譜</h2><span class="rule"></span></div>
+      ${poemLines.length?`<p class="poem">${poemLines.map(esc).join("<br>")}</p>`:""}
+      <div class="spectra">
+        ${sc.map((s,i)=>`<div class="sp">
+          <span class="n">${DIMS[i].name}</span><span class="w">${words[i]}</span>
+          <div class="bar"><b class="${s.none?"none":""}" style="left:${s.pos*100}%"></b></div>
+          <div class="ends"><span>${DIMS[i].L}</span><span>${DIMS[i].R}</span></div>
+        </div>`).join("")}
+      </div>
+      ${places.length?`<div class="places"><span class="muted small">常去的地方</span><div class="chips">${places.map(p=>`<span class="chip">${p}</span>`).join("")}</div></div>`:""}
+      ${st.fear!==null?`<div class="hook"><small>我最怕讀經變成：</small><strong>${FEARS[st.fear]}</strong></div>`:""}
+      <div class="card-foot"><span class="brand">Bib<span>Cycle</span> 翼旅</span><span class="q">慢讀聖經 · 走進聖經的那扇門</span></div>
+    </article>
+    <div class="after">
+      <p class="door">兩端都有人這樣讀聖經。BibCycle 是一個順著讀和隨處打開都可以的地方。</p>
+      <div class="share">
+        <div class="row"><button class="btn btn-primary" id="dl">下載圖片（PNG）</button><button class="btn-pill" id="again">重新作答</button></div>
+        <div class="share-preview" id="preview"><img id="previewImg" alt="我的讀經光譜分享圖"><span class="muted small">如果沒有自動下載，請長按圖片（手機）或按右鍵（電腦）儲存。</span></div>
+      </div>
+      <section class="dl" aria-label="下載 BibCycle 翼旅">
+        <div class="dl-logo">Bib<span>Cycle</span></div>
+        <img class="dl-bird" src="assets/logo_bird002.png" alt="" aria-hidden="true" onerror="this.remove()">
+        <h3>願你展翼，旅程開始</h3>
+        <p class="dl-sub">Word &amp; Wings</p>
+        <div class="dl-btns">
+          <a class="btn btn-primary" href="https://apps.apple.com/hk/app/bibcycle-%E7%BF%BC%E6%97%85/id6761640990" target="_blank" rel="noopener"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/></svg><div><span class="btn-label-sub">Download on the</span>App Store</div></a>
+          <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.edwinluk.bibcycle" target="_blank" rel="noopener"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.18 23.76c.37.2.8.22 1.21.06l12.3-7.1-2.62-2.62-10.89 9.66zM20.54 10.2L17.1 8.22 14.2 11l3 3 3.35-1.93c.96-.56.96-1.93-.01-2.87zM2.03 1.17C1.69 1.5 1.5 2.01 1.5 2.68v18.64c0 .67.19 1.18.53 1.51l.08.07 10.44-10.44v-.25L2.11 1.1l-.08.07zM14.2 13l-2.65 2.65L2.11 23l12.09-6.99L17.1 13l-2.9-0z" fill="white"/></svg><div><span class="btn-label-sub">Get it on</span>Google Play</div></a>
+        </div>
+        <div class="dl-facts"><p>完全免費</p><p>無廣告及追蹤</p><p>閱讀進度只留在裝置</p></div>
+      </section>
+      <p class="note">圖片在你的裝置上生成，答案沒有上傳，也沒有留下紀錄。</p>
+    </div>
+  </section>`;
+  const data={sc,words,poemLines,places,fear:st.fear===null?null:FEARS[st.fear]};
+  document.getElementById("dl").onclick=()=>makePng(data);
+  document.getElementById("again").onclick=()=>{st={step:-1,ans:Array(Q.length).fill(null),fear:null,places:[]};render()};
+  window.scrollTo({top:0});
+}
+async function makePng(d){
+  const btn=document.getElementById("dl");btn.disabled=true;const old=btn.textContent;btn.textContent="生成中⋯⋯";
+  try{
+    const SERIF='"Noto Serif TC","Songti TC","PMingLiU",serif',SANS='"Noto Sans TC","PingFang TC",sans-serif';
+    const all="你和聖經，是怎樣相處的？我的讀經光譜我最怕讀經變成：BibCycle翼旅慢讀聖經·走進聖經的那扇門常去的地方"+d.poemLines.join("")+d.words.join("")+DIMS.map(x=>x.name+x.L+x.R).join("")+d.places.join("")+(d.fear||"");
+    try{await Promise.all(["500 72px "+SERIF,"400 38px "+SERIF,"600 46px "+SERIF,"400 28px "+SANS,"300 28px "+SANS].map(f=>document.fonts.load(f,all)))}catch(_){}
+    const W=1080,H=1920,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+    const sp=v=>{if("letterSpacing" in x)x.letterSpacing=v};
+    x.fillStyle="#2a3f5c";x.fillRect(0,0,W,H);
+    const g=x.createRadialGradient(760,420,0,760,420,760);g.addColorStop(0,"rgba(255,210,127,.10)");g.addColorStop(1,"rgba(255,210,127,0)");x.fillStyle=g;x.fillRect(0,0,W,H);
+    x.lineWidth=2;[[540,900,560,"rgba(255,210,127,.10)"],[540,900,800,"rgba(255,210,127,.06)"]].forEach(([cx,cy,rr,col])=>{x.strokeStyle=col;x.beginPath();x.arc(cx,cy,rr,0,Math.PI*2);x.stroke()});
+    const rr=(X,Y,w,h,r)=>{x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath()};
+    x.save();x.shadowColor="rgba(5,13,27,.5)";x.shadowBlur=80;x.shadowOffsetY=30;rr(60,50,960,1776,44);x.fillStyle="#101b2d";x.fill();x.restore();
+    rr(60,50,960,1776,44);x.strokeStyle="rgba(255,255,255,.14)";x.lineWidth=2;x.stroke();
+    x.textAlign="center";x.textBaseline="alphabetic";
+    x.fillStyle="#FFD27F";x.font="400 30px "+SANS;sp("8px");x.fillText("你和聖經，是怎樣相處的？",540,150);
+    x.fillStyle="#fff";x.font="500 76px "+SERIF;sp("4px");x.fillText("我的讀經光譜",540,252);
+    x.fillStyle="#FFD27F";x.fillRect(510,288,60,3);
+    sp("3px");x.font="400 34px "+SERIF;x.fillStyle="rgba(255,255,255,.88)";
+    let y=372;d.poemLines.forEach(l=>{x.fillText(l,540,y);y+=56});
+    y=Math.max(y+48,750);
+    const L=130,R=950;
+    d.sc.forEach((s,i)=>{
+      x.textAlign="left";sp("4px");x.font="400 28px "+SANS;x.fillStyle="rgba(255,255,255,.6)";x.fillText(DIMS[i].name,L,y);
+      x.textAlign="right";sp("2px");x.font="500 38px "+SERIF;x.fillStyle=s.none?"rgba(255,255,255,.4)":"#FFD27F";x.fillText(d.words[i],R,y);
+      const by=y+36;rr(L,by-3,R-L,6,3);x.fillStyle="rgba(255,255,255,.14)";x.fill();
+      const dx=L+(R-L)*s.pos;x.save();
+      if(!s.none){x.shadowColor="rgba(255,210,127,.8)";x.shadowBlur=28}
+      const dg=x.createRadialGradient(dx-4,by-4,1,dx,by,16);dg.addColorStop(0,s.none?"rgba(255,255,255,.5)":"#FFF6DD");dg.addColorStop(.55,s.none?"rgba(255,255,255,.4)":"#FFD27F");dg.addColorStop(1,s.none?"rgba(255,255,255,.3)":"#e8b84b");
+      x.fillStyle=dg;x.beginPath();x.arc(dx,by,15,0,Math.PI*2);x.fill();x.restore();
+      sp("1px");x.font="300 23px "+SANS;x.fillStyle="rgba(255,255,255,.42)";x.textAlign="left";x.fillText(DIMS[i].L,L,by+46);x.textAlign="right";x.fillText(DIMS[i].R,R,by+46);
+      y+=136;
+    });
+    y-=14;
+    if(d.places.length){
+      y+=0;x.textAlign="center";sp("4px");x.font="400 24px "+SANS;x.fillStyle="rgba(255,255,255,.6)";x.fillText("常去的地方",540,y);
+      y+=24;x.font="400 27px "+SANS;sp("2px");
+      const ws=d.places.map(p=>x.measureText(p).width+56),tot=ws.reduce((a,b)=>a+b,0)+(ws.length-1)*18;let cx=540-tot/2;
+      d.places.forEach((p,i)=>{rr(cx,y,ws[i],56,28);x.strokeStyle="rgba(255,210,127,.4)";x.lineWidth=2;x.stroke();x.fillStyle="rgba(255,255,255,.88)";x.fillText(p,cx+ws[i]/2,y+38);cx+=ws[i]+18});
+      y+=82;
+    }
+    if(d.fear){
+      const hy=Math.min(y,1664);rr(130,hy,820,130,28);x.fillStyle="#FFD27F";x.fill();
+      x.textAlign="center";x.fillStyle="rgba(42,63,92,.8)";sp("3px");x.font="400 27px "+SANS;x.fillText("我最怕讀經變成：",540,hy+48);
+      x.fillStyle="#2a3f5c";x.font="600 46px "+SERIF;sp("3px");x.fillText(d.fear,540,hy+104);
+    }
+    x.textAlign="center";sp("1px");x.font="600 40px "+SERIF;
+    const a="Bib",b="Cycle",t=" 翼旅",wa=x.measureText(a).width,wb=x.measureText(b).width,wt=x.measureText(t).width;let bx=540-(wa+wb+wt)/2;
+    x.textAlign="left";x.fillStyle="rgba(255,255,255,.8)";x.fillText(a,bx,1872);x.fillStyle="#FFD27F";x.fillText(b,bx+wa,1872);x.fillStyle="rgba(255,255,255,.8)";x.fillText(t,bx+wa+wb,1872);
+    x.textAlign="center";sp("4px");x.font="300 24px "+SANS;x.fillStyle="rgba(255,255,255,.5)";x.fillText("慢讀聖經 · 走進聖經的那扇門",540,1908);
+    const url=c.toDataURL("image/png");
+    const img=document.getElementById("previewImg");img.src=url;document.getElementById("preview").classList.add("show");
+    try{const blob=await new Promise(res=>c.toBlob(res,"image/png"));const file=new File([blob],"我的讀經光譜.png",{type:"image/png"});
+      if(navigator.canShare&&navigator.canShare({files:[file]})&&matchMedia("(pointer:coarse)").matches){await navigator.share({files:[file]});}
+      else{const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="我的讀經光譜.png";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500)}
+    }catch(_){}
+  }finally{btn.disabled=false;btn.textContent=old}
+}
+render();
+</script>
+
+</body>
+</html>
