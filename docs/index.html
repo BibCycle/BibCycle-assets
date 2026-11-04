@@ -262,6 +262,8 @@
       animation: fadeUp 0.8s 0.75s forwards;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
     }
+    .hero-spectrum-test { margin-left: 10px; border-style: dashed; }
+    @media (max-width: 640px) { .hero-spectrum-test { margin-left: 0; margin-top: 0; } }
     .hero-received:hover {
       color: #fff;
       border-color: rgba(255,210,127,0.75);
@@ -1008,6 +1010,8 @@
           <a href="download.html" class="btn btn-secondary" data-i18n="nav-download">下載</a>
         </div>
         <a class="hero-received" href="received.html" data-i18n="hero-received"></a>
+        <!-- TEST LINK: 讀經光譜 alpha，正式上線前移除或改為 i18n -->
+        <a class="hero-received hero-spectrum-test" href="spectrum.html">【測試】我的讀經光譜 →</a>
       </div>
       <div class="hero-visual" aria-label="BibCycle App 與分享卡片預覽">
         <div class="hero-phone"><img src="assets/screen2.jpg" width="1242" height="2688" alt="BibCycle 讀經畫面" data-i18n-alt="hero-screen-alt"></div>
